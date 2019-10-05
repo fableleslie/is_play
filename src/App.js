@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route} from 'react-router-dom'
+import 'styles/reset.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import {PayContainer} from 'pages/pay/pay/'
+
+import {OrderContainer} from 'pages/pay/comorder/'
+
+import {EditContainer} from 'pages/pay/editaddress/'
+
+import UseCoupon from 'pages/pay/usecoupon/coupon'
+
+export default class App extends React.PureComponent {
+
+  render(){
+    return (
+      <Switch>
+        <Route path='/paypage' component={PayContainer}></Route>
+        <Route path='/comorder' component={OrderContainer}></Route>
+        <Route path='/editaddress' component={EditContainer}></Route>
+        <Route path='/usecoupon' component={UseCoupon}></Route>
+      </Switch>
+    )
+  }
 }
 
-export default App;
+
