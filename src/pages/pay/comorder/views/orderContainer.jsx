@@ -10,6 +10,7 @@ class orderContainer extends PureComponent{
             comeBack={this.comeBack}
             toEdit={this.toEdit}
             useCoupon={this.useCoupon}
+            sureOrder={this.sureOrder}
             >
             </OrderUI>
         )
@@ -22,8 +23,10 @@ class orderContainer extends PureComponent{
         this.props.history.push('/pay/editaddress')
     }
     useCoupon = () => {
-        console.log(1)
         this.props.history.push('/pay/usecoupon')
+    }
+    sureOrder = () => {
+        this.props.history.push('/pay/waitpay')
     }
 }
 

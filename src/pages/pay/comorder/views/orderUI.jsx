@@ -77,7 +77,7 @@ function orderUI(props){
                    <div>￥528</div>
                    <i>&#xe63d;</i>
                </div>
-               <div className="make-sure">确定</div>
+               <div className="make-sure" onClick={props.sureOrder}>确定</div>
             </footer>
         </OrderUIContainer>
     )

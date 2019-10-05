@@ -46,7 +46,7 @@ class Pay extends PureComponent {
     decreCount = ()=>{
         this.setState({
             count:(this.state.count) > 0 ?(this.state.count - 1): 0 ,
-            payprice:this.state.price * (this.state.count) > 0 ?(this.state.count - 1): 0
+            payprice:(this.state.count) > 0 ?this.state.price * (this.state.count - 1): 0
         })
     }
     increCount = ()=>{
