@@ -19,11 +19,11 @@ class orderContainer extends PureComponent{
         this.props.history.goBack()
     }
     toEdit = ()=>{
-        this.props.history.push('/editaddress')
+        this.props.history.push('/pay/editaddress')
     }
     useCoupon = () => {
         console.log(1)
-        this.props.history.push('/usecoupon')
+        this.props.history.push('/pay/usecoupon')
     }
 }
 
