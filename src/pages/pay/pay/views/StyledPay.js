@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
-import styledIcon  from 'components/styles/icons.js'
+
+import {styledIconOne}  from 'components/styles/icons.js'
 
 import border from 'components/styles/border'
 
 const PayContainer = 
-styledIcon(
+styledIconOne(
     styled.div`
         font-family:Microsoft YaHei;
         width:100%;

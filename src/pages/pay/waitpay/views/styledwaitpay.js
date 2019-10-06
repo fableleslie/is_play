@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import styledIcon  from 'components/styles/icons.js'
+import {styledIconOne}  from 'components/styles/icons.js'
 
 const WaitUIContainer = 
-styledIcon(
+styledIconOne(
     styled.div`
         width:100%;
         height:100%;
