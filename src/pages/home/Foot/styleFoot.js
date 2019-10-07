@@ -13,7 +13,7 @@ const FootContainer = styled.div`
         height : .5rem;
         display : flex;
         background : #fff;
-        div{
+        a{
             display : inline-block;
             flex : 1;
             height : 100%;
@@ -22,18 +22,13 @@ const FootContainer = styled.div`
             justify-items : center;
             align-items : center;
             text-align : center;
+            font-size : .1rem;
+            color : #080808;
             img{
                 height : .25rem;
                 width : .25rem;
                 margin-top : .03rem;
             }
-            a{
-                font-size : .1rem;
-                color : #080808;
-            }
-        }
-        .active{
-            color : red;
         }
     }
 `
