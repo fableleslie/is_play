@@ -8,8 +8,8 @@ import HomePage2 from 'images/icons/xianxingshouye-2@3x.png'
 import Discovery from 'images/icons/faxian@3x.png'
 import Discovery2 from 'images/icons/faxian-2@3x.png'
 
-import Message from 'images/icons/xiaoxi@3x.png'
-import Message2 from 'images/icons/xiaoxi-2@3x.png'
+import TabMessage from 'images/icons/xiaoxi@3x.png'
+import TabMessage2 from 'images/icons/xiaoxi-2@3x.png'
 
 import Mine from 'images/icons/Icon_wode@3x.png'
 
@@ -41,7 +41,7 @@ export class Foot extends Component {
                             <span>发现</span>
                         </NavLink>
                         <NavLink to='/index/message' activeClassName='active'>
-                            <img src={ this.props.location.pathname === '/index/message' ? Message2 : Message} alt=""/>
+                            <img src={ this.props.location.pathname === '/index/message' ? TabMessage2 : TabMessage} alt=""/>
                             <span>消息</span>
                         </NavLink>
                         <NavLink to='/index/mine' activeClassName='active'>
