@@ -14,13 +14,13 @@ function ConsultUI(props){
                 {
                     false ? <Empty></Empty>:<ConsultList></ConsultList>
                 }
-                <p className="message-end">
+                <div className="message-end">
                     <div>
                         <i></i>
                         <div>END</div>
                         <i></i>
                     </div>
-                </p>
+                </div>
             </main>
         </ConsultUIContainer>
     )
