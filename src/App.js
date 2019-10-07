@@ -13,7 +13,7 @@ import 'styles/reset.css'
 
 import Pay from 'pages/pay/pay.js'
 
-import {MessageContainer} from 'pages/message/messages/index.js'
+
 import Message from 'pages/message/message.js'
 
 export default class App extends React.PureComponent {
