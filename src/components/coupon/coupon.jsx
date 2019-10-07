@@ -1,6 +1,7 @@
 import React,{PureComponent} from 'react'
 import CouponLi from './styledCoupon'
 
+//优惠券组件
 class CouponItem extends PureComponent{
     render(){
         return(
