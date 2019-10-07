@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import icons from 'components/styles/icons'
+import {styledIconOne} from 'components/styles/icons'
 import border from 'components/styles/border'
 
 const RepContainer = styled.div`
@@ -97,5 +97,5 @@ const RepContainer = styled.div`
 
 export default border({
     width : '0 0 1px 0',
-    comp: icons(RepContainer)
+    comp: styledIconOne(RepContainer)
 })

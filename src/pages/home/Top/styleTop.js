@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import icons from 'components/styles/icons'
+import {styledIconOne} from 'components/styles/icons.js'
 
 const Top = styled.header`
     height : .44rem;
@@ -30,6 +30,6 @@ const Top = styled.header`
         }
     }
 `
-const TopContainer = icons(Top)
+// const TopContainer = icons(Top)
 
-export default TopContainer
+export default styledIconOne(Top)

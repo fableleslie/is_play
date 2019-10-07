@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import icons from 'components/styles/icons'
+import {styledIconOne} from 'components/styles/icons'
 
 const searchContainer = styled.div`
     height : ${props=>props.height};
@@ -21,4 +21,4 @@ const searchContainer = styled.div`
     }
 `
 
-export default icons(searchContainer)
+export default styledIconOne(searchContainer)
