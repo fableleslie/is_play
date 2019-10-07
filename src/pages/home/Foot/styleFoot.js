@@ -11,20 +11,25 @@ const FootContainer = styled.div`
     }
     .tabBar{
         height : .5rem;
-        width : 100%;
         display : flex;
-        text-align : center;
-        line-height : .5rem;
         background : #fff;
         div{
             display : inline-block;
             flex : 1;
             height : 100%;
+            display : flex;
+            flex-direction : column;
+            justify-items : center;
+            align-items : center;
+            text-align : center;
+            img{
+                height : .25rem;
+                width : .25rem;
+                margin-top : .03rem;
+            }
             a{
-                display : inline-block;
-                height :100%;
-                width : 100%;
-                color : #111;
+                font-size : .1rem;
+                color : #080808;
             }
         }
         .active{
