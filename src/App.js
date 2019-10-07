@@ -16,17 +16,21 @@ import Pay from 'pages/pay/pay.js'
 
 import Index from 'pages/home/Foot/Foot'
 
+// import {MessageContainer} from 'pages/message/messages/index.js'
+import Message from 'pages/message/message.js'
+
 export default class App extends React.PureComponent {
 
   render(){
     return (
       <Switch>
         <Route path='/pay' component={Pay}></Route>
+        <Route path='/message' component={Message}></Route>
+        <Route path='/index' component={Index}></Route>
+        <Redirect from='/' to='/index' exact></Redirect>
         {/* <Route path='/comorder' component={OrderContainer}></Route>
         <Route path='/editaddress' component={EditContainer}></Route>
         <Route path='/usecoupon' component={UseCoupon}></Route> */}
-        <Route path='/index' component={Index}></Route>
-        <Redirect from='/' to='/index' exact></Redirect>
       </Switch>
     )
   }

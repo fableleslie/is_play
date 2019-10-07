@@ -12,8 +12,10 @@ import Message from 'images/icons/xiaoxi@3x.png'
 import Message2 from 'images/icons/xiaoxi-2@3x.png'
 
 import Mine from 'images/icons/Icon_wode@3x.png'
+
 import Mine2 from 'images/icons/Icon_wode_2@3x.png'
 
+import {MessageContainer} from 'pages/message/messages/index.js'
 export class Foot extends Component {
     render() {
         let { match } = this.props;
@@ -23,7 +25,7 @@ export class Foot extends Component {
                     <Switch>
                         <Route path={`${match.path}/home`} component={Home}></Route>
                         <Route path={`${match.path}/discover`}></Route>
-                        <Route path={`${match.path}/message`}></Route>
+                        <Route path={`${match.path}/message`} component={MessageContainer}></Route>
                         <Route path={`${match.path}/mine`}></Route>
                         <Redirect from='/index' to='/index/home'></Redirect>
                     </Switch>
