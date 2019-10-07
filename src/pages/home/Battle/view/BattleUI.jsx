@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BattleContainer from './styleBattle'
-import { Carousel, WingBlank } from 'antd-mobile'
+// import { Carousel, WingBlank } from 'antd-mobile'
 
 class BattleUI extends Component {
     state = {
@@ -10,7 +10,7 @@ class BattleUI extends Component {
     render() {
         return (
             <BattleContainer>
-                <WingBlank>
+                {/* <WingBlank>
                     <Carousel className="space-carousel"
                     frameOverflow="visible"
                     cellSpacing={10}
@@ -43,15 +43,15 @@ class BattleUI extends Component {
                         </a>
                     ))}
                     </Carousel>
-                </WingBlank>
+                </WingBlank> */}
             </BattleContainer>
         )
     }
     componentDidMount(){
         setTimeout(() => {
-            this.setState({
-              data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-            });
+            // this.setState({
+            //   data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+            // });
         }, 100);
     }
 }

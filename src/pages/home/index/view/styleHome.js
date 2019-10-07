@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 
 const HomeContainer = styled.div`
-    height : 100%;
     display : flex;
     flex-direction : column;
-    main{
+    .container{
         flex : 1;
-        overflow-y : scroll;
         background : #fff;
     }
 `
@@ -27,7 +25,7 @@ const SwiperContainer = styled.div`
         width : 100%;
         position : absolute;
         left : 0;
-        top : 0;
+        top : -.01rem;
         background: #FFE60D;
         border-radius : 0 0 43% 43%;
     }

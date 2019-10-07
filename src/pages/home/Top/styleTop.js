@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {styledIconOne} from 'components/styles/icons.js'
 
-const Top = styled.header`
+const Top = styled.div`
     height : .44rem;
     padding : 0 .34rem 0 .15rem;
     background : #FFE60D;

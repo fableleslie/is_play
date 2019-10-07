@@ -1,5 +1,5 @@
-import HomeContainer from './view/HomeContainer'
+import Home from './view/HomeContainer'
 
 export {
-    HomeContainer
+    Home
 }

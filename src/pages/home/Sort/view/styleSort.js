@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 const SortContainer = styled.div`
     height : 1.51rem;
     background : #fff;
-    ul{
+    ul.sort{
         height: 100%;
         display : flex;
         flex-wrap : wrap;
