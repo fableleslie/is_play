@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RepContainer from './style'
+import {RepContainer,MainContainer} from './style'
 import act1 from 'images/act-1.png'
 import act2 from 'images/act-2.png'
 import act3 from 'images/act-3.png'
@@ -12,7 +12,7 @@ export class RepresentationUI extends Component {
                     <span className='act'>精彩演出</span>
                     <span className='all'><span>全部</span><span className='icon'><i>&#xe645;</i></span></span>
                 </header>
-                <main>
+                <MainContainer>
                     <div>
                         <div className='left'>
                             <img src={act1} alt=""/>
@@ -45,7 +45,7 @@ export class RepresentationUI extends Component {
                             <i>￥ 88起</i>
                         </div>
                     </div>
-                </main>
+                </MainContainer>
             </RepContainer>
         )
     }

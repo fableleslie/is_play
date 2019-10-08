@@ -4,7 +4,8 @@ import Top from '../../Top/Top'
 import Sort from '../../Sort/view/Sort'
 import {Represention} from '../../Representation/index'
 import Battle from '../../Battle/index'
-import banner from 'images/banner.png';
+import banner from 'images/banner.png'
+import {Sunday} from '../../Sunday/index'
 
 class HomeUI extends Component {
     render() {
@@ -19,6 +20,7 @@ class HomeUI extends Component {
                     <Sort {...this.props}></Sort>
                     <Represention></Represention>
                     <Battle></Battle>
+                    <Sunday></Sunday>
                 </div>
             </HomeContainer>
         )

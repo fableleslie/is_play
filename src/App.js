@@ -2,6 +2,7 @@ import React from 'react';
 import {Switch, Route,Redirect} from 'react-router-dom'
 import 'styles/reset.css'
 
+import 'swiper/css/swiper.min.css'
 
 // import {PayContainer} from 'pages/pay/pay/'
 
