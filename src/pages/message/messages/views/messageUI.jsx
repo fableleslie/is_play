@@ -27,13 +27,13 @@ function MessageUI (props){
                     <img src={Sesytem} alt=""/>
                     <div>系统通知</div>
                 </div>
-                <div className="message-end">
+                <i className="message-end">
                     <div>
                         <i></i>
                         <div>END</div>
                         <i></i>
                     </div>
-                </div>
+                </i>
             </main>
         </MessageUIContainer>
     )
