@@ -3,6 +3,8 @@ import React from 'react'
 import ConsultUIContainer from './styledConsult'
 import Empty from 'components/empty/empty'
 import ConsultList from 'components/consultList/consultList'
+
+import Bear from 'assets/images/xiaoxi/bear.png'
 function ConsultUI(props){
     return(
         <ConsultUIContainer>
@@ -12,7 +14,13 @@ function ConsultUI(props){
             </header>
             <main>
                 {
-                    true ? <Empty></Empty>:<ConsultList></ConsultList>
+                    true ? 
+                    <Empty
+                        Bear={Bear}
+                        emptyText='亲，你还没有消息呦~'
+                    ></Empty>
+                    :<ConsultList>
+                    </ConsultList>
                 }
                 <i className="message-end">
                     <div>
