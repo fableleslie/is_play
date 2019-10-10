@@ -1,0 +1,1 @@
+import {MainIndex} from "./StyledMain"

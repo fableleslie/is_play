@@ -1,0 +1,26 @@
+import React from 'react'
+import { SetContainer } from "./StyledSet"
+
+export default function (props) {
+    return (
+        <SetContainer>
+            <header>
+                <span className="back">&#xe646;</span>
+                <span>设置</span>
+            </header>
+            <div className='grayBk'></div>
+            <ul className="infoList">
+                <li>
+                    <span>手机号码</span>
+                    <div>
+                        <span>未绑定</span>
+                        <i></i>
+                    </div>
+                </li>
+            </ul>
+            <div className="exitBtn">
+                <span>退出登录</span>
+            </div>
+        </SetContainer>
+    )
+}

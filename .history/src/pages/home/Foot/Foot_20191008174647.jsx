@@ -28,7 +28,7 @@ export class Foot extends Component {
                         <Route path={`${match.path}/home`} component={Home}></Route>
                         <Route path={`${match.path}/discover`}></Route>
                         <Route path={`${match.path}/message`} component={MessageContainer}></Route>
-                        <Route path={`${match.path}/mine`} component={Mine}></Route>
+                        <Route path={`${match.path}/mine`}></Route>
                         <Redirect from='/index' to='/index/home'></Redirect>
                     </Switch>
                 </main>

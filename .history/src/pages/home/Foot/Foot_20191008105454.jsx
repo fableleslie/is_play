@@ -11,13 +11,11 @@ import Discovery2 from 'images/icons/faxian-2@3x.png'
 import TabMessage from 'images/icons/xiaoxi@3x.png'
 import TabMessage2 from 'images/icons/xiaoxi-2@3x.png'
 
-import Mine1 from 'images/icons/Icon_wode@3x.png'
+import Mine from 'images/icons/Icon_wode@3x.png'
 
 import Mine2 from 'images/icons/Icon_wode_2@3x.png'
 
 import {MessageContainer} from 'pages/message/messages/index.js'
-
-import {Mine} from "pages/mine/mine"
 export class Foot extends Component {
     render() {
         let { match } = this.props;
@@ -28,7 +26,7 @@ export class Foot extends Component {
                         <Route path={`${match.path}/home`} component={Home}></Route>
                         <Route path={`${match.path}/discover`}></Route>
                         <Route path={`${match.path}/message`} component={MessageContainer}></Route>
-                        <Route path={`${match.path}/mine`} component={Mine}></Route>
+                        <Route path={`${match.path}/mine`}></Route>
                         <Redirect from='/index' to='/index/home'></Redirect>
                     </Switch>
                 </main>
@@ -47,7 +45,7 @@ export class Foot extends Component {
                             <span>消息</span>
                         </NavLink>
                         <NavLink to='/index/mine' activeClassName='active'>
-                            <img src={this.props.location.pathname === '/index/mine' ? Mine2 : Mine1} alt=""/>
+                            <img src={this.props.location.pathname === '/index/mine' ? Mine2 : Mine} alt=""/>
                             <span>我的</span>
                         </NavLink>
                     </div>
