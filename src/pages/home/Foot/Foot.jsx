@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import  FootContainer  from './styleFoot'
 import { NavLink,Switch,Route,Redirect} from 'react-router-dom'
 import {Home} from '../index/index.js'
+
 import HomePage from 'images/icons/xianxingshouye@3x.png'
 import HomePage2 from 'images/icons/xianxingshouye-2@3x.png'
 
@@ -16,6 +17,7 @@ import Mine from 'images/icons/Icon_wode@3x.png'
 import Mine2 from 'images/icons/Icon_wode_2@3x.png'
 
 import {MessageContainer} from 'pages/message/messages/index.js'
+import FindContainer from 'pages/find/index/index.js'
 export class Foot extends Component {
     render() {
         let { match } = this.props;
@@ -24,7 +26,7 @@ export class Foot extends Component {
                 <main>
                     <Switch>
                         <Route path={`${match.path}/home`} component={Home}></Route>
-                        <Route path={`${match.path}/discover`}></Route>
+                        <Route path={`${match.path}/discover`} component={FindContainer}></Route>
                         <Route path={`${match.path}/message`} component={MessageContainer}></Route>
                         <Route path={`${match.path}/mine`}></Route>
                         <Redirect from='/index' to='/index/home'></Redirect>
