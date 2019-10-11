@@ -1,1 +1,0 @@
-import {BindPhoneContainer} from "./StyledBindPhone"
