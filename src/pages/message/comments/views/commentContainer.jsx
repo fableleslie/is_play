@@ -2,6 +2,12 @@ import React,{PureComponent} from 'react'
 import CommemtUI from './commentUI'
 
 class CommentContainer extends PureComponent{
+
+    constructor(props) {
+        super(props);
+        
+        this.fileInput = React.createRef();
+    }
     
     state={
         iptvalue:''
@@ -13,17 +19,16 @@ class CommentContainer extends PureComponent{
             state={this.state}
             handleChange={this.handleChange}
             toSubmit={this.toSubmit}
+            fileInput={this.fileInput}
             ></CommemtUI>
         )
     }
 
     handleChange = (e)=>{
-        this.setState({
-            iptvalue:e.target.value
-        })
+       console.log(this.fileInput.current.value)
     }
     toSubmit = ()=>{
-        console.log(this.state.iptvalue)
+        console.log(this.fileInput.current.value)
     }
 }
 

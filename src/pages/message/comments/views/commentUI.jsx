@@ -23,7 +23,7 @@ function CommentUI (props){
                     :(<ul className='comment-list'>
                         <li>
                             <img src={Active1} alt=""/>
-                            <input className='comment-ipt' type="text" value={props.state.iptvalue} onChange={props.handleChange} placeholder="请您给予诚挚的评价~"/>
+                            <input className='comment-ipt' type="text"  ref={props.fileInput} onChange={ props.handleChange} placeholder="请您给予诚挚的评价~"/>
                             <div className="comment-submit">
                                 <i>&#xe501;</i>
                                 <button onClick={props.toSubmit}>提交</button>
@@ -31,7 +31,7 @@ function CommentUI (props){
                         </li>
                         <li>
                             <img src={Active2} alt=""/>
-                            <input className='comment-ipt' value={props.state.iptvalue} onChange={props.handleChange} type="text" placeholder="请您给予诚挚的评价~"/>
+                            <input className='comment-ipt' ref={props.fileInput} onChange={props.handleChange} type="text" placeholder="请您给予诚挚的评价~"/>
                             <div className="comment-submit">
                                 <i>&#xe501;</i>
                                 <button onClick={props.toSubmit}>提交</button>
