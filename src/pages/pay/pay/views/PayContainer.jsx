@@ -2,15 +2,9 @@ import React,{PureComponent} from 'react'
 
 import PayUI from './PayUI'
 
-// const timeList = [
-//     {
-//         playtime:'13:00-17:00'
-//     },
-//     {
-//        playtime:'14:25-18:25'
-//     }
-// ]
+import connect from './connect'
 
+@connect
 class Pay extends PureComponent {
     state={
         select:'',
@@ -32,6 +26,10 @@ class Pay extends PureComponent {
             nextStup={this.nextStup}
             ></PayUI>
         )
+    }
+
+    componentDidMount(){
+        this.props.show_data('我就是我')
     }
 
     changeSelect = (value,price)=>{
