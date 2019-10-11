@@ -17,6 +17,7 @@ import Mine from 'images/icons/Icon_wode@3x.png'
 import Mine2 from 'images/icons/Icon_wode_2@3x.png'
 
 import {MessageContainer} from 'pages/message/messages/index.js'
+import BeforeContainer from 'pages/beforeSignIn/beforeSignin.js'
 import FindContainer from 'pages/find/index/index.js'
 export class Foot extends Component {
     render() {
@@ -27,7 +28,7 @@ export class Foot extends Component {
                     <Switch>
                         <Route path={`${match.path}/home`} component={Home}></Route>
                         <Route path={`${match.path}/discover`} component={FindContainer}></Route>
-                        <Route path={`${match.path}/message`} component={MessageContainer}></Route>
+                        <Route path={`${match.path}/message`} component={BeforeContainer}></Route>
                         <Route path={`${match.path}/mine`}></Route>
                         <Redirect from='/index' to='/index/home'></Redirect>
                     </Switch>

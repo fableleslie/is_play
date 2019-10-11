@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 const HeadStyle = styled.div`
+    a{
+        color:#777777;
+        font-size:.11rem;
+    }
     display : flex;
     flex-direction:column;
     >div{

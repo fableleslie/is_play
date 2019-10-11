@@ -1,4 +1,5 @@
 import React , {Component} from 'react'
+import {Link} from 'react-router-dom'
 import HeadStyle from './styleHeadline'
 
 import headpic1 from 'assets/images/find/3dc9e042f0f8e34c628db1d6789af4a3.png'
@@ -15,20 +16,24 @@ export default class Headlines extends Component{
                     <span>玩么头条</span>
                 </div>
                 <ul>
-                    <li>
-                        <img src={headpic1} alt=""/>
-                        <div>
-                            <p className="headline_title">#溜娃好去处#小小天才的诞生--UCCA Kids儿童节艺 术展要来啦！</p>
-                            <p className="`headline_summary`">小小天才的诞生--UCCA Kids儿童节</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src={headpic2} alt=""/>
-                        <div>
-                            <p className="headline_title">#小末福利#春节不打烊，献上20元无门槛红包，畅快 买！买！买！</p>
-                            <p className="headline_summary">春节在家无聊？nono~</p>
-                        </div>
-                    </li>
+                    <Link to="/headline/headderail">
+                        <li>
+                            <img src={headpic1} alt=""/>
+                            <div>
+                                <p className="headline_title">#溜娃好去处#小小天才的诞生--UCCA Kids儿童节艺 术展要来啦！</p>
+                                <p className="`headline_summary`">小小天才的诞生--UCCA Kids儿童节</p>
+                            </div>
+                        </li>
+                    </Link>
+                    <Link to="/headline/headderail">
+                        <li>
+                            <img src={headpic2} alt=""/>
+                            <div>
+                                <p className="headline_title">#小末福利#春节不打烊，献上20元无门槛红包，畅快 买！买！买！</p>
+                                <p className="headline_summary">春节在家无聊？nono~</p>
+                            </div>
+                        </li>
+                    </Link>
                     <li>
                         <img src={headpic3} alt=""/>
                         <div>
