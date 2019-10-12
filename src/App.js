@@ -27,7 +27,7 @@ export default class App extends React.PureComponent {
     return (
       <Switch>
         <Route path='/pay' component={Pay}></Route>
-        <Route path='/message' component={Message}></Route>
+        <Route path='/message'  component={Message}></Route>
         <Route path='/index' component={Index}></Route>
         <Route path='/my' component={My}></Route>
 

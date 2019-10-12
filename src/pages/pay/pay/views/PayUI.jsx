@@ -2,7 +2,7 @@ import React from 'react'
 
 import {PayContainer} from './StyledPay'
 
-
+import Detaile from 'assets/images/zhifu/detail.png'
 
 function PayUI(props){
     //console.log(props)
@@ -15,7 +15,7 @@ function PayUI(props){
                 <main>
                     <div className="pay-active">
                         <div className="active-pic">
-                            <img src="https://upload-images.jianshu.io/upload_images/18223867-849de0f4ac09efad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""/>
+                            <img src={Detaile} alt=""/>
                         </div>
                         <div className="active-desc"><span>不可能的艺术--纪念碑谷2视错觉主题艺...</span></div>
                     </div>

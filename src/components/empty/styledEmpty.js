@@ -8,7 +8,7 @@ const EmptyContainer = styled.div`
     .bear-tips{
         position:absolute;
         bottom:.53rem;
-        left:34%;
+        left:38%;
         color:#030303;
         font-size:.12rem;
         opacity:.6;
