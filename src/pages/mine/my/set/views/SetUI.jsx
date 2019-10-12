@@ -39,7 +39,7 @@ export default function (props) {
                 <LiWrap onClick={props.goFeedback}>
                     <span>意见反馈</span>
                 </LiWrap>
-                <LiWrap>
+                <LiWrap onClick={props.beBoss}>
                     <span>成为商户</span>
                 </LiWrap>
                 <LiWrap>

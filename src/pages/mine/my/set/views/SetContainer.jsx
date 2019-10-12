@@ -17,6 +17,7 @@ class SetContainer extends PureComponent {
                 selectPick={()=>this.selectPick()}
                 updatePhone={()=>this.updatePhone()}
                 goFeedback = {()=>this.goFeedback()}
+                beBoss ={()=>this.beBoss()}
                 select={this.state.select}
             >
 
@@ -40,6 +41,9 @@ class SetContainer extends PureComponent {
     }
     goFeedback(){
         this.props.history.push("/my/set/feedback")
+    }
+    beBoss(){
+        this.props.history.push("/my/beboss")
     }
 }
 

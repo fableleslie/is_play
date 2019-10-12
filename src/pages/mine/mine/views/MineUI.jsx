@@ -21,7 +21,7 @@ export default (props) => {
                         <span>编辑资料</span>
                     </div>
                 </div>
-                <div className="beBoss">
+                <div className="beBoss" onClick={props.beBoss}>
                     成为商户？
                 </div>
             </header>
