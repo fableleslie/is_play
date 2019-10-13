@@ -1,8 +1,15 @@
-import {SHOW_DATA} from './actionType'
+import {CHANGE_ORDER,DECOUNT} from './actionType'
 
-export const show_data = (data) => {
+export const change_order = (data) => {
     return {
-        type:SHOW_DATA,
+        type:CHANGE_ORDER,
+        data
+    }
+}
+
+export const decount = (data) =>{
+    return {
+        type:DECOUNT,
         data
     }
 }

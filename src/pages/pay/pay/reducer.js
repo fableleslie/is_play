@@ -1,18 +1,29 @@
-import {SHOW_DATA} from './actionType'
+import {CHANGE_ORDER,DECOUNT} from './actionType'
 
 const defaultState = {
-    data:{
-        test:'我在测试中'
+    pay_order:{
+       
     }
     
 }
 
 export default (state=defaultState,action) => {
+    console.log(action.data)
     switch(action.type){
-        case SHOW_DATA:
+        case CHANGE_ORDER:
             return {
-                test: action.data
+                pay_order:{
+                    ...action.data
+                }
             }
+        
+        case DECOUNT:
+            return {
+                pay_order:{
+                    ...state.pay_order,
+                    decount_price:action.data
+                }
+            }    
         default:
             return state
     }
