@@ -8,7 +8,7 @@ import connect from './connect'
 class orderContainer extends PureComponent{
     
     render(){
-        //console.log(this.props)
+        console.log(this.props)
         return(
             <OrderUI
             {...this.props}
