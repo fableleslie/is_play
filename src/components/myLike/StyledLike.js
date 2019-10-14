@@ -8,7 +8,7 @@ const MyOrderContainer = styled.div`
     }
     .imgWrap{
         width:100%;
-        padding-bottom:50%;
+        padding-bottom:66.67%;
         position:relative;
         img{
             width:100%;
@@ -43,16 +43,19 @@ const MyOrderContainer = styled.div`
                 }
             }
         }
+        .actionType{
+            font-size:.12rem;
+            color:#777777;
+            margin-top:.08rem;
+        }
         .goPay{
             width:.55rem;
             height:.25rem;
-            border:1px solid #FF6600;
-            border-radius:.05rem;
             display:flex;
             justify-content:center;
             align-items: center;
             span{
-                font-size: .13rem;
+                font-size: .14rem;
             }
         }
     }

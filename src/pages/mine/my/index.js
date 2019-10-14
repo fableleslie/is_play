@@ -6,7 +6,7 @@ import { UpdatePhone } from "./set/updatePhone/index.js"
 import { Feedback } from "./set/feedback/index.js"
 import {BeBoss} from "./set/beBoss/index.js"
 import {BeBossInfo} from "./set/beBossInfo/index.js"
-import {Edit} from "./set/edit/index.js"
+import {Edit} from "./edit/index.js"
 
 class My extends PureComponent{
     render(){

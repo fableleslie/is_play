@@ -5,7 +5,7 @@ import CouponLi from './styledCoupon'
 class CouponItem extends PureComponent{
     render(){
         return(
-            <CouponLi>
+            <CouponLi onClick={() => this.props.toDecount(this.props.money)}>
                 <div className="money">
                     <i>￥</i>
                     <span>{this.props.money}</span>

@@ -1,0 +1,1 @@
+export const CHANGE_ISSHOW = 'waitpay/change_isshow'

@@ -41,7 +41,7 @@ class EditInfo extends PureComponent {
     )
   }
   back() {
-
+    this.props.history.push("/index/mine")
   }
   setName(val) {
     this.setState({
