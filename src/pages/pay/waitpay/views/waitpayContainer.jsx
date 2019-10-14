@@ -35,19 +35,15 @@ class WaitpayContainer extends PureComponent {
     comeBack = () => {
         this.props.history.goBack()
     }
-    toPay = ()=>{
-        axios({
-            url:'/payment',
-            method: 'POST',
-            headers: {
-                'X-XSRF-TOKEN': 'a24ebb11942f0052d224ce97628c675fj8YcNlG2Al+eyxih88Q8yxloyh4qwzS1LEIbLdK97LMB59+gwjJijRbf9j/gjG1XiPqmI+wYrIem/QgAA/TUuhJvW0znx8xHpevkBP8qQ8c86LEeEbnatFKtKaxijaJh'
-              },
-            data: 'body=aaa&orderId=' + new Date().getTime()
-        }).then((res)=>{
-            this.setState({
-                image_url:res.data
-            })
+    toPay = async()=>{
+         let result = await axios({
+            url:`/payment?body=aaa&id=${new Date().getTime()}`,
+            method: 'GET'
         })
+        
+        this.setState({
+          image_url:result.data
+      })
     }
 
     showModal = key => (e) => {
