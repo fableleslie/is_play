@@ -14,7 +14,7 @@ export default class HeadDetail extends Component{
                 <h3>小小天才的诞生--UCCAKid...</h3>
                 <p>
                     <Heart>&#xe634;</Heart>
-                    <Share>&#xe624;</Share>
+                    <Share onClick={this.props.share}>&#xe624;</Share>
                 </p>
             </header>
             <main>

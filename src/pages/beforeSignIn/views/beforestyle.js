@@ -5,9 +5,13 @@ const BeforeSign = styled.div`
     >div:first-child{
         box-sizing:content-box;
         padding: 19% 21.6% 0 21.6% ;
-        height:1.45rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom:.5rem;
         img{
-            margin:0 .69rem;
+            width:.75rem;
+            height:.75rem;
+            margin:0 auto;
         }
         .tips{
             height:.23rem;
@@ -37,7 +41,7 @@ const BeforeSign = styled.div`
         font-size:.16rem;
         text-align:center;
         line-height:.4rem;
-        margin:.5rem 22% 0 22%;
+        margin:0 auto;
     }
 `
 export default BeforeSign

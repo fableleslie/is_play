@@ -21,6 +21,8 @@ import Message from 'pages/message/message.js'
  
 import HeadDetails from 'pages/headdetails/headdetails.js'
 
+import LoginIn from 'pages/login&registration/loginin.js'
+
 export default class App extends React.PureComponent {
 
   render(){
@@ -30,6 +32,7 @@ export default class App extends React.PureComponent {
         <Route path='/message'  component={Message}></Route>
         <Route path='/index' component={Index}></Route>
         <Route path='/headline' component={HeadDetails}></Route>
+        <Route path='/loginin' component={LoginIn}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
         {/* <Route path='/comorder' component={OrderContainer}></Route>
         <Route path='/editaddress' component={EditContainer}></Route>
