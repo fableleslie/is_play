@@ -72,10 +72,24 @@ const BeBossInfoContainer = styledIconOne(
             }
         }
         .mainShow{
+            >div{
+                >div{
+                padding: 0 !important;
+                    >div{
+                       padding: 0 !important;
+                    }
+
+                }
+                width:100%;
+            }
             justify-content: space-between;
             i{
 
             }
+        }
+        .pickIcon{
+            width: .5rem;
+            text-align:right;
         }
         .mainInfo,.connect,.mainName{
             >span{
@@ -121,6 +135,37 @@ const BeBossInfoContainer = styledIconOne(
             background:#FFE60D;
             font-size: .16rem;
             font-weight:600;
+        }
+
+        .mask{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(119, 119, 119, .5);
+            z-index:999;
+            .tip{
+                position:absolute;
+                top:2.97rem;
+                left:.27rem;
+                width:3.22rem;
+                height:1.05rem;
+                background:#fff;
+                border-radius:.05rem;
+                h2{
+                    position:absolute;
+                    font-size:.19rem;
+                    top:.14rem;
+                    line-height:.25rem;
+                    left:.36rem;
+                }         
+                span{
+                    position:absolute;
+                    font-size:.14rem;
+                    top:.63rem;
+                    line-height:.19rem;
+                    right:.21rem;
+                }       
+            }
         }
 
     `

@@ -49,38 +49,38 @@ const colorStyle = {
     marginRight: '10px',
 };
 
-const colors = [
-    {
-        label:
-            (<div>
-                <span
-                    style={{ ...colorStyle, backgroundColor: '#FF0000' }}
-                />
-                <span>红色</span>
-            </div>),
-        value: '#FF0000',
-    },
-    {
-        label:
-            (<div>
-                <span
-                    style={{ ...colorStyle, backgroundColor: '#00FF00' }}
-                />
-                <span>绿色</span>
-            </div>),
-        value: '#00FF00',
-    },
-    {
-        label:
-            (<div>
-                <span
-                    style={{ ...colorStyle, backgroundColor: '#0000FF' }}
-                />
-                <span>蓝色</span>
-            </div>),
-        value: '#0000FF',
-    },
-];
+// const colors = [
+//     {
+//         label:
+//             (<div>
+//                 <span
+//                     style={{ ...colorStyle, backgroundColor: '#FF0000' }}
+//                 />
+//                 <span>红色</span>
+//             </div>),
+//         value: '#FF0000',
+//     },
+//     {
+//         label:
+//             (<div>
+//                 <span
+//                     style={{ ...colorStyle, backgroundColor: '#00FF00' }}
+//                 />
+//                 <span>绿色</span>
+//             </div>),
+//         value: '#00FF00',
+//     },
+//     {
+//         label:
+//             (<div>
+//                 <span
+//                     style={{ ...colorStyle, backgroundColor: '#0000FF' }}
+//                 />
+//                 <span>蓝色</span>
+//             </div>),
+//         value: '#0000FF',
+//     },
+// ];
 
 class Tests extends React.Component {
     state = {
@@ -99,47 +99,47 @@ class Tests extends React.Component {
             });
         }, 120);
     };
-    onPickerChange = (val) => {
-        console.log(val);
-        let colNum = 1;
-        const d = [...this.state.data];
-        const asyncValue = [...val];
-        if (val[0] === 'zj') {
-            d.forEach((i) => {
-                if (i.value === 'zj') {
-                    colNum = 2;
-                    if (!i.children) {
-                        i.children = [{
-                            value: 'zj-nb',
-                            label: '宁波',
-                        }, {
-                            value: 'zj-hz',
-                            label: '杭州',
-                        }];
-                        asyncValue.push('zj-nb');
-                    } else if (val[1] === 'zj-hz') {
-                        i.children.forEach((j) => {
-                            if (j.value === 'zj-hz') {
-                                j.children = [{
-                                    value: 'zj-hz-xh',
-                                    label: '西湖区',
-                                }];
-                                asyncValue.push('zj-hz-xh');
-                            }
-                        });
-                        colNum = 3;
-                    }
-                }
-            });
-        } else {
-            colNum = 1;
-        }
-        this.setState({
-            data: d,
-            cols: colNum,
-            asyncValue,
-        });
-    };
+    // onPickerChange = (val) => {
+    //     console.log(val);
+    //     let colNum = 1;
+    //     const d = [...this.state.data];
+    //     const asyncValue = [...val];
+    //     if (val[0] === 'zj') {
+    //         d.forEach((i) => {
+    //             if (i.value === 'zj') {
+    //                 colNum = 2;
+    //                 if (!i.children) {
+    //                     i.children = [{
+    //                         value: 'zj-nb',
+    //                         label: '宁波',
+    //                     }, {
+    //                         value: 'zj-hz',
+    //                         label: '杭州',
+    //                     }];
+    //                     asyncValue.push('zj-nb');
+    //                 } else if (val[1] === 'zj-hz') {
+    //                     i.children.forEach((j) => {
+    //                         if (j.value === 'zj-hz') {
+    //                             j.children = [{
+    //                                 value: 'zj-hz-xh',
+    //                                 label: '西湖区',
+    //                             }];
+    //                             asyncValue.push('zj-hz-xh');
+    //                         }
+    //                     });
+    //                     colNum = 3;
+    //                 }
+    //             }
+    //         });
+    //     } else {
+    //         colNum = 1;
+    //     }
+    //     this.setState({
+    //         data: d,
+    //         cols: colNum,
+    //         asyncValue,
+    //     });
+    // };
     getSel() {
         const value = this.state.pickerValue;
         if (!value) {
@@ -169,14 +169,14 @@ class Tests extends React.Component {
                     data={district}
                     title="Areas"
                     {...getFieldProps('district', {
-                        initialValue: ['340000', '341500', '341502'],
+                        initialValue: ['110000', '110100', '110114'],
                     })}
                     onOk={e => console.log('ok', e)}
                     onDismiss={e => console.log('dismiss', e)}
                 >
-                    <List.Item arrow="horizontal">Multiple & cascader</List.Item>
+                    <List.Item arrow="horizontal">选择省市</List.Item>
                 </Picker>
-                <Picker
+                {/* <Picker
                     data={seasons}
                     title="选择季节"
                     cascade={false}
@@ -186,11 +186,11 @@ class Tests extends React.Component {
                     onOk={v => this.setState({ sValue: v })}
                 >
                     <List.Item arrow="horizontal">Multiple</List.Item>
-                </Picker>
+                </Picker> */}
                 <Picker data={district} cols={1} {...getFieldProps('district3')} className="forss">
                     <List.Item arrow="horizontal">Single</List.Item>
                 </Picker>
-                <Picker
+                {/* <Picker
                     data={this.state.data}
                     cols={this.state.cols}
                     value={this.state.asyncValue}
@@ -220,15 +220,7 @@ class Tests extends React.Component {
                     <List.Item extra={this.getSel()} onClick={() => this.setState({ visible: true })}>
                         Visible state
           </List.Item>
-                </Picker>
-                <Picker
-                    data={colors}
-                    value={this.state.colorValue}
-                    cols={1}
-                    onChange={this.onChangeColor}
-                >
-                    <List.Item arrow="horizontal">Complex Labels</List.Item>
-                </Picker>
+                </Picker> */}
             </List>
         </div>);
     }

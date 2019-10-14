@@ -1,5 +1,5 @@
-// import { BeBossInfo } from "./views/BeBossInfoContainer"
-import BeBossInfo from "./views/Test"
+import { BeBossInfo } from "./views/BeBossInfoContainer"
+// import BeBossInfo from "./views/Test"
 export{
     BeBossInfo
 }

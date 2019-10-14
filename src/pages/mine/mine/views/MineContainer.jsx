@@ -11,6 +11,7 @@ class MineComp extends PureComponent{
            {...this.props}
            setClick = {()=>this.setClick()}
            beBoss={()=>{this.beBoss()}}
+           toEdit = {()=>{this.toEdit()}}
            >
 
            </Mine> 
@@ -22,6 +23,9 @@ class MineComp extends PureComponent{
     }
     beBoss(){
         this.props.history.push("/my/beboss")
+    }
+    toEdit(){
+        this.props.history.push("/my/edit")
     }
     // componentDidMount(){
     //  console.log(this.props)   
