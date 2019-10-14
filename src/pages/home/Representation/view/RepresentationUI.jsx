@@ -10,7 +10,7 @@ export class RepresentationUI extends Component {
             <RepContainer>
                 <header>
                     <span className='act'>精彩演出</span>
-                    <span className='all'><span>全部</span><span className='icon'><i>&#xe645;</i></span></span>
+                    <span className='all' onClick={this.props.goAllAct}><span>全部</span><span className='icon'><i>&#xe645;</i></span></span>
                 </header>
                 <MainContainer>
                     <div>

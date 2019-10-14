@@ -12,11 +12,11 @@ const SundayContainer = styled.div`
         color : #0d0d0d;
     }
     .more{
-        height : .83rem;
+        height : .68rem;
         font-size : .11rem;
         color : #0d0d0d;
         text-align : center;
-        line-height : .83rem;
+        line-height : .68rem;
     }
     .content{
         margin : .13rem 0 .02rem 0;
@@ -53,7 +53,7 @@ const SundayContainer = styled.div`
         }
         .btn{
             flex : 1;
-            margin : .03rem 0 .09rem 0;
+            margin : .06rem 0 .15rem 0;
             background : #f7f7f7;
             border-radius : .05rem;
             box-shadow: 0 .015rem .03rem rgba(0,0,0,0.16);

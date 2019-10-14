@@ -17,12 +17,33 @@ class BattleUI extends Component {
                         <div className="swiper-wrapper">
                             <div className="swiper-slide">
                                 <img src={battle1} alt=""/>
+                                <div className='title'>
+                                    <span className='address'>金秋坝上草原…</span>
+                                    <div>
+                                        <span className='price'>¥ 120 起</span>
+                                        <span className='way'>地铁5号、10号线惠新西街南口站A口</span>
+                                    </div>
+                                </div>
                             </div>
                             <div className="swiper-slide">
                                 <img src={battle1} alt=""/>
+                                <div className='title'>
+                                    <span className='address'>金秋坝上草原…</span>
+                                    <div>
+                                        <span className='price'>¥ 120 起</span>
+                                        <span className='way'>地铁5号、10号线惠新西街南口站A口</span>
+                                    </div>
+                                </div>
                             </div>
                             <div className="swiper-slide">
                                 <img src={battle1} alt=""/>
+                                <div className='title'>
+                                    <span className='address'>金秋坝上草原…</span>
+                                    <div>
+                                        <span className='price'>¥ 120 起</span>
+                                        <span className='way'>地铁5号、10号线惠新西街南口站A口</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

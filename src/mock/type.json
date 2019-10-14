@@ -1,0 +1,32 @@
+{
+    "data" : [
+        {
+            "id" : 2,
+            "type" : 2,
+            "imgurl" : "https://upload-images.jianshu.io/upload_images/18974629-98a613f304e098b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "title" : "奇葩减压馆——36项奇葩体验",
+            "address" : "国瑞购物中心LG层（物美超市）",
+            "state" : "进行中",
+            "price" : "58起",
+            "site" : "北京"
+        },
+        {
+            "type" : 3,
+            "imgurl" : "https://upload-images.jianshu.io/upload_images/18974629-9353e9dca42edaf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "title" : "不可能的艺术——纪念碑谷2视错觉主题艺术展",
+            "address" : "IOMA爱马思艺术中心",
+            "state" : "进行中",
+            "price" : "78起",
+            "site" : ""
+        },
+        {
+            "type" : 1,
+            "imgurl" : "https://upload-images.jianshu.io/upload_images/18974629-2c9db28e55885b14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "title" : "沉浸式艺术娱乐展《幻境星辰展》",
+            "address" : "北京崇文门新世界南馆（青年文化中心）",
+            "state" : "进行中",
+            "price" : "29",
+            "site" : ""
+        }
+    ]
+}
