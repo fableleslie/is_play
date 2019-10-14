@@ -147,6 +147,16 @@ styledIconOne(
                     li:nth-child(2n+1){
                         margin-right:.1rem;
                     }
+                    li.active{
+                        color:#FF7011;
+                        >div{
+                            color:#FF7011;
+                        }
+                        border:1px solid #FF7011;
+                        p{
+                            color:#FF7011;
+                        }
+                    }
                     li{
                         width:48%;
                         height:.35rem;
@@ -172,6 +182,62 @@ styledIconOne(
                     }
                 }
             }
+
+            .select-time{
+                width:100%;
+                min-height:.9rem;
+                display:flex;
+                flex-direction:column;
+                .select-title{
+                    width:100%;
+                    height:.3rem;
+                    
+                    display:flex;
+                    align-items:center;
+                    span{
+                        font-size:.12rem;
+                        color:#B7B7B7;
+                        margin-left: .15rem;
+                    }
+                }
+                .time-content{
+                    width:100%;
+                    min-height:.6rem;
+                    background-color:#fff;
+                    padding:.15rem;
+                    li:nth-child(2n+1){
+                        margin-right:.1rem;
+                    }
+                    li.active{
+                        color:#FF7011;
+                        >div{
+                            color:#FF7011;
+                        }
+                        border:1px solid #FF7011;
+                        p{
+                            color:#FF7011;
+                        }
+                    }
+                    li{
+                        width:48%;
+                        height:.3rem;
+                        border:1px solid #ccc;
+                        border-radius:.08rem;
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;
+                        flex-direction:column;
+                        float:left;
+                        div{
+                            width:.72rem;
+                            height:.16rem;
+                            font-size:.12rem;
+                            color:#777777;
+                        }
+                    }
+                }
+            }
+
             .active-count{
                 width:100%;
                 height:.8rem;
