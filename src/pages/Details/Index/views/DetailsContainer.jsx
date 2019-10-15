@@ -15,6 +15,7 @@ class DetailsContainer extends Component{
         changeComponent={this.handleClick}
         path = { path }
         changeHeaderBackground={this.hanldeScroll}
+        join = { this.iWantJoin }
       ></DetailsUI>
     )
   }
@@ -34,6 +35,10 @@ class DetailsContainer extends Component{
     }else{
       back.style.color = "#fff"
     }
+  }
+
+  iWantJoin = () => {
+    this.props.history.push('/pay')
   }
   
   handleClick = (e) => {

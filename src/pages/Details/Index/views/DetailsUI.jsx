@@ -24,7 +24,7 @@ import {
 
 class Details extends Component {
   render() {
-    let { changeComponent, path, changeHeaderBackground } = this.props
+    let { changeComponent, path, changeHeaderBackground, join } = this.props
     // console.log(this.props)
     return (
       <DetailsContainer>
@@ -73,7 +73,7 @@ class Details extends Component {
               <span>分享</span>
             </div>
           </div>
-          <div className="button">我要参加</div>
+          <div className="button" onClick={join}>我要参加</div>
         </FooterContainer>
       </DetailsContainer>
     )
