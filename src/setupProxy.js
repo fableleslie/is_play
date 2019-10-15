@@ -5,8 +5,8 @@ module.exports = function(app) {
     target: 'http://127.0.0.1:3333',
     changeOrigin: true,
   }))
-  app.use('/data', proxy({
-    target: 'http://localhost:9009',
+  app.use('/jssdk', proxy({
+    target: 'https://xiedawen.club',
     changeOrigin: true,
   }))
 }

@@ -65,7 +65,7 @@ function orderUI(props){
                         <i>&#xe695;</i>
                     </div>
                     <div className='pay-bar'></div>
-                    <div className="weixin">
+                    <div onClick={props.openScan} className="weixin">
                         <div className="weixin-pic-box">
                             <div className="weixin-pic">
                                 <img src={Weixin} alt=""/>
