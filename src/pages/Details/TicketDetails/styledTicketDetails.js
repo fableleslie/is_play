@@ -30,6 +30,7 @@ const TicketDetailsContainer = styledIconOne(
         }
         main{
             flex: 1;
+            .warning
         }
     `
 )
