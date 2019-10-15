@@ -38,7 +38,7 @@ function orderUI(props){
                 <div className="order-detail-bar">订单详情</div>
                 <div className="order-detail-box">
                     <div className="order-detail">
-                        <div className="order-type">{pay_order.select} ￥{pay_order.price}，{pay_order.count}份</div>
+                        <div className="order-type">{pay_order.select ? pay_order.select : '单人' } ￥{pay_order.price}，{pay_order.count}份</div>
                         <div className="order-date">{pay_order.date} {pay_order.week} {pay_order.time}</div>
                     </div>
                 </div>
