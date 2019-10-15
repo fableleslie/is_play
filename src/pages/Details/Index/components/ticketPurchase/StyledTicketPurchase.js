@@ -29,14 +29,16 @@ const TicketPurchaseContainer = styled.div.attrs({
                 list-style: square;
             }
         }
-        button{
+        .am-button{
             width: 1.61rem;
             height: .34rem;
             border: 1px solid #FF8E43;
             background: #fff;
             color: #FF8E43;
             font-size: .14rem;
-            margin: .17rem auto;
+            line-height: .32rem;
+            margin: 0 auto;
+            border-radius: .05rem;
         }
     }
 `

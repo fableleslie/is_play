@@ -40,6 +40,10 @@ class ActiveDetails extends Component{
             <img src={imgDetail} alt=""/>
           </div>
         </div>
+        <div className="active-details-footer">
+          <span>展开阅读详情</span>
+          <i>&#xe63d;</i>
+        </div>
       </ActiveDetailsContainer>
     )
   }

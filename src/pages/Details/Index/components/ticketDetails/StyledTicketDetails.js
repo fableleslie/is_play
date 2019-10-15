@@ -1,23 +1,36 @@
 import styled from 'styled-components'
 import border from 'components/styles/border.js'
-import ellipsis from 'components/styles/ellipsis.js';
+import ellipsis from 'components/styles/ellipsis.js'
+import { styledIconOne } from 'components/styles/icons.js'
 
-const TicketDetailsContainer = styled.div.attrs({
-    id: 'child'
-})`
-    .header{
-        height: .26rem;
-        width: 100%;
-        border-left: .08rem solid #FF6600;
-        padding-left: .07rem;
-        font-size: .18rem;
-        line-height: .26rem;
-        font-weight: bold;
-    }
-    ul{
-        padding: 0 .15rem;
-    }
-`
+const TicketDetailsContainer = styledIconOne(
+    styled.div.attrs({
+        id: 'child'
+    })`
+        .header{
+            height: .26rem;
+            width: 100%;
+            border-left: .08rem solid #FF6600;
+            padding-left: .07rem;
+            font-size: .18rem;
+            line-height: .26rem;
+            font-weight: bold;
+        }
+        ul{
+            padding: 0 .15rem;
+        }
+        .ticket-details-footer{
+            width: 100%;
+            text-align: center;
+            font-size: .1rem;
+            color: #FF6600;
+            i{
+                font-family: 'iconfont' !important;
+                margin-left: .05rem;
+            }
+        }
+    `
+)
 
 const TicketItemsContainer = border({
     width: "0 0 1px 0",

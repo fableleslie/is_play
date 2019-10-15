@@ -9,7 +9,10 @@ import connect from '../../views/connect'
 
 import animate from 'components/hoc/animate'
 
+import { Modal, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+
 class TicketPurchase extends Component{
+
   constructor(props){
     super(props)
     this.state = {
@@ -43,7 +46,10 @@ class TicketPurchase extends Component{
             <li>参与凭证：电子票</li>
             <li>该活动不支持退款</li>
           </ul>
-          <button>团单咨询</button>
+          <WingBlank size="lg">
+            <WhiteSpace size="lg" />
+            <Button onClick={this.showAlert}>团单咨询</Button>
+          </WingBlank>
         </div>
       </TicketPurchaseContainer>
     )
@@ -54,6 +60,19 @@ class TicketPurchase extends Component{
     var parent = document.getElementById('parent');
 
     parent.style.height = child.offsetHeight + 26 + 'px';
+  }
+
+  showAlert() {
+    const alert = Modal.alert;
+    const alertInstance = alert('活动电话', '000-00000000', [
+      { text: '取消', style: 'default' },
+      { text: '确认' },
+    ]);
+    setTimeout(() => {
+      // 可以调用close方法以在外部close
+      console.log('auto close');
+      alertInstance.close();
+    }, 500000);
   }
 }
 

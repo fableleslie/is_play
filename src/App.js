@@ -13,16 +13,13 @@ import 'styles/animate.css'
 // import UseCoupon from 'pages/pay/usecoupon/coupon'
 
 import Pay from 'pages/pay/pay.js'
-<<<<<<< HEAD
-import { Details } from 'pages/Details/details.js'
-=======
+import Details from 'pages/details/details.js'
 // import {Home} from 'pages/home/index/index.js'
 
 import Index from 'pages/home/Foot/Foot'
 
 // import {MessageContainer} from 'pages/message/messages/index.js'
 import Message from 'pages/message/message.js'
->>>>>>> master
 
 export default class App extends React.PureComponent {
 
@@ -30,13 +27,10 @@ export default class App extends React.PureComponent {
     return (
       <Switch>
         <Route path='/pay' component={Pay}></Route>
-<<<<<<< HEAD
         <Route path='/details' component={Details}></Route>
-=======
         <Route path='/message'  component={Message}></Route>
         <Route path='/index' component={Index}></Route>
         <Redirect from='/' to='/index' exact></Redirect>
->>>>>>> master
         {/* <Route path='/comorder' component={OrderContainer}></Route>
         <Route path='/editaddress' component={EditContainer}></Route>
         <Route path='/usecoupon' component={UseCoupon}></Route> */}
