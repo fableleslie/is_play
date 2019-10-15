@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import CategoryContainer from "./CategoryUI"
+import connect from "./connect"
 //根据路由信息的不同获取不同的数据
+@connect
 class Category extends PureComponent {
     constructor(){
         super();
@@ -26,6 +28,7 @@ class Category extends PureComponent {
         )
     }
     componentDidMount(){
+        console.log(this.props)
         let type = this.props.match.params.type
         let title;
         //1、根据type不同获取不同的数据存到state中infoList

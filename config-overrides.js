@@ -24,6 +24,6 @@ const path = require('path')
         ["styles"]: path.resolve(__dirname, "src/assets/styles"),
         ["pages"]: path.resolve(__dirname, "src/pages"),
         ["components"]: path.resolve(__dirname, "src/components"),
-        ["images"] : path.resolve(__dirname,'src/pages/home/images')
+        ["images"] : path.resolve(__dirname,'src/pages/home/images'),
       })
 )
