@@ -81,9 +81,10 @@ class Pay extends PureComponent {
     }
     nextStup = () => {
         //console.log(this.props)
-        this.props.history.push({pathname:'/pay/comorder',state:{...this.state}})
-        this.props.show_data(this.state)
-
+        console.log(this.state)
+        let data = this.props.pay_order
+        this.props.history.push('/pay/comorder')
+        this.props.show_data(this.state.select ? this.state : data)
     }
 }
 
