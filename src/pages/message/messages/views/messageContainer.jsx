@@ -6,6 +6,9 @@ class MessageContainer extends PureComponent{
         return (
             <MessageUI
             toConsult={this.toConsult}
+            toDynamic={this.toDynamic}
+            toComment={this.toComment}
+            toInform={this.toInform}
             >
                 
             </MessageUI>
@@ -13,6 +16,15 @@ class MessageContainer extends PureComponent{
     }
     toConsult = () => {
         this.props.history.push('/message/consult')
+    }
+    toDynamic = () => {
+        this.props.history.push('/message/dynamic')
+    }
+    toComment = () => {
+        this.props.history.push('/message/comment')
+    }
+    toInform = () =>{
+        this.props.history.push('/message/system')
     }
 }
 

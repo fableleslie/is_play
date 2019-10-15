@@ -17,11 +17,11 @@ export default (props) => {
                     <span className="username">
                         账户昵称
                     </span>
-                    <div className="editBtn">
+                    <div className="editBtn" onClick={props.toEdit}>
                         <span>编辑资料</span>
                     </div>
                 </div>
-                <div className="beBoss">
+                <div className="beBoss" onClick={props.beBoss}>
                     成为商户？
                 </div>
             </header>

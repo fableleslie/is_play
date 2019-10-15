@@ -15,25 +15,25 @@ function MessageUI (props){
                     <img src={Reply} alt=""/>
                     <div>资询回复</div>
                 </div>
-                <div>
+                <div onClick={props.toDynamic}>
                     <img src={Shanghu} alt=""/>
                     <div>商户动态</div>
                 </div>
-                <div>
-                    <img src={Pingjia} alt=""/>
+                <div onClick={props.toComment}>
+                    <img  src={Pingjia} alt=""/>
                     <div>评价邀请</div>
                 </div>
-                <div>
+                <div onClick={props.toInform} >
                     <img src={Sesytem} alt=""/>
                     <div>系统通知</div>
                 </div>
-                <div className="message-end">
+                <i className="message-end">
                     <div>
                         <i></i>
                         <div>END</div>
                         <i></i>
                     </div>
-                </div>
+                </i>
             </main>
         </MessageUIContainer>
     )

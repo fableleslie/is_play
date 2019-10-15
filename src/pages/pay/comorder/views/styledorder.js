@@ -11,6 +11,20 @@ styledIconOne(
         top:0;
         display:flex;
         flex-direction:column;
+        .cancel-order{
+            width:2rem;
+            height:1rem;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:fixed;
+            top:40%;
+            background-color:#000;
+            opacity:.4;
+            color:#fff;
+            left:50%;
+            transform:translate(-50%,-50%)
+        }
         header{
             width:100%;
             height: .44rem;

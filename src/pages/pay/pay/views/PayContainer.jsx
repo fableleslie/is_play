@@ -2,29 +2,29 @@ import React,{PureComponent} from 'react'
 
 import PayUI from './PayUI'
 
-// const timeList = [
-//     {
-//         playtime:'13:00-17:00'
-//     },
-//     {
-//        playtime:'14:25-18:25'
-//     }
-// ]
+import connect from './connect'
 
+@connect
 class Pay extends PureComponent {
     state={
         select:'',
         price:'',
         payprice:'328-598',
         count:0,
+        date:'',
+        week:'',
+        time:'',
         timeList:[],
-        dataList:[]
+        dataList:[],
+        isshow_time:false
     }
     render(){
         return(
             <PayUI
             {...this.props}
             changeSelect={this.changeSelect}
+            selectDate={this.selectDate}
+            selectTime={this.selectTime}
             state={this.state}
             decreCount={this.decreCount}
             increCount={this.increCount}
@@ -32,6 +32,10 @@ class Pay extends PureComponent {
             nextStup={this.nextStup}
             ></PayUI>
         )
+    }
+
+    componentDidMount(){
+        //this.props.show_data('我就是我')
     }
 
     changeSelect = (value,price)=>{
@@ -43,6 +47,22 @@ class Pay extends PureComponent {
             payprice:price
         })
     }
+    selectDate = (date,week) => {
+        this.setState({
+            date,
+            week,
+            isshow_time:true
+        })
+    }
+    
+    selectTime = (time) => {
+        //console.log(time)
+        this.setState({
+            time
+        })
+    }
+
+
     decreCount = ()=>{
         this.setState({
             count:(this.state.count) > 0 ?(this.state.count - 1): 0 ,
@@ -60,8 +80,10 @@ class Pay extends PureComponent {
         this.props.history.goBack()
     }
     nextStup = () => {
-        console.log(this.props)
-        this.props.history.push('/pay/comorder')
+        //console.log(this.props)
+        this.props.history.push({pathname:'/pay/comorder',state:{...this.state}})
+        this.props.show_data(this.state)
+
     }
 }
 
