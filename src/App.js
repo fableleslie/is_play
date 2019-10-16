@@ -33,13 +33,10 @@ export default class App extends React.PureComponent {
         <Route path='/pay' component={Pay}></Route>
         <Route path='/message'  component={Message}></Route>
         <Route path='/index' component={Index}></Route>
-<<<<<<< HEAD
         <Route path='/headline' component={HeadDetails}></Route>
         <Route path='/loginin' component={LoginIn}></Route>
-=======
         <Route path='/my' component={My}></Route>
 
->>>>>>> master
         <Redirect from='/' to='/index' exact></Redirect>
         {/* <Route path='/comorder' component={OrderContainer}></Route>
         <Route path='/editaddress' component={EditContainer}></Route>
