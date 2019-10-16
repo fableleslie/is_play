@@ -6,6 +6,7 @@ class MyInfoContainer extends PureComponent {
         let comp;
         // infoList应该是this.props里面获取  这个对象里面就是每一条数据的信息
         let infoList = [{ isPay: false }, { isPay: true }]
+        // 看是订单也还是
         if (this.props.type === "order") {
             comp = (
                 infoList.map((item) => {
