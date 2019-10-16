@@ -1,4 +1,4 @@
-import React , {Component} from 'react'
+import React  from 'react'
 import {Link} from 'react-router-dom'
 import HeadStyle from './styleHeadline'
 
@@ -8,8 +8,7 @@ import headpic3 from 'assets/images/find/5c3b039de9ec8df6a3c01285aa86641e.png'
 import headpic4 from 'assets/images/find/236cfa18057fd295d9e81bf74697770a.png'
 import headpic5 from 'assets/images/find/5e76cec46c3642021422a33a3731e6f9.png'
 
-export default class Headlines extends Component{
-    render(){
+function Headlines(props){
         return(
             <HeadStyle>
                 <div>
@@ -58,5 +57,5 @@ export default class Headlines extends Component{
                 </ul>
             </HeadStyle>
         )
-    }
 }
+export default Headlines

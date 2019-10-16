@@ -1,4 +1,4 @@
-import React , {PureComponent} from 'react'
+import React from 'react'
 import {PhoneUIstyle,PhoneNum,ShortMsg} from './phonestyle'
 
 import ClosePic from 'assets/images/loginin/icon_right_close.png'
@@ -6,14 +6,13 @@ import QQpic from 'assets/images/loginin/a309ade25621a0c5702bce2aa6af6426.png'
 import WXpic from 'assets/images/loginin/0595eea203c052100c944d907bbe5be5.png'
 import WBpic from 'assets/images/loginin/a4e0c764f5e49c7b5cb1cf26e6837dd2.png'
 
-export default class PhoneUI extends PureComponent{
-    render(){
+function PhoneUI (props){
         return (
             <PhoneUIstyle>
                 <header>
-                    <img src={ClosePic} onClick={this.props.back} alt=""/>
+                    <img src={ClosePic} onClick={props.back} alt=""/>
                     <div>手机验证码登录</div>
-                    <div onClick={this.props.toRegister} className="register">注册</div>
+                    <div onClick={props.toRegister} className="register">注册</div>
                 </header>
                 <main>
                     <div className="loginReg">
@@ -22,7 +21,7 @@ export default class PhoneUI extends PureComponent{
                                 <PhoneNum className="pad">&#xe651;</PhoneNum>
                                 <div className="IptBox">
                                     <input type="text" placeholder="手机号码"/>
-                                    <span>获取验证码</span>
+                                    <span onClick={props.getVerification}>获取验证码</span>
                                 </div>
                             </div>
                             <div>
@@ -34,7 +33,7 @@ export default class PhoneUI extends PureComponent{
                         </div>
                         <div className="loginBox">
                             <div className="loginIn">登录</div>
-                            <p onClick={this.props.toAccount}>账号密码登录</p>
+                            <p onClick={props.toAccount}>账号密码登录</p>
                         </div>
                     </div>
                     <p className="agreement">
@@ -58,5 +57,5 @@ export default class PhoneUI extends PureComponent{
                 </footer>
             </PhoneUIstyle>
         )
-    }
 }
+export default PhoneUI

@@ -1,9 +1,8 @@
-import React , {Component} from 'react'
+import React  from 'react'
 import SearchContainer from '../../search/search'
 import HeadlinesContainer from '../../headlines/headlines'
 import GuessLikeContainer from '../../guessLike/guesslike'
-export default class Find extends Component{
-    render(){
+function Find(){
         return (
             <div style={{background:'#fff'}}>
             <SearchContainer></SearchContainer>
@@ -11,5 +10,5 @@ export default class Find extends Component{
             <GuessLikeContainer></GuessLikeContainer>
             </div>
         )
-    }
 }
+export default Find

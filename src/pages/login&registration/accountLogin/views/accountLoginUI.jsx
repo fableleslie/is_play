@@ -1,18 +1,17 @@
-import React , {Component} from 'react'
+import React from 'react'
 import {AccountLoginStyle,PhoneNum,ShortMsg,BackPic} from './accountLoginStyle'
 
 import QQpic from 'assets/images/loginin/a309ade25621a0c5702bce2aa6af6426.png'
 import WXpic from 'assets/images/loginin/0595eea203c052100c944d907bbe5be5.png'
 import WBpic from 'assets/images/loginin/a4e0c764f5e49c7b5cb1cf26e6837dd2.png'
 
-export default class AccountLoginUI extends Component{
-    render(){
+function AccountLoginUI (props){
         return(
             <AccountLoginStyle>
                 <header>
-                    <BackPic onClick={this.props.back}>&#xe646;</BackPic>
+                    <BackPic onClick={props.back}>&#xe646;</BackPic>
                     <div>账号密码登录</div>
-                    <div onClick={this.props.toRegister} className="register">注册</div>
+                    <div onClick={props.toRegister} className="register">注册</div>
                 </header>
                 <main>
                     <div className="loginReg">
@@ -32,7 +31,7 @@ export default class AccountLoginUI extends Component{
                         </div>
                         <div className="loginBox">
                             <div className="loginIn">登录</div>
-                            <p onClick={this.props.forgetPassword}>忘记密码？</p>
+                            <p onClick={props.forgetPassword}>忘记密码？</p>
                         </div>
                     </div>
                     <p className="agreement">
@@ -56,5 +55,5 @@ export default class AccountLoginUI extends Component{
                 </footer>
             </AccountLoginStyle>
         )
-    }
 }
+export default AccountLoginUI

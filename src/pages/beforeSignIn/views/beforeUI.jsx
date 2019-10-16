@@ -1,8 +1,7 @@
-import React , {Component} from 'react'
+import React from 'react'
 import BeforeSign from './beforestyle'
 import disconnect from 'assets/images/beforesign/disconnect.png'
-export default class BeforeUI extends Component{
-    render(){
+function BeforeUI (props){
         return (
             <BeforeSign>
                 <div>
@@ -10,8 +9,8 @@ export default class BeforeUI extends Component{
                     <p className="tips">你还没有登录哦~</p>
                     <p className="sm_tips">登录后可查看你的个人信息</p>
                 </div>
-                <div className="signIn" onClick={this.props.back}>登录</div>
+                <div className="signIn" onClick={props.back}>登录</div>
             </BeforeSign>
         )
-    }
 }
+export default BeforeUI

@@ -1,9 +1,8 @@
-import React , {Component} from 'react'
+import React from 'react'
 import {GuessLikestyle,Heart} from './styleGuessLike'
 import guesspic1 from 'assets/images/find/7d9c0a77b84ca1d3f3cb78e230710c4e.png'
 import guesspic2 from 'assets/images/find/0fd2694c5cfdc847741dd4809a6e6fb1.png'
-export default class GuessLike extends Component{
-    render(){
+function GuessLike(props){
         return(
             <GuessLikestyle>
                 <p className="guesstitle">猜你喜欢</p>
@@ -42,5 +41,5 @@ export default class GuessLike extends Component{
                 </div>
             </GuessLikestyle>
         )
-    }
 }
+export default GuessLike

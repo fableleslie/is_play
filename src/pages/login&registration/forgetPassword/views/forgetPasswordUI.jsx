@@ -1,13 +1,12 @@
-import React , {Component} from 'react'
+import React from 'react'
 import {ForGetPsdStyle,BackPic,PhonePic} from './forgetPasswordStyle'
-export default class ForGetPsdUI extends Component{
-    render(){
+function ForGetPsdUI (props){
         return (
             <ForGetPsdStyle>
                 <header>
-                    <BackPic onClick={this.props.back}>&#xe646;</BackPic>
+                    <BackPic onClick={props.back}>&#xe646;</BackPic>
                     <div>重置密码</div>
-                    <div onClick={this.props.toNext} className="next">下一步</div>
+                    <div onClick={props.toNext} className="next">下一步</div>
                 </header>
                 <main>
                     <div>
@@ -18,5 +17,5 @@ export default class ForGetPsdUI extends Component{
                 </main>
             </ForGetPsdStyle>
         )
-    }
 }
+export default ForGetPsdUI 

@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {SearchStyle,SearchPic} from '../../search/views/styleSearch'
 
-export default class Search extends Component{
-    render(){
+function Search(){
         return (
             <SearchStyle>
                 <div>
@@ -13,5 +12,5 @@ export default class Search extends Component{
                 </div>
             </SearchStyle>
         )
-    }
 }
+export default Search 

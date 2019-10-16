@@ -1,4 +1,6 @@
 import React , {PureComponent} from 'react'
+import {Toast} from 'antd-mobile';
+
 import PhoneUI from './phoneUI'
 export default class PhoneContainer extends PureComponent{
     render(){
@@ -7,6 +9,7 @@ export default class PhoneContainer extends PureComponent{
             back={this.handlerClick} 
             toRegister={this.handlerTo}
             toAccount={this.handlerAccount}
+            getVerification={this.getVerification}
             ></PhoneUI>
         )
     }
@@ -19,5 +22,11 @@ export default class PhoneContainer extends PureComponent{
     }
     handlerAccount = ()=>{
         this.props.history.push('/loginin/account')
+    }
+    getVerification = ()=>{
+        this.showToast()
+    }
+    showToast() {
+        Toast.info('验证码已逃窜至您的手机~', 2);
     }
 }

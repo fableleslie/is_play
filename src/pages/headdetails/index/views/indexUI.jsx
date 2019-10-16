@@ -1,20 +1,24 @@
-import React , {Component} from 'react'
-// import {Link} from 'react-router-dom'
+import React from 'react'
+import { Modal} from 'antd-mobile';
 import {IndexStyle,BackPic,Heart,Share,Location} from './styleindex'
 
 import smallpic1 from 'assets/images/headderail/3dc9e042f0f8e34c628db1d6789af4a3.png'
 import smallpic2 from 'assets/images/headderail/a2521e6c599ab0c0fd8cbc98ed9a80e2.png'
 import smallpic3 from 'assets/images/headderail/3f8ef301a4dd1d0919f9f470200a2fa4.png'
-export default class HeadDetail extends Component{
-    render(){
+import WXFriends from 'assets/images/headderail/WXFriends.png'
+import QQ from 'assets/images/headderail/QQ.png'
+import WB from 'assets/images/headderail/WB.png'
+import WXFriendshipCircle from 'assets/images/headderail/WXFriendshipCircle.png'
+
+function HeadDetail(props){
         return (
             <IndexStyle>
             <header>
-                <BackPic onClick={this.props.back}>&#xe646;</BackPic>
+                <BackPic onClick={props.back}>&#xe646;</BackPic>
                 <h3>小小天才的诞生--UCCAKid...</h3>
                 <p>
                     <Heart>&#xe634;</Heart>
-                    <Share onClick={this.props.share}>&#xe624;</Share>
+                    <Share onClick={props.share}>&#xe624;</Share>
                 </p>
             </header>
             <main>
@@ -56,7 +60,37 @@ export default class HeadDetail extends Component{
                 </div>
                 <div className="joinin">我要参加</div>
             </footer>
+            <Modal
+            visible={props.state.isShowShare}
+            transparent
+            maskClosable={true}
+            onClose={props.onClose(props.state)}
+            title="分享到"
+            // footer={[{ text: 'Ok', onPress: () => { console.log('ok'); props.onClose(props.state.isShowShare)(); } }]}
+            // wrapProps={{ onTouchStart: this.onWrapTouchStart }}
+            // afterClose={() => { alert('afterClose'); }}
+            >
+            <div style={{display:"flex", justifyContent:"space-between"}}>
+                <div>
+                    <img src={WXFriends} alt=""/>
+                    <p style={{fontSize:".11rem",marginTop:".13rem"}}>微信好友</p>
+                </div>
+                <div>
+                    <img src={WXFriendshipCircle} alt=""/>
+                    <p style={{fontSize:".11rem",marginTop:".13rem"}}>微信朋友圈</p>
+                </div>
+                <div>
+                    <img src={QQ} alt=""/>
+                    <p style={{fontSize:".11rem",marginTop:".13rem"}}>QQ</p>
+                </div>
+                <div>
+                    <img src={WB} alt=""/>
+                    <p style={{fontSize:".11rem",marginTop:".13rem"}}>新浪微博</p>
+                </div>
+            </div>
+            </Modal>
             </IndexStyle>
         )
-    }
 }
+
+export default HeadDetail

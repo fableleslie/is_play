@@ -1,11 +1,10 @@
-import React , {Component} from 'react'
+import React from 'react'
 import {RegisterStyle,PhoneNum,ShortMsg,Choice,Back} from './registerStyle'
-export default class RegisterUI extends Component{
-    render(){
+function RegisterUI(props){
         return (
             <RegisterStyle>
                 <header>
-                    <Back onClick={this.props.back}>&#xe646;</Back>
+                    <Back onClick={props.back}>&#xe646;</Back>
                     <p>注册</p>
                 </header>
                 <div className="loginReg">
@@ -14,7 +13,7 @@ export default class RegisterUI extends Component{
                                 <PhoneNum className="pad">&#xe651;</PhoneNum>
                                 <div className="IptBox">
                                     <input type="text" placeholder="手机号码"/>
-                                    <span>获取验证码</span>
+                                    <span onClick={props.getVerification}>获取验证码</span>
                                 </div>
                             </div>
                             <div>
@@ -41,5 +40,5 @@ export default class RegisterUI extends Component{
                     </div>
             </RegisterStyle>
         )
-    }
 }
+export default RegisterUI
