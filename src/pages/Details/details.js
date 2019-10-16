@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import { DetailsIndex } from './Index/details-index'
 import TicketDetailsContainer from './TicketDetails/TicketDetailsContainer'
+import ActiveEvaluationContainer from './activeEvaluation/activeEvaluationContainer'
 
 export default class Details extends Component{
   render(){
@@ -11,7 +12,8 @@ export default class Details extends Component{
         <Switch>
             <Route path="/details/index" component={ DetailsIndex }></Route>
             <Route path="/details/ticketdetails" component={ TicketDetailsContainer }></Route>
-            <Redirect from="/details" to="/details/ticketdetails" exact></Redirect>
+            <Route path="/details/activeevaluation" component={ ActiveEvaluationContainer }></Route>
+            <Redirect from="/details" to="/details/index" exact></Redirect>
         </Switch>
     )
   }

@@ -2,7 +2,7 @@ import React , { Component } from 'react'
 
 import TicketDetailsUI from './TicketDetailsUI'
 
-export default class  extends Component{
+export default class TicketDetailsContainer extends Component{
   constructor(props){
     super(props)
     this.state = {
@@ -12,13 +12,17 @@ export default class  extends Component{
 
   render(){
     return(
-      <TicketDetailsUI>
-          
-      </TicketDetailsUI>
+      <TicketDetailsUI
+        back = { this.handleClick }
+      ></TicketDetailsUI>
     )
   }
 
   componentDidMount() {
 
+  }
+
+  handleClick = () => {
+    this.props.history.goBack();
   }
 }

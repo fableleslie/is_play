@@ -6,9 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 import { 
   TicketDetailsContainer,
-  TicketItemsContainer,
-  TitleContainer,
-  TicketTextContainer
+  TicketDetailsItem
 } from './StyledTicketDetails';
 
 import animate from 'components/hoc/animate'
@@ -28,46 +26,50 @@ class TicketDetails extends Component{
           票种明细
         </div>
         <ul>
-          <TicketItemsContainer>
-            <div className="ticket-text">
-              <TitleContainer>78票面 单人优惠票（限本科及以下学历）fsdfasdfasdffasdfasdfasdfasdfasdfsd</TitleContainer>
-              <TicketTextContainer>单人优惠券（选本科及以下学生，
-                60岁及以上老人、现役军人、残疾人购买。入场时须出示有效证件
-                通过证件进入长内)
-              </TicketTextContainer>
+          <TicketDetailsItem>
+            <div className="text-content">
+              <h3 className="ticket-details-header">
+                78票面 单人优惠票（限本科及以下学历）
+              </h3>
+              <span>
+                单人优惠票（限本科及以下学生、60岁及以上老 人、现役军人、残疾人购买。入场时须出示有效证方可入场）
+              </span>
             </div>
-            <div className="button">￥78</div>
-          </TicketItemsContainer>
-          <TicketItemsContainer>
-            <div className="ticket-text">
-              <TitleContainer>78票面 单人优惠票（限本科及以下学历）fsdfasdfasdffasdfasdfasdfasdfasdfsd</TitleContainer>
-              <TicketTextContainer>单人优惠券（选本科及以下学生，
-                60岁及以上老人、现役军人、残疾人购买。入场时须出示有效证件
-                通过证件进入长内)
-              </TicketTextContainer>
+            <button>￥78</button>
+          </TicketDetailsItem>
+          <TicketDetailsItem>
+            <div className="text-content">
+              <h3 className="ticket-details-header">
+                78票面 单人优惠票（限本科及以下学历）
+              </h3>
+              <span>
+                单人优惠票（限本科及以下学生、60岁及以上老 人、现役军人、残疾人购买。入场时须出示有效证方可入场）
+              </span>
             </div>
-            <div className="button">￥78</div>
-          </TicketItemsContainer>
-          <TicketItemsContainer>
-            <div className="ticket-text">
-              <TitleContainer>78票面 单人优惠票（限本科及以下学历）fsdfasdfasdffasdfasdfasdfasdfasdfsd</TitleContainer>
-              <TicketTextContainer>单人优惠券（选本科及以下学生，
-                60岁及以上老人、现役军人、残疾人购买。入场时须出示有效证件
-                通过证件进入长内)
-              </TicketTextContainer>
+            <button>￥78</button>
+          </TicketDetailsItem>
+          <TicketDetailsItem>
+            <div className="text-content">
+              <h3 className="ticket-details-header">
+                78票面 单人优惠票（限本科及以下学历）
+              </h3>
+              <span>
+                单人优惠票（限本科及以下学生、60岁及以上老 人、现役军人、残疾人购买。入场时须出示有效证方可入场）
+              </span>
             </div>
-            <div className="button">￥78</div>
-          </TicketItemsContainer>
-          <TicketItemsContainer>
-            <div className="ticket-text">
-              <TitleContainer>78票面 单人优惠票（限本科及以下学历）fsdfasdfasdffasdfasdfasdfasdfasdfsd</TitleContainer>
-              <TicketTextContainer>单人优惠券（选本科及以下学生，
-                60岁及以上老人、现役军人、残疾人购买。入场时须出示有效证件
-                通过证件进入长内)
-              </TicketTextContainer>
+            <button>￥78</button>
+          </TicketDetailsItem>
+          <TicketDetailsItem>
+            <div className="text-content">
+              <h3 className="ticket-details-header">
+                78票面 单人优惠票（限本科及以下学历）
+              </h3>
+              <span>
+                单人优惠票（限本科及以下学生、60岁及以上老 人、现役军人、残疾人购买。入场时须出示有效证方可入场）
+              </span>
             </div>
-            <div className="button">￥78</div>
-          </TicketItemsContainer>
+            <button>￥78</button>
+          </TicketDetailsItem>
         </ul>
         <div className="ticket-details-footer">
           <span onClick={() => {

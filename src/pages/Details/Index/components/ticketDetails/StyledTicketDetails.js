@@ -32,54 +32,51 @@ const TicketDetailsContainer = styledIconOne(
     `
 )
 
-const TicketItemsContainer = border({
+const TicketDetailsItem = border({
     width: "0 0 1px 0",
+    color: '#777',
     comp: styled.li`
+        padding: .16rem 0;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        padding-top: .14rem;
-        padding-bottom: .16rem;
-        .ticket-text{
-            width: 258px;
+        .text-content{
+            width: 2.58rem;
+            h3{
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: .15rem;
+            }
+            span{
+                width: 100%;
+                padding-top: .1rem;
+                font-size: .11rem;
+                color: #777;
+                line-height: .2rem;
+                text-overflow: -o-ellipsis-lastline;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
         }
-        .button{
-            width: .97rem;
+        button{
+            min-width: .57rem;
             height: .33rem;
-            border-radius: .05rem;
-            border: none;
-            background-color: #FF6600;
-            color: #fff;
             line-height: .33rem;
             text-align: center;
+            background: #FF6600;
             font-size: .15rem;
-            margin-right: .16rem;
-            margin-left: .15rem;
+            color: #fff;
+            border: none;
         }
     `
 })
-
-const TitleContainer = ellipsis({
-    comp: styled.h3`
-        font-size: .15rem;
-    `
-})
-
-const TicketTextContainer = styled.span `
-    text-overflow: -o-ellipsis-lastline;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    margin-top: .1rem;
-    font-size: .11rem;
-    color: #777;
-    line-height: .2rem;
-`
 
 export {
     TicketDetailsContainer,
-    TicketItemsContainer,
-    TitleContainer,
-    TicketTextContainer
+    TicketDetailsItem
 }
