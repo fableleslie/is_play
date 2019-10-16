@@ -23,7 +23,6 @@ export default class Pay extends React.PureComponent {
                 <Route path='/pay/editaddress' component={EditContainer}></Route>
                 <Route path='/pay/usecoupon' component={UseCoupon}></Route>
                 <Route path='/pay/waitpay' component={WaitpayContainer}></Route>
-
                 <Redirect from='/pay' exact to='/pay/paypage'></Redirect>
             </Switch>
            

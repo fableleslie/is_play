@@ -2,9 +2,9 @@ import {connect} from 'react-redux'
 import {change_order} from '../actionCreator'
 
 const mapState = (state)=>{
-    console.log(state.pay)
+    //console.log(state.pay)
     return {
-      test:state.pay.test
+      pay_order:state.pay.pay_order
     }
 }
 
