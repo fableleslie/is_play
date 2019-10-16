@@ -27,6 +27,6 @@ export default class PhoneContainer extends PureComponent{
         this.showToast()
     }
     showToast() {
-        Toast.info('验证码已逃窜至您的手机~', 2);
+        Toast.info('验证码已逃窜至您的手机~', 60);
     }
 }

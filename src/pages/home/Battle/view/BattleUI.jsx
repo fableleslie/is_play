@@ -1,59 +1,62 @@
 import React, { Component } from 'react';
 import BattleContainer from './styleBattle'
-// import { Carousel, WingBlank } from 'antd-mobile'
+import Swiper from 'swiper/js/swiper.js'
+import battle1 from 'images/battle/battle-1.png'
+
 
 class BattleUI extends Component {
-    state = {
-        data: ['1', '2', '3'],
-        imgHeight: 176,
-    }
     render() {
         return (
             <BattleContainer>
-                {/* <WingBlank>
-                    <Carousel className="space-carousel"
-                    frameOverflow="visible"
-                    cellSpacing={10}
-                    slideWidth={0.8}
-                    autoplay
-                    infinite
-                    afterChange={index => this.setState({ slideIndex: index })}
-                    >
-                    {this.state.data.map((val, index) => (
-                        <a
-                        key={val}
-                        href="http://www.alipay.com"
-                        style={{
-                            display: 'block',
-                            position: 'relative',
-                            height: this.state.imgHeight,
-                            boxShadow: '2px 1px 1px rgba(0, 0, 0, 0.2)',
-                        }}
-                        >
-                        <img
-                            src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
-                            alt=""
-                            style={{ width: '100%', verticalAlign: 'top' }}
-                            onLoad={() => {
-                            // fire window resize event to change height
-                            window.dispatchEvent(new Event('resize'));
-                            this.setState({ imgHeight: 'auto' });
-                            }}
-                        />
-                        </a>
-                    ))}
-                    </Carousel>
-                </WingBlank> */}
+                <div className='top'>
+                    <span className='act'>甩汗大作战</span>
+                    <span className='all'><span>全部</span><span className='icon'><i>&#xe645;</i></span></span>
+                </div>
+                <div className='container'>
+                    <div className="swiper-container">
+                        <div className="swiper-wrapper">
+                            <div className="swiper-slide">
+                                <img src={battle1} alt=""/>
+                                <div className='title'>
+                                    <span className='address'>金秋坝上草原…</span>
+                                    <div>
+                                        <span className='price'>¥ 120 起</span>
+                                        <span className='way'>地铁5号、10号线惠新西街南口站A口</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <img src={battle1} alt=""/>
+                                <div className='title'>
+                                    <span className='address'>金秋坝上草原…</span>
+                                    <div>
+                                        <span className='price'>¥ 120 起</span>
+                                        <span className='way'>地铁5号、10号线惠新西街南口站A口</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="swiper-slide">
+                                <img src={battle1} alt=""/>
+                                <div className='title'>
+                                    <span className='address'>金秋坝上草原…</span>
+                                    <div>
+                                        <span className='price'>¥ 120 起</span>
+                                        <span className='way'>地铁5号、10号线惠新西街南口站A口</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </BattleContainer>
         )
     }
     componentDidMount(){
-        setTimeout(() => {
-            // this.setState({
-            //   data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-            // });
-        }, 100);
-    }
+        new Swiper('.swiper-container',{
+            slidesPerView : 'auto',
+            spaceBetween : 30,
+        })
+    }   
 }
 
 export default BattleUI;

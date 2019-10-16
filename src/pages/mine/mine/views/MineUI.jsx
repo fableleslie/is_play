@@ -26,19 +26,19 @@ export default (props) => {
                 </div>
             </header>
             <ul className="listWrap">
-                <li>
+                <li onClick={()=>props.goCategory("waitPay")}>
                     <span className="waitPay">&#xe609;</span>
                     <span>待付款</span>
                 </li>
-                <li>
+                <li onClick={()=>props.goCategory("allOrder")}>
                     <span className="allOrder">&#xf0133;</span>
                     <span>全部订单</span>
                 </li>
-                <li>
+                <li onClick={()=>props.goCategory("wkTicket")}>
                     <span className="ticket">&#xe65c;</span>
                     <span>周末券</span>
                 </li>
-                <li>
+                <li onClick={()=>props.goCategory("collect")}>
                     <span className="allOrder">&#xe634;</span>
                     <span>收藏</span>
                 </li>

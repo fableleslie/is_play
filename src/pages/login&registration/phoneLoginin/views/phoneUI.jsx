@@ -1,5 +1,6 @@
 import React from 'react'
 import {PhoneUIstyle,PhoneNum,ShortMsg} from './phonestyle'
+import {Toast} from 'antd-mobile';
 
 import ClosePic from 'assets/images/loginin/icon_right_close.png'
 import QQpic from 'assets/images/loginin/a309ade25621a0c5702bce2aa6af6426.png'
@@ -21,7 +22,7 @@ function PhoneUI (props){
                                 <PhoneNum className="pad">&#xe651;</PhoneNum>
                                 <div className="IptBox">
                                     <input type="text" placeholder="手机号码"/>
-                                    <span onClick={props.getVerification}>获取验证码</span>
+                                    <span onClick={()=>{Toast.info('验证码已逃窜至您的手机~', 3);}}>获取验证码</span>
                                 </div>
                             </div>
                             <div>

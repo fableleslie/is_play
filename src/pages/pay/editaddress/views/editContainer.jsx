@@ -30,7 +30,7 @@ class EditContainer extends PureComponent{
         this.props.history.goBack()
     }
     preserve = () => {
-        console.log(this.state)
+        // console.log(this.state)
     }
 
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { EditContainer, DivBord, LiBord } from "./StyledEdit"
 import touxiang from "assets/images/mine/touxiang.png"
-import { Picker, List, Modal, Toast } from 'antd-mobile';
+import {  Modal, Toast } from 'antd-mobile';
 import { ImagePicker } from 'antd-mobile';
 const prompt = Modal.prompt;
 const alert = Modal.alert;
