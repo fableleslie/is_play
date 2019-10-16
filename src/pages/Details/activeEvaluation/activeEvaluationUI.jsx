@@ -1,13 +1,18 @@
 import React , { Component } from 'react'
 
 import {
-    ActiveEvaluationContainer
+    ActiveEvaluationContainer,
+    EvaluationHeader
 } from './styledactiveEvaluation'
 
-export default class activeEvaluation extends Component{
+export default class activeEvaluationUI extends Component{
   render(){
     return(
-      <ActiveEvaluationContainer></ActiveEvaluationContainer>
+      <ActiveEvaluationContainer>
+          <EvaluationHeader>
+              
+          </EvaluationHeader>
+      </ActiveEvaluationContainer>
     )
   }
 }

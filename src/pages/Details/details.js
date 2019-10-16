@@ -13,7 +13,7 @@ export default class Details extends Component{
             <Route path="/details/index" component={ DetailsIndex }></Route>
             <Route path="/details/ticketdetails" component={ TicketDetailsContainer }></Route>
             <Route path="/details/activeevaluation" component={ ActiveEvaluationContainer }></Route>
-            <Redirect from="/details" to="/details/index" exact></Redirect>
+            <Redirect from="/details" to="/details/activeevaluation" exact></Redirect>
         </Switch>
     )
   }

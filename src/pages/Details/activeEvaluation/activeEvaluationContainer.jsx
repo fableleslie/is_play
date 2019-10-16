@@ -1,6 +1,6 @@
 import React , { Component } from 'react'
 
-import activeEvaluationUI from './activeEvaluationUI'
+import ActiveEvaluationUI from './activeEvaluationUI'
 
 export default class  extends Component{
   constructor(props){
@@ -12,7 +12,7 @@ export default class  extends Component{
 
   render(){
     return(
-      <activeEvaluationUI></activeEvaluationUI>
+      <ActiveEvaluationUI></ActiveEvaluationUI>
     )
   }
 
