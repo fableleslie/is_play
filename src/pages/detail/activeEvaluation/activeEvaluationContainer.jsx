@@ -12,11 +12,17 @@ export default class  extends Component{
 
   render(){
     return(
-      <ActiveEvaluationUI></ActiveEvaluationUI>
+      <ActiveEvaluationUI
+        back = {this.handleClick}
+      ></ActiveEvaluationUI>
     )
   }
 
   componentDidMount() {
 
+  }
+
+  handleClick = () => {
+    this.props.history.goBack();
   }
 }

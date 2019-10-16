@@ -24,13 +24,13 @@ import {
 
 class Details extends Component {
   render() {
-    let { changeComponent, path, changeHeaderBackground, join } = this.props
+    let { changeComponent, path, changeHeaderBackground, join, goBack } = this.props
     // console.log(this.props)
     return (
       <DetailsContainer>
         <DetailsWrap onScroll={changeHeaderBackground}>
           <HeaderContainer>
-            <span id="back">&#xe646;</span>
+            <span id="back" onClick={goBack}>&#xe646;</span>
           </HeaderContainer>
           <Swiper></Swiper>
           {/* 内容详情 */}

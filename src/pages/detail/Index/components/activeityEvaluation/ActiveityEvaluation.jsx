@@ -12,6 +12,8 @@ import connect from '../../views/connect'
 
 import animate from 'components/hoc/animate'
 
+import {withRouter} from 'react-router-dom'
+
 class ActiveityEvaluation extends Component{
   constructor(props){
     super(props)
@@ -35,7 +37,7 @@ class ActiveityEvaluation extends Component{
             </UserInfoWrap>
             <div className="create-time">01月01日</div>
           </UserInfoContainer>
-          <div className="evaluation-text">
+          <div className="evaluation-text" onClick={this.toEvaluation}>
             评价评价评价评价
           </div>
           <IconContainer>
@@ -55,10 +57,10 @@ class ActiveityEvaluation extends Component{
         <OrganizerContainer>
           <i className="organize-head">
             &#xe545;
-            <i className="authentication-sign">&#xe657;</i>
+            <i className="authentication-sign" onClick={this.toHost}>&#xe657;</i>
           </i>
             <div className="organize-info">
-              <span className="organize-name">组织者：IOMA爱马思艺...</span>
+              <span className="organize-name" onClick={this.toHost}>组织者：IOMA爱马思艺...</span>
               <span className="authentication">资质认证</span>
             </div>
           <button>加关</button>
@@ -73,6 +75,15 @@ class ActiveityEvaluation extends Component{
 
     parent.style.height = child.offsetHeight + 26 + 'px';
   }
+
+  toEvaluation = () => {
+    this.props.history.push('/details/activeevaluation')
+    // console.log(this.props)
+  }
+
+  toHost = () => {
+    this.props.history.push('/details/host')
+  }
 }
 
-export default connect(animate(ActiveityEvaluation))
+export default connect(animate(withRouter(ActiveityEvaluation)))

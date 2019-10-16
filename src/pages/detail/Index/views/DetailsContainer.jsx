@@ -16,6 +16,8 @@ class DetailsContainer extends Component{
         path = { path }
         changeHeaderBackground={this.hanldeScroll}
         join = { this.iWantJoin }
+        toEvaluation = { this.toEvaluation }
+        goBack = {this.goBack}
       ></DetailsUI>
     )
   }
@@ -39,6 +41,10 @@ class DetailsContainer extends Component{
 
   iWantJoin = () => {
     this.props.history.push('/pay')
+  }
+  
+  goBack = () => {
+    this.props.history.goBack();
   }
   
   handleClick = (e) => {
