@@ -4,6 +4,10 @@ import Coupon from './styledCoupon'
 
 import CouponLi from 'components/coupon/coupon'
 
+import connect from './connect'
+
+
+@connect
 class Usecoupon extends PureComponent{
     render(){
         return(
@@ -15,9 +19,10 @@ class Usecoupon extends PureComponent{
                 <main>
                     <ul>
                         <CouponLi
-                            money={'5'}
+                            money={5}
                             coupontype="新用户专享券"
                             deadline="2019年11月8日前有效"
+                            toDecount={this.toDecount}
                         ></CouponLi>
                         <CouponLi
                             money={'20'}
@@ -31,6 +36,10 @@ class Usecoupon extends PureComponent{
     }
 
     comeBack = ()=>{
+        this.props.history.goBack()
+    }
+    toDecount = (deprice) => {
+        this.props.decount(deprice)
         this.props.history.goBack()
     }
 }

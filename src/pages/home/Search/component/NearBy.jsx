@@ -6,12 +6,15 @@ class NearBy extends Component {
         return (
             <NearByContainer>
                 <div className='nearTop'>
-                    <i>&#xe646;</i>
+                    <i onClick={this.backBtn}>&#xe646;</i>
                     <span className='headline'>附近</span>
                     <span>排序</span>
                 </div>
             </NearByContainer>
         )
+    }
+    backBtn = ()=>{
+        this.props.history.goBack()
     }
 }
 

@@ -276,6 +276,15 @@
 
 "@babel/plugin-proposal-decorators@7.6.0":
   version "7.6.0"
+  resolved "https://registry.npm.taobao.org/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.6.0.tgz?cache=0&sync_timestamp=1567791519699&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-proposal-decorators%2Fdownload%2F%40babel%2Fplugin-proposal-decorators-7.6.0.tgz#6659d2572a17d70abd68123e89a12a43d90aa30c"
+  integrity sha1-ZlnSVyoX1wq9aBI+iaEqQ9kKoww=
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.6.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-decorators" "^7.2.0"
+
+"@babel/plugin-proposal-decorators@^7.6.0":
+  version "7.6.0"
   resolved "https://registry.npm.taobao.org/@babel/plugin-proposal-decorators/download/@babel/plugin-proposal-decorators-7.6.0.tgz#6659d2572a17d70abd68123e89a12a43d90aa30c"
   integrity sha1-ZlnSVyoX1wq9aBI+iaEqQ9kKoww=
   dependencies:
@@ -855,7 +864,7 @@
 
 "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
   version "7.6.3"
-  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.6.3.tgz?cache=0&sync_timestamp=1570565315026&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
+  resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
   integrity sha1-k1Eix0xz0iQMr9Mt21/Cps01zx8=
   dependencies:
     regenerator-runtime "^0.13.2"
@@ -1137,12 +1146,12 @@
 
 "@redux-saga/deferred@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@redux-saga/deferred/download/@redux-saga/deferred-1.1.0.tgz?cache=0&sync_timestamp=1568662342691&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40redux-saga%2Fdeferred%2Fdownload%2F%40redux-saga%2Fdeferred-1.1.0.tgz#aff018f64a936c288c18bd64ddf9ccfa143db6b4"
+  resolved "https://registry.npm.taobao.org/@redux-saga/deferred/download/@redux-saga/deferred-1.1.0.tgz#aff018f64a936c288c18bd64ddf9ccfa143db6b4"
   integrity sha1-r/AY9kqTbCiMGL1k3fnM+hQ9trQ=
 
 "@redux-saga/delay-p@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@redux-saga/delay-p/download/@redux-saga/delay-p-1.1.0.tgz?cache=0&sync_timestamp=1568662343636&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40redux-saga%2Fdelay-p%2Fdownload%2F%40redux-saga%2Fdelay-p-1.1.0.tgz#4024f979d0f78763d2e90233be8c922781ae4400"
+  resolved "https://registry.npm.taobao.org/@redux-saga/delay-p/download/@redux-saga/delay-p-1.1.0.tgz#4024f979d0f78763d2e90233be8c922781ae4400"
   integrity sha1-QCT5edD3h2PS6QIzvoySJ4GuRAA=
   dependencies:
     "@redux-saga/symbols" "^1.1.0"
@@ -1157,12 +1166,12 @@
 
 "@redux-saga/symbols@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@redux-saga/symbols/download/@redux-saga/symbols-1.1.0.tgz?cache=0&sync_timestamp=1568662340901&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40redux-saga%2Fsymbols%2Fdownload%2F%40redux-saga%2Fsymbols-1.1.0.tgz#676b277cb5deb48ce723b2b394cbae97f82e8319"
+  resolved "https://registry.npm.taobao.org/@redux-saga/symbols/download/@redux-saga/symbols-1.1.0.tgz#676b277cb5deb48ce723b2b394cbae97f82e8319"
   integrity sha1-Z2snfLXetIznI7KzlMuul/gugxk=
 
 "@redux-saga/types@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@redux-saga/types/download/@redux-saga/types-1.1.0.tgz?cache=0&sync_timestamp=1568662341669&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40redux-saga%2Ftypes%2Fdownload%2F%40redux-saga%2Ftypes-1.1.0.tgz#0e81ce56b4883b4b2a3001ebe1ab298b84237204"
+  resolved "https://registry.npm.taobao.org/@redux-saga/types/download/@redux-saga/types-1.1.0.tgz#0e81ce56b4883b4b2a3001ebe1ab298b84237204"
   integrity sha1-DoHOVrSIO0sqMAHr4aspi4QjcgQ=
 
 "@sindresorhus/is@^0.14.0":
@@ -1954,6 +1963,14 @@ aws4@^1.8.0:
   version "1.8.0"
   resolved "https://registry.npm.taobao.org/aws4/download/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha1-8OAD2cqef1nHpQiUXXsu+aBKVC8=
+
+axios@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.npm.taobao.org/axios/download/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  integrity sha1-jgm/89kSLhM/e4EByPvdAO09Krg=
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
 
 axobject-query@^2.0.2:
   version "2.0.2"
@@ -3380,7 +3397,7 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0:
+debug@3.1.0, debug@=3.1.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/debug/download/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
@@ -4481,6 +4498,13 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha1-e3qfmuov3/NnhqlP9kPtB/T/Xio=
+  dependencies:
+    debug "=3.1.0"
+
 follow-redirects@^1.0.0:
   version "1.9.0"
   resolved "https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.9.0.tgz#8d5bcdc65b7108fe1508649c79c12d732dcedb4f"
@@ -5399,6 +5423,11 @@ is-buffer@^1.0.2, is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://registry.npm.taobao.org/is-buffer/download/is-buffer-1.1.6.tgz?cache=0&sync_timestamp=1569905349018&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-buffer%2Fdownload%2Fis-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha1-76ouqdqg16suoTqXsritUf776L4=
+
+is-buffer@^2.0.2:
+  version "2.0.4"
+  resolved "https://registry.npm.taobao.org/is-buffer/download/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
+  integrity sha1-PlcvI8hBGlz9lVfISeNmXgspBiM=
 
 is-callable@^1.1.4:
   version "1.1.4"
@@ -9169,7 +9198,7 @@ redux-immutable@^4.0.0:
 
 redux-saga@^1.1.1:
   version "1.1.1"
-  resolved "https://registry.npm.taobao.org/redux-saga/download/redux-saga-1.1.1.tgz?cache=0&sync_timestamp=1568706734416&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fredux-saga%2Fdownload%2Fredux-saga-1.1.1.tgz#7e02879beb02c92030b5fbe746fd70e8bda97dfb"
+  resolved "https://registry.npm.taobao.org/redux-saga/download/redux-saga-1.1.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fredux-saga%2Fdownload%2Fredux-saga-1.1.1.tgz#7e02879beb02c92030b5fbe746fd70e8bda97dfb"
   integrity sha1-fgKHm+sCySAwtfvnRv1w6L2pffs=
   dependencies:
     "@redux-saga/core" "^1.1.1"

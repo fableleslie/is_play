@@ -12,9 +12,21 @@ const ProjectContainer = styled.div`
             width : 1.5rem;
             height : 100%;
             margin-right : .1rem;
+            position: relative;
             img{
                 height : 100%;
                 width : 100%;
+            }
+            .collect{
+                position : absolute;
+                top : .1rem;
+                right : .14rem;
+                height : .2rem;
+                width : .2rem;
+                img{
+                    height : 100%;
+                    width : 100%;
+                }
             }
         }
         .rightName{
@@ -59,6 +71,24 @@ const ProjectContainer = styled.div`
                 }   
             }
         }
+    }
+`
+export const LaughContainer = styled.div`
+    height : .6rem;
+    width : .6rem;
+    img{
+        height : 100%;
+        width : 100%;
+        border-radius :50%;
+    }
+`
+export const CryContainer = styled.div`
+    height : .6rem;
+    width : .6rem;
+    img{
+        height : 100%;
+        width : 100%;
+        border-radius :50%;
     }
 `
 

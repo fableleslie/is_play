@@ -1,4 +1,4 @@
-const { override, fixBabelImports,addWebpackAlias } = require('customize-cra')
+const { override, fixBabelImports,addWebpackAlias,addBabelPlugins } = require('customize-cra')
 const path = require('path')
 
 // module.exports = function override(config, env) {
@@ -7,6 +7,14 @@ const path = require('path')
 //   }
 
  module.exports = override(
+      ...addBabelPlugins(
+        [
+          "@babel/plugin-proposal-decorators",
+          {
+            "legacy": true
+          }
+        ]
+      ),
       fixBabelImports('import', {
         libraryName: 'antd-mobile',
         style: 'css'
