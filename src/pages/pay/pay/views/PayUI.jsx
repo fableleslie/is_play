@@ -46,7 +46,10 @@ function PayUI(props){
                     <div className="select-date">
                         <div className="select-title"><span>选择日期</span></div>
                         <ul className="date-content">
-                            <li>
+                            <li
+                            onClick={() => {props.selectDate('19年9月15日','本周日')}}
+                            className={(props.state.week==='本周日' && props.state.date ==='19年9月15日')?'active':''}
+                            >
                                 <div>19年9月15日</div>
                                 <p>本周日</p>
                             </li>
@@ -56,6 +59,21 @@ function PayUI(props){
                             </li>
                         </ul>
                     </div>
+                    {
+                        props.state.isshow_time ? (
+                            <div className='select-time'>
+                                <div className="select-title"><span>选择时间</span></div>
+                                <ul className='time-content'>
+                                    <li
+                                     onClick={() => {props.selectTime('13:00-17:00')}}
+                                     className={props.state.time === '13:00-17:00' ? 'active':''}
+                                    >
+                                        <div>13:00-17:00</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        ):''
+                    }
                     <div className="active-count">
                         <div className="count-title"><span>数量</span></div>
                         <div className="count-container">

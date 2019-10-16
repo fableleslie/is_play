@@ -1,17 +1,17 @@
 import {connect} from 'react-redux'
-import {show_data} from '../actionCreator'
+import {change_order} from '../actionCreator'
 
 const mapState = (state)=>{
-    console.log(state.pay)
+    //console.log(state.pay)
     return {
-      test:state.pay.test
+      pay_order:state.pay.pay_order
     }
 }
 
 const mapDispatch = (dispatch) => {
     return {
      show_data(data) {
-        dispatch(show_data(data))
+        dispatch(change_order(data))
       }
     }
   }

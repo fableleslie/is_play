@@ -22,9 +22,10 @@ styledIconOne(
                 color:#000000;
             }
             i{
-                width:.15rem;
-                height:.15rem;
+                width:.19rem;
+                height:.19rem;
                 font-family:'iconfont' !important;
+                font-size:.18rem;
                 position:absolute;
                 left:.15rem;
                 top:.15rem;
@@ -37,6 +38,26 @@ styledIconOne(
                 top:.12rem;
                 color:#777777;
                 font-size:.16rem;
+                .cancel-btn{
+                    width:.8rem;
+                    height:.4rem;
+                    
+                    font-size:.16rem;
+                    background-color:#fff;
+                    position:fixed;
+                    top:0;
+                    right:0;
+                    border:none;
+                    ::before{
+                        border:none;
+                    }
+                    span{
+                        font-size:.16rem;
+                        color:#777777;
+                        position:absolute;
+                        top:0;
+                    }
+                }
             }
         }
         .waitpay-bar{
@@ -160,6 +181,18 @@ styledIconOne(
             align-items:center;
             color:#000000;
             font-size:.16rem;
+            .pay-btn{
+                background-color:#FFE60D;
+
+            }
+            .show-paypic{
+                width:100%;
+                height:200px !important;
+                img{
+                    width:1rem;
+                    height:1rem;
+                }
+            }
         }
     `
 )

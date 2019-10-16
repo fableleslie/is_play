@@ -12,6 +12,8 @@ import UseCoupon from 'pages/pay/usecoupon/coupon'
 
 import {WaitpayContainer} from 'pages/pay/waitpay/'
 
+
+
 export default class Pay extends React.PureComponent {
     render(){
         return(

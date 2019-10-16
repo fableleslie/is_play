@@ -7,9 +7,14 @@ import Zhifubao from 'assets/images/zhifubao.png'
 import Weixin from 'assets/images/weixin.png'
 
 function orderUI(props){
-    
+    let {pay_order} =  props
+    console.log(pay_order)
     return (
         <OrderUIContainer>
+            {
+                props.isshow ? (<div className='cancel-order'>订单已经取消,你好自为之~</div>):''
+            }
+           
             <header>
                 <span className='yo-ico' onClick={props.comeBack}>&#xe646;</span>
                 <div>确认订单</div>
@@ -33,8 +38,8 @@ function orderUI(props){
                 <div className="order-detail-bar">订单详情</div>
                 <div className="order-detail-box">
                     <div className="order-detail">
-                        <div className="order-type">家庭三人 ￥528，1份</div>
-                        <div className="order-date">19年9月15日 本周四 13 00-17 00</div>
+                        <div className="order-type">{pay_order.select ? pay_order.select : '单人' } ￥{pay_order.price}，{pay_order.count}份</div>
+                        <div className="order-date">{pay_order.date} {pay_order.week} {pay_order.time}</div>
                     </div>
                 </div>
                 <div className="take-ticket">
@@ -60,7 +65,7 @@ function orderUI(props){
                         <i>&#xe695;</i>
                     </div>
                     <div className='pay-bar'></div>
-                    <div className="weixin">
+                    <div onClick={props.openScan} className="weixin">
                         <div className="weixin-pic-box">
                             <div className="weixin-pic">
                                 <img src={Weixin} alt=""/>
@@ -74,7 +79,7 @@ function orderUI(props){
             <footer>
                <div className="show-price">
                    <span>合计:</span>
-                   <div>￥528</div>
+                   <div>￥{ Number(pay_order.payprice)-(pay_order.decount_price ? Number(pay_order.decount_price) : 0)}</div>
                    <i>&#xe63d;</i>
                </div>
                <div className="make-sure" onClick={props.sureOrder}>确定</div>
