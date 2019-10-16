@@ -1,7 +1,7 @@
 import React,{PureComponent} from 'react'
 import BeBossInfoUI from "./BeBossInfoUI"
 import { createForm } from 'rc-form';
-import { district, provinceLite } from 'antd-mobile-demo-data';
+import { district } from 'antd-mobile-demo-data';
 class BeBossMessage extends PureComponent{
   constructor() {
     super();
