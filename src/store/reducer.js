@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import { reducer as details } from 'pages/details/Index/details-index.js'
+import { reducer as details } from 'pages/detail/Index/details-index.js'
 
 import {reducer as pay} from 'pages/pay/pay/index.js'
 

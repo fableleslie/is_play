@@ -13,7 +13,7 @@ import 'styles/animate.css'
 // import UseCoupon from 'pages/pay/usecoupon/coupon'
 
 import Pay from 'pages/pay/pay.js'
-import Details from 'pages/details/details.js'
+import Details from 'pages/detail/details.js'
 // import {Home} from 'pages/home/index/index.js'
 
 import Index from 'pages/home/Foot/Foot'
