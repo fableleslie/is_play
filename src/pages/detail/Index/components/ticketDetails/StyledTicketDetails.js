@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import border from 'components/styles/border.js'
-import ellipsis from 'components/styles/ellipsis.js'
 import { styledIconOne } from 'components/styles/icons.js'
 
 const TicketDetailsContainer = styledIconOne(
