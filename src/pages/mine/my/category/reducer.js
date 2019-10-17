@@ -3,21 +3,20 @@
 import { WAIT_PAY } from "./actionTypes"
 
 const defaultState = {
-    list:[]
+    list: []
 }
 
 
-export default (state=defaultState,action)=>{
-    switch(action.type){
+export default (state = defaultState, action) => {
+    switch (action.type) {
         case WAIT_PAY:
             return {
-                ...state.list,
-                ...action.data
+                list:action.data
             }
         default:
             return state
     }
-}   
+}
 
 
 

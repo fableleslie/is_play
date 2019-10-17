@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-const MyOrderContainer = styled.div`
+const MyLikeContainer = styled.div`
     width:100%;
-    margin-top:.25rem;
+    padding-top:.25rem;
     i{
         font-family:"iconfont";
     }
@@ -10,9 +10,24 @@ const MyOrderContainer = styled.div`
         width:100%;
         padding-bottom:66.67%;
         position:relative;
+        display:flex;
+        justify-content:center; 
+        overflow: hidden;
         img{
-            width:100%;
+            border-radius:.05rem;
+            position:absolute;
+            /* width:100%; */
+            /* left: */
             height:100%;
+            transform:scale(0.9);
+        }
+        i{
+            position:absolute;
+            top:.27rem;
+            right:.1rem;
+            z-index: 999;
+            color: red;
+            font-size:.35rem;
         }
     }
     .messageWrap{
@@ -62,5 +77,5 @@ const MyOrderContainer = styled.div`
 `
 
 export {
-    MyOrderContainer
+    MyLikeContainer
 }

@@ -1,10 +1,11 @@
 import styled from "styled-components"
-
-const CategoryContainer = styled.div`
+// import 
+const MyEmptyContainer = styled.div`
     height:100%;
     width:100%;
     display:flex;
     flex-direction: column;
+    background:#F6F6F6;
     i{
         font-family:"iconfont";
     }
@@ -23,5 +24,18 @@ const CategoryContainer = styled.div`
             left:.15rem;
         }
     }
+    .imgWrap{
+        /* margin-top:.1rem; */
+        background:#fff;
+        flex:1;
+        img{
+            margin-top:.35rem;
+            width:100%;
+        }
+    }
+
 `
-export {CategoryContainer}
+
+export {
+    MyEmptyContainer
+}

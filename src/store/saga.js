@@ -1,9 +1,8 @@
-import { saga as categorySage } from 'pages/mine/my/category'
+import { saga as categorySaga } from 'pages/mine/my/category/index.js'
 
 function* saga() {
-  yield categorySage.getWaitPay();
-  // yield homeSaga.loadDataSaga()
-  // yield homeSaga.loadMoreDataSaga()
+  yield categorySaga.LoadWaitPayList();
+
 }
 
 export default saga

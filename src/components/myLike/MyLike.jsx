@@ -5,14 +5,15 @@ class MyLike extends PureComponent {
     render() {
         return (
             <MyLikeContainer>
-                <div className="imgWrap">
+                <div className="imgWrap" ref={this.props.item.userId}>
                     <img src={item1} alt="" />
                     {/* 这里判断有没有心和心的类型 */}
-                    {this.props.isLike ? (<i>&#xe64e;</i>) : (<i>&#xe634;</i>)}
+                    <i onClick={()=>this.noLike()}>&#xe64e;</i>
+                    {/* {this.props.isLike ? (<i>&#xe64e;</i>) : (<i>&#xe634;</i>)} */}
                 </div>
                 {/* 这里判断是否需要使用那行字 */}
                 <div className="actionType">
-                    <span>北京初心户外</span>
+                    <span>北京初心户外{this.props.item.userId}</span>
                 </div>
                 <div className="messageWrap">
                     <ul>
@@ -34,6 +35,9 @@ class MyLike extends PureComponent {
                 </div>
             </MyLikeContainer>
         )
+    }
+    noLike(){
+        console.log(this.refs)
     }
 }
 export default MyLike
