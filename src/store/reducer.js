@@ -12,10 +12,5 @@ export default combineReducers({
     moldSort,
     pay,
     waitpay,
-<<<<<<< HEAD
     category
 })
-=======
-    categoryReducer
-})
->>>>>>> master

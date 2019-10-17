@@ -1,7 +1,7 @@
 import React from "react"
 import { BeBossInfoContainer, LiBord, DivBord } from "./StyledBeBossInfo"
 import touxiang from "assets/images/mine/touxiang.png"
-import { Picker, List } from 'antd-mobile';
+import { Picker, List ,InputItem} from 'antd-mobile';
 // import { district, provinceLite } from 'antd-mobile-demo-data';
 import { district } from 'antd-mobile-demo-data';
 export default (props) => {
@@ -36,7 +36,7 @@ export default (props) => {
                 </LiBord> */}
                 <LiBord className="mainInfo">
                     <span>主办方简介</span>
-                    <input placeholder="描述一下自己吧,让玩家更了解你"></input>
+                    <InputItem  placeholder="描述一下自己吧,让玩家更了解你"></InputItem >
                 </LiBord>
                 <li className="connect">
                     <span>联系电话</span>
