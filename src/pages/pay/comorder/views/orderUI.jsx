@@ -33,7 +33,7 @@ function orderUI(props){
                             技职业学院千锋教育
                         </div>
                     </div>
-                    <div className='yo-ico' onClick={props.toEdit}>&#xe645;</div>
+                    <div className='yo-ico' onClick={props.toAddressList}>&#xe645;</div>
                 </div>
                 <div className="order-detail-bar">订单详情</div>
                 <div className="order-detail-box">
