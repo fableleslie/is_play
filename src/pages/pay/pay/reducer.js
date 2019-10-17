@@ -18,7 +18,7 @@ const defaultState = {
 }
 
 export default (state=defaultState,action) => {
-    
+    // console.log(action.data)
     switch(action.type){
         case CHANGE_ORDER:
             return {

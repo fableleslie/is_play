@@ -2,10 +2,9 @@ import styled from 'styled-components'
 import {styledIconOne} from 'components/styles/icons'
 import border from 'components/styles/border'
 
-const RepContainer = styled.div`
+const RepContainer_1 = styled.div`
     height : 4.91rem;
     padding : .1rem 0 0 0;
-    margin : 0 .15rem;
     background : #fff;
     display : flex;
     flex-direction : column;
@@ -14,6 +13,7 @@ const RepContainer = styled.div`
         display : flex;
         align-items : center;
         justify-content : space-between;
+        padding-left : .14rem;
         .act{
             font-size : .17rem;
             font-weight : bold;
@@ -37,65 +37,71 @@ const RepContainer = styled.div`
             }
         }
     }
-    main{
-        flex : 1;
-        padding-top : .06rem;
-        display : flex;
-        flex-wrap : wrap;
-        >div{
-            width : 50%;
-            height : 50%;
-            .left{
-                padding-right : .075rem;
-                height : 100%;
-                img{
-                    height : 1.25rem;
-                }
-                p{
-                    font-size : .13rem;
-                    color : #0d0d0d;
-                }
-                span{
-                    font-size : .11rem;
-                    color : #777777;
-                    margin-top : .06rem;
-                    display :block;
-                }
-                i{
-                    color : #FF6600;
-                    font-size : .12rem;
-                    display : inline-block;
-                    margin-top : .05rem;
-                }
+`
+const MainContainer_1 = styled.main`
+    flex : 1;
+    padding-top : .06rem;
+    display : flex;
+    flex-wrap : wrap;
+    margin : 0 .15rem;
+    >div{
+        width : 50%;
+        height : 50%;
+        .left{
+            padding-right : .075rem;
+            height : 100%;
+            img{
+                height : 1.25rem;
             }
-            .right{
-                padding-left : .075rem;
-                height : 100%;
-                img{
-                    height : 1.25rem;
-                }
-                p{
-                    font-size : .13rem;
-                    color : #0d0d0d;
-                }
-                span{
-                    font-size : .11rem;
-                    color : #777777;
-                    margin-top : .06rem;
-                    display :block;
-                }
-                i{
-                    color : #FF6600;
-                    font-size : .12rem;
-                    display : inline-block;
-                    margin-top : .05rem;
-                }
+            p{
+                font-size : .13rem;
+                color : #0d0d0d;
+            }
+            span{
+                font-size : .11rem;
+                color : #777777;
+                margin-top : .06rem;
+                display :block;
+            }
+            i{
+                color : #FF6600;
+                font-size : .12rem;
+                display : inline-block;
+                margin-top : .05rem;
+            }
+        }
+        .right{
+            padding-left : .075rem;
+            height : 100%;
+            img{
+                height : 1.25rem;
+            }
+            p{
+                font-size : .13rem;
+                color : #0d0d0d;
+            }
+            span{
+                font-size : .11rem;
+                color : #777777;
+                margin-top : .06rem;
+                display :block;
+            }
+            i{
+                color : #FF6600;
+                font-size : .12rem;
+                display : inline-block;
+                margin-top : .05rem;
             }
         }
     }
 `
-
-export default border({
+const RepContainer = styledIconOne(RepContainer_1)
+const MainContainer = border({
     width : '0 0 1px 0',
-    comp: styledIconOne(RepContainer)
+    comp : MainContainer_1
 })
+
+export {
+    RepContainer,
+    MainContainer
+}

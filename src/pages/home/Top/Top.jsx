@@ -12,9 +12,12 @@ export class Top extends Component {
                     <span>北京<i className='iconfont'>&#xe63d;</i></span>
                     <i>多云23°C</i>
                 </div>
-                <Search></Search>
+                <Search Gosearch={this.search} height='.29rem' width='2.34rem'></Search>
             </TopContainer>
         )
+    }
+    search = ()=>{
+        this.props.history.push('/type')
     }
 }
 

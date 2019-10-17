@@ -18,6 +18,7 @@ const searchContainer = styled.div`
         border : none;
         font-weight : bold;
         color : #8a8a8a;
+        background : #fff;
     }
 `
 

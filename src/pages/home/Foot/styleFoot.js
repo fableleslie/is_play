@@ -8,6 +8,7 @@ const FootContainer = styled.div`
     main{
         flex : 1;
         overflow-y : scroll;
+        background : #fff;
     }
     .tabBar{
         height : .5rem;
