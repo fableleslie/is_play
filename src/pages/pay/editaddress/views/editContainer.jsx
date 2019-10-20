@@ -12,7 +12,8 @@ class EditContainer extends PureComponent{
         name:'',
         phonenum:'',
         city:'',
-        address:''
+        address:'',
+        pickerValue:[]
     }
 
     render(){
@@ -21,16 +22,23 @@ class EditContainer extends PureComponent{
             comeBack={this.comeBack}
             preserve={this.preserve}
             state={this.state}
+            changeState={this.changeState}
             >
 
             </EditUI>
         )
     }
+
+    changeState = (v) => {
+        this.setState({
+            pickerValue:v
+        })
+    }
     comeBack = ()=>{
         this.props.history.goBack()
     }
     preserve = () => {
-        console.log(this.state)
+         console.log(this.state)
     }
 
 }

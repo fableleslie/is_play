@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import RepresentationUI from './RepresentationUI'
+import {withRouter} from 'react-router'
 
-export class Representation extends Component {
+class Representation extends Component {
     render() {
         return (
-            <RepresentationUI></RepresentationUI>
+            <RepresentationUI goAllAct={this.goAllAct}></RepresentationUI>
         )
+    }
+    goAllAct= ()=>{
+        this.props.history.push('/type/allAct')
     }
 }
 
-export default Representation;
+export default withRouter(Representation);

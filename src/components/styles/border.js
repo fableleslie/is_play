@@ -8,7 +8,7 @@ const border = ({width='1px', style='solid', color='#ccc', radius=0, comp}) => {
       /* 用以解决边框layer遮盖内容 */
       pointer-events: none;
       position: absolute;
-      z-index: 999;
+      z-index: 11;
       top: 0;
       left: 0;
       /* fix当元素宽度出现小数时，边框可能显示不全的问题 */

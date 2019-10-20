@@ -19,7 +19,7 @@ export default class Details extends Component{
             <Route path="/details/host" component={ HostContainer }></Route>
             <Route path="/details/fans" component={ Fans }></Route>
             <Route path="/details/user" component={ User }></Route>
-            <Redirect from="/details" to="/details/user" exact></Redirect>
+            <Redirect from="/details" to="/details/index" exact></Redirect>
         </Switch>
     )
   }

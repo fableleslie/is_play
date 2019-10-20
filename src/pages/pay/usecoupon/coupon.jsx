@@ -39,7 +39,6 @@ class Usecoupon extends PureComponent{
         this.props.history.goBack()
     }
     toDecount = (deprice) => {
-        console.log('11')
         this.props.decount(deprice)
         this.props.history.goBack()
     }
