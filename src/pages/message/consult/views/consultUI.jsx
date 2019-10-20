@@ -14,7 +14,7 @@ function ConsultUI(props){
             </header>
             <main>
                 {
-                    true ? 
+                    false ? 
                     <Empty
                         Bear={Bear}
                         emptyText='亲，你还没有消息呦~'

@@ -17,6 +17,8 @@ import Mine1 from 'images/icons/Icon_wode@3x.png'
 import Mine2 from 'images/icons/Icon_wode_2@3x.png'
 
 import {MessageContainer} from 'pages/message/messages/index.js'
+import BeforeContainer from 'pages/beforeSignIn/beforeSignin.js'
+import FindContainer from 'pages/find/index/index.js'
 import {MoldSort} from 'pages/home/MoldSort/index'
 
 
@@ -31,8 +33,8 @@ export class Foot extends Component {
                     <main>
                         <Switch>
                             <Route path={`${match.path}/home`} component={Index}></Route>
-                            <Route path={`${match.path}/discover`}></Route>
-                            <Route path={`${match.path}/message`} component={MessageContainer}></Route>
+                            <Route path={`${match.path}/discover`} component={FindContainer}></Route>
+                            <Route path={`${match.path}/message`} component={false?MessageContainer:BeforeContainer}></Route>
                             <Route path={`${match.path}/mine`} component={Mine}></Route>
                             <Route path={`${match.path}/moldSort`} component={MoldSort}></Route>
                             <Redirect from='/index' to='/index/home' exact></Redirect>

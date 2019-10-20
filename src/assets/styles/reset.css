@@ -210,11 +210,3 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   vertical-align: middle; }
-
-.am-toast-notice-content .am-toast-text {
-  background: rgba(250, 250, 250, 0.3) !important;
-  
-}
-.am-toast-notice-content .am-toast-text.am-toast-text-icon{
-  background: rgba(0, 0, 0, 0.3) !important;
-}

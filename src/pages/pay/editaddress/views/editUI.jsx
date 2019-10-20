@@ -1,15 +1,29 @@
 import React from 'react'
 
 import EidtContainerUI from './styledEdit'
-import { List, InputItem } from 'antd-mobile';
+import { List, InputItem,Picker } from 'antd-mobile'
+import { district } from 'antd-mobile-demo-data'
 
 const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
 let moneyKeyboardWrapProps;
 if (isIPhone) {
   moneyKeyboardWrapProps = {
     onTouchStart: e => e.preventDefault(),
-  };
+  }
 }
+
+
+const CustomChildren = props => (
+    <div
+      onClick={props.onClick}
+      style={{ backgroundColor: '#fff', paddingLeft: 15 }}
+    >
+      <div className="test" style={{ display: 'flex', height: '45px', lineHeight: '45px' }}>
+        <div style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{props.children}</div>
+        <div style={{ textAlign: 'right', color: '#888', marginRight: 15 }}>{props.extra}</div>
+      </div>
+    </div>
+  )
 
 function editUI(props){
     return(
@@ -29,19 +43,24 @@ function editUI(props){
                         onBlur={(name) => { props.state.name = name }}
                         moneyKeyboardWrapProps={moneyKeyboardWrapProps}
                     >姓名</InputItem>
+    
                     <InputItem
                         placeholder='输入手机'
                         clear                      
                         onBlur={(phonenum) => { props.state.phonenum = phonenum }}
                         moneyKeyboardWrapProps={moneyKeyboardWrapProps}
+                        className='edit-address'
                     >手机</InputItem>
-                    <InputItem
-                        placeholder='选择地区'
-                        clear                      
-                        onBlur={(city) => { props.state.city = city }}
-                        moneyKeyboardWrapProps={moneyKeyboardWrapProps}
-                    >所在地区                   
-                    </InputItem>
+                    <Picker
+                        title="选择地区"
+                        extra="请选择(可选)"
+                        data={district}
+                        value={props.state.pickerValue}
+                        onChange={v => props.changeState(v)}
+                        onOk={v => props.changeState(v)}
+                        >
+                        <CustomChildren>选择地区</CustomChildren>
+                    </Picker>
                     <InputItem
                         placeholder='填写地址'
                         clear= {true}

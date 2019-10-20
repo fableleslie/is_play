@@ -47,6 +47,9 @@ styledIconOne(
                 width:100%;
                 height:1.97rem;
                 background-color:#fff;
+                .test{
+                    font-size:.17rem !important;
+                }
             }
             .del-address{
                 width:100%;
