@@ -1,6 +1,7 @@
 import React from 'react';
 import {Switch, Route,Redirect} from 'react-router-dom'
 import 'styles/reset.css'
+import 'styles/animate.css'
 
 import 'swiper/css/swiper.min.css'
 
@@ -13,6 +14,7 @@ import 'swiper/css/swiper.min.css'
 // import UseCoupon from 'pages/pay/usecoupon/coupon'
 
 import Pay from 'pages/pay/pay.js'
+import Details from 'pages/detail/details.js'
 // import {Home} from 'pages/home/index/index.js'
 
 import Index from 'pages/home/Foot/Foot'
@@ -33,6 +35,7 @@ export default class App extends React.PureComponent {
     return (
       <Switch>
         <Route path='/pay' component={Pay}></Route>
+        <Route path='/details' component={Details}></Route>
         <Route path='/message'  component={Message}></Route>
         <Route path='/index' component={Index}></Route>
         <Route path='/headline' component={HeadDetails}></Route>
