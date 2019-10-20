@@ -14,7 +14,6 @@ class AllActUI extends Component {
         ]
     }
     render() {
-        // bug尚未解决（节日图片外层的div高度消失了，可能与列表渲染的组件有关）
         return (
             <AllActContainer>
                 <div className='topTab'>

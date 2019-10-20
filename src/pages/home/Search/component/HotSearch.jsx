@@ -17,10 +17,20 @@ class HotSearch extends Component {
             <HotContainer>
                 <p>热门搜索</p>
                 <div className='search-name'>
-                    <div className='activity' onClick={this.nearBy}><span><i><img src={dizhi} alt=""/></i>附近活动</span></div>
+                    <div className='activity' onClick={this.nearBy}>
+                        <span>
+                            <i><img src={dizhi} alt=""/></i>
+                            周边
+                        </span>
+                    </div>
                     {
                         (this.state.List).map((value,index)=>{
-                            return <div className='activity' key={index}><span>{value.title}</span></div>
+                            return  <div className='activity' 
+                                        key={index}
+                                        onClick={()=>this.searchResult(value.title)}
+                                    >
+                                        <span>{value.title}</span>
+                                    </div>
                         })
                     }
                 </div>
@@ -29,7 +39,10 @@ class HotSearch extends Component {
         )
     }
     nearBy=()=>{
-        this.props.history.push('/type/nearby')
+        this.props.history.push(encodeURI(`/type/nearby?content=周边`))
+    }
+    searchResult = (title)=>{
+        this.props.history.push(encodeURI(`/type/nearby?content=${title}`))
     }
 }
 
