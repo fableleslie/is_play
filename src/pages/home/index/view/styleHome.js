@@ -13,6 +13,7 @@ const SwiperContainer = styled.div`
     padding : .07rem .11rem .09rem .11rem;
     position: relative;
     background : #fff;
+    overflow : hidden;
     img{
         height : 100%;
         width : 100%;

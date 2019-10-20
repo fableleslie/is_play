@@ -5,11 +5,14 @@ import {withRouter} from 'react-router'
 class Representation extends Component {
     render() {
         return (
-            <RepresentationUI goAllAct={this.goAllAct}></RepresentationUI>
+            <RepresentationUI goAllAct={this.goAllAct} toDetail={this.toDetail}></RepresentationUI>
         )
     }
     goAllAct= ()=>{
         this.props.history.push('/type/allAct')
+    }
+    toDetail= ()=>{
+        this.props.history.push('/details?id=1')
     }
 }
 
