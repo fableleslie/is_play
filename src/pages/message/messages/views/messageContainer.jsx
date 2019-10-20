@@ -24,7 +24,7 @@ class MessageContainer extends PureComponent{
         this.props.history.push('/message/comment')
     }
     toInform = () =>{
-        this.props.history.push('/pay/paypage')
+        this.props.history.push('/pay/system')
     }
 }
 

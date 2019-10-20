@@ -39,11 +39,7 @@ export default class App extends React.PureComponent {
         <Route path='/loginin' component={LoginIn}></Route>
         <Route path='/type' component={searchIndex}></Route>
         <Route path='/my' component={My}></Route>
-
         <Redirect from='/' to='/index' exact></Redirect>
-        {/* <Route path='/comorder' component={OrderContainer}></Route>
-        <Route path='/editaddress' component={EditContainer}></Route>
-        <Route path='/usecoupon' component={UseCoupon}></Route> */}
       </Switch>
     )
   }
