@@ -143,11 +143,46 @@ const NearByContainer_1 = styled.div`
 `
 const NearByContainer = styledIconOne(NearByContainer_1)
 
+const SeachresContainer_1 = styled.div`
+    height : 100%;
+    background : white;
+    display : flex;
+    flex-direction : column;
+    .searchRes{
+        height : .44rem;
+        background : #FFE60D;
+        padding-left : .15rem;
+        display : flex;
+        align-items : center;
+        justify-content : space-between;
+        i{
+            font-family : 'iconfont';
+            font-size : .15rem;
+            display : inline-block;
+            width : .15rem;
+        }
+    }
+    .contentRes{
+        flex : 1;
+    }
+`
+const SeachresContainer = styledIconOne(SeachresContainer_1)
+
+const LoadingContainer = styled.div`
+    height : 100%;
+    position: relative;
+    img{
+        position : absolute;
+        top : 15%;
+    }
+`
 
 export {
     TopContainer,
     HotContainer,
     History,
     HistoryType,
-    NearByContainer
+    NearByContainer,
+    SeachresContainer,
+    LoadingContainer
 }
