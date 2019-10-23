@@ -1,6 +1,6 @@
 // 这里面就是state 和他要返回新的值的操作
 
-import { WAIT_PAY } from "./actionTypes"
+import { DELETEDOM } from "./actionTypes"
 
 const defaultState = {
     list: []
@@ -10,9 +10,9 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case WAIT_PAY:
+        case DELETEDOM:
             return {
-                list:action.data
+                list:action.data,
             }
         default:
             return state

@@ -3,6 +3,7 @@ import styled from "styled-components"
 const MyLikeContainer = styled.div`
     width:100%;
     padding-top:.25rem;
+    transition: all 0.2s Ease-in;
     i{
         font-family:"iconfont";
     }
@@ -73,6 +74,11 @@ const MyLikeContainer = styled.div`
                 font-size: .14rem;
             }
         }
+    }
+    .item-exit-active {
+        opacity: 0;
+        /* transition: opacity 200ms; */
+        transition: translate(-100%)
     }
 `
 

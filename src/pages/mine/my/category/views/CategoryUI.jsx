@@ -1,5 +1,5 @@
 import React from "react"
-import MyInfo from "components/myInfo/MyInfo"
+import MyInfo from "components/myInfo/views/MyInfo"
 import MyEmpty from "components/myEmpty/MyEmpty"
 import { CategoryContainer } from "./StyledCategory"
 export default (props) => {
@@ -12,11 +12,12 @@ export default (props) => {
             {
                 props.isGetted === "成功啦" 
                 ? (
+                    //可能没有获取到数据 所以这里要进行一次判断，然后判断数据是不是为空
                     (props.list[0]&&JSON.stringify(props.list[0].data)!=="{}") 
                     ?(<MyInfo {...props}></MyInfo>)
                     :<MyEmpty {...props}></MyEmpty> 
                 ) 
-                : (<div>aa</div>)
+                : (<div>动态加载图</div>)
             }
         </CategoryContainer>
     )

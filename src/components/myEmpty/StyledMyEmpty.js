@@ -25,7 +25,6 @@ const MyEmptyContainer = styled.div`
         }
     }
     .imgWrap{
-        /* margin-top:.1rem; */
         background:#fff;
         flex:1;
         img{
