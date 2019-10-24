@@ -1,6 +1,5 @@
 import React from 'react'
 import {PhoneUIstyle,PhoneNum,ShortMsg} from './phonestyle'
-import {Toast} from 'antd-mobile';
 
 import ClosePic from 'assets/images/loginin/icon_right_close.png'
 import QQpic from 'assets/images/loginin/a309ade25621a0c5702bce2aa6af6426.png'
@@ -21,19 +20,19 @@ function PhoneUI (props){
                             <div>
                                 <PhoneNum className="pad">&#xe651;</PhoneNum>
                                 <div className="IptBox">
-                                    <input type="text" placeholder="手机号码"/>
-                                    <span onClick={()=>{Toast.info('验证码已逃窜至您的手机~', 3);}}>获取验证码</span>
+                                    <input onChange={props.phoneNum} defaultValue={props.phoneNum} type="text" placeholder="手机号码"/>
+                                    <span onClick={props.VerificationClick}>{props.state.title}</span>
                                 </div>
                             </div>
                             <div>
                                 <ShortMsg className="pad">&#xe697;</ShortMsg>
                                 <div className="IptBox">
-                                    <input type="password" placeholder="短信验证码"/>
+                                    <input onChange={props.userCode} defaultValue={props.userCode} type="password" placeholder="短信验证码"/>
                                 </div>
                             </div>
                         </div>
                         <div className="loginBox">
-                            <div className="loginIn">登录</div>
+                            <div onClick={props.login} className="loginIn">登录</div>
                             <p onClick={props.toAccount}>账号密码登录</p>
                         </div>
                     </div>

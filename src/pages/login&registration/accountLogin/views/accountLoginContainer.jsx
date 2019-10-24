@@ -1,7 +1,10 @@
 import React , {Component} from 'react'
 import AccountLoginUI from './accountLoginUI'
-export default class AccountLoginContainer extends Component{
+import  connect from './connect'
+@connect
+class AccountLoginContainer extends Component{
     render(){
+        console.log(this.props)
         return <AccountLoginUI 
                 back={this.handlerClick}
                 toRegister={this.handlerTo}
@@ -19,3 +22,4 @@ export default class AccountLoginContainer extends Component{
         this.props.history.push('/loginin/forget_psd')
     }
 }
+export default AccountLoginContainer

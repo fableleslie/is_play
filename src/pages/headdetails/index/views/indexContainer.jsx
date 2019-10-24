@@ -8,6 +8,7 @@ export default class HeadDetailContainer extends Component{
         }
     }
     render(){
+        console.log(this.props)
         return <HeadDetail 
         back={this.back}
         share={this.share}

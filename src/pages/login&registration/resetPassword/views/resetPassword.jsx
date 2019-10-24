@@ -17,7 +17,7 @@ function ResetPsdUI (props){
                     <p className="tips">验证码已发送到您的手机上，如狗没有收到， 可在60秒后重新获取。</p>
                 </main>
                 <footer>
-                    <div onClick={props.getVerification}>获取验证码</div>
+                    <div onClick={props.getVerification}>{props.state.title}</div>
                 </footer>
             </ResetPsdStyle>
         )
