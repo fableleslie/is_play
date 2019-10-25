@@ -12,5 +12,12 @@ export default {
         }).then((result)=>{
             return result
         })
+    },
+    getpay:({url}) => {
+        return axios({
+            url
+        }).then((res)=>{
+            return res
+        })
     }
 }

@@ -3,14 +3,14 @@ import React,{PureComponent} from 'react'
 import OrderUI from './orderUI'
 
 import connect from './connect'
-
+import axios from 'axios'
 
 
 @connect
 class orderContainer extends PureComponent{
     
     render(){
-        console.log(this.props)
+        //console.log(this.props)
         return(
             <OrderUI
             {...this.props}
@@ -45,7 +45,32 @@ class orderContainer extends PureComponent{
     useCoupon = () => {
         this.props.history.push('/pay/usecoupon')
     }
-    sureOrder = () => {
+    sureOrder = async() => {
+        console.log(this.props)
+        //console.log(this.props.pay_order.dataList[0].activityId)
+        let result = await axios({
+            url:'http://agoiu.com:8080/addOrderByUid?userId=1&userAddress=大声道&username=阿达&activityId=1&priceType=100&ticketSign=124&buyNum=3&userTel=15222222224&discountsType=0',
+            // method:'POST',
+            // data:{
+
+            //     userId:1,
+            //     userAddress:'ashdkuahsdj',
+            //     username:'我问问看了',
+            //     activityId:1,
+            //     priceType:100,
+            //     ticketSign:124,
+            //     buyNum:3,
+            //     discountsType:5,
+            //     userTel:1522222333
+
+                // userId:123,
+                // activityId:this.props.pay_order.dataList[0].activityId,
+                // productPriceAll:this.props.pay_order.payprice,
+                // productPrice:this.props.pay_order.price
+            
+        })
+
+        console.log(result)
         this.props.history.push('/pay/waitpay')
     }
     openScan = ()=>{

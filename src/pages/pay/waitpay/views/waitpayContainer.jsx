@@ -6,12 +6,14 @@ import WaitpayUI from './waitpayUI'
 
 import connect from './connect'
 
+
+
 @connect
 class WaitpayContainer extends PureComponent {
     state={
         image_url:'',
         modal2: false,
-        ishow:true
+        ishow:true,
     }
 
     render(){
@@ -27,6 +29,7 @@ class WaitpayContainer extends PureComponent {
             onClose={this.onClose}
             cancelOrder={this.cancelOrder}
             pay_order={pay_order}
+            alreadyPay={this.alreadyPay}
             ></WaitpayUI>
         )
     }
@@ -37,13 +40,26 @@ class WaitpayContainer extends PureComponent {
     }
     toPay = async()=>{
          let result = await axios({
-            url:`/payment?body=aaa&id=${new Date().getTime()}`,
+            url:`/payment?body=aaa&id=00000010`,
             method: 'GET'
         })
         
         this.setState({
           image_url:result.data
       })
+    }
+
+    componentWillMount(){
+
+    }
+
+    alreadyPay = async()=>{
+      console.log(this.props)
+      let res =  (await axios({
+        url:'/check?id=321321323'
+      })).data
+
+      console.log(res)
     }
 
     showModal = key => (e) => {

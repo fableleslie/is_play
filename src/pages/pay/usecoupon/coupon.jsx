@@ -6,6 +6,7 @@ import CouponLi from 'components/coupon/coupon'
 
 import connect from './connect'
 
+import http from 'pages/utiles/http.js'
 
 @connect
 class Usecoupon extends PureComponent{
@@ -34,6 +35,15 @@ class Usecoupon extends PureComponent{
             </Coupon>
         )
     }
+
+    async componentDidMount(){
+        let result = await http.getpay({
+            url:'http://agoiu.com:8080/getDiscounts?userId=1&activityId=1'
+        })
+
+        console.log(result)
+    }
+
 
     comeBack = ()=>{
         this.props.history.goBack()

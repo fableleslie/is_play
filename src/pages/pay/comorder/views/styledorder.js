@@ -115,7 +115,7 @@ styledIconOne(
                     height:100%;
                     border-bottom:1px dashed #D6D5D5;
                     .order-type{
-                        width:1.16rem;
+                        width:1.3rem;
                         height:.16rem;
                         line-height:.16rem;
                         color:#777777;
