@@ -7,17 +7,17 @@ function ResetPsdUI (props){
                 <header>
                     <BackPic onClick={props.back}>&#xe646;</BackPic>
                     <div>重置密码</div>
-                    <div onClick={props.toNext} className="next">下一步</div>
+                    <div onClick={props.handlerClick} className="next">下一步</div>
                 </header>
                 <main>
                     <div>
                         <PhonePic>&#xe697;</PhonePic>
-                        <input type="text" placeholder="验证码"/>
+                        <input onChange={props.getUserCode} type="text" placeholder="验证码" defaultValue={props.state.userCode}/>
                     </div>
-                    <p className="tips">验证码已发送到您的手机上，如狗没有收到， 可在60秒后重新获取。</p>
+                    <p className="tips">验证码已发送到您的手机上，如果没有收到， 可在60秒后重新获取。</p>
                 </main>
                 <footer>
-                    <div onClick={props.getVerification}>获取验证码</div>
+                    <div onClick={props.VerificationClick}>{props.state.title}</div>
                 </footer>
             </ResetPsdStyle>
         )

@@ -8,11 +8,13 @@ export default class HeadDetailContainer extends Component{
         }
     }
     render(){
+        console.log(this.props)
         return <HeadDetail 
         back={this.back}
         share={this.share}
         state={this.state}
         onClose={this.onClose}
+        to={this.to}
         ></HeadDetail>
     }
 
@@ -31,6 +33,9 @@ export default class HeadDetailContainer extends Component{
         this.setState({
             isShowShare:!this.state.isShowShare
         })
+    }
+    to = ()=>{
+        this.props.history.push('/details')
     }
     
 

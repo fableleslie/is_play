@@ -59,6 +59,9 @@ styledIconOne(
                     margin-top:.29rem;
                     font-size:.15rem;
                     font-weight: 540;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
                 }
             }
             .select-ticket{
