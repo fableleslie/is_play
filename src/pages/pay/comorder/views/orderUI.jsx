@@ -33,12 +33,12 @@ function orderUI(props){
                             技职业学院千锋教育
                         </div>
                     </div>
-                    <div className='yo-ico' onClick={props.toEdit}>&#xe645;</div>
+                    <div className='yo-ico' onClick={props.toAddressList}>&#xe645;</div>
                 </div>
                 <div className="order-detail-bar">订单详情</div>
                 <div className="order-detail-box">
                     <div className="order-detail">
-                        <div className="order-type">{pay_order.select ? pay_order.select : '单人' } ￥{pay_order.price}，{pay_order.count}份</div>
+                        <div className="order-type">{pay_order.select === 1 ? '单人':(pay_order.select === 2 ? '亲子/情侣':(pay_order.select === 3 ? '家庭三人' : '家庭四人')) } ￥{pay_order.price}，{pay_order.count}份</div>
                         <div className="order-date">{pay_order.date} {pay_order.week} {pay_order.time}</div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ import UseCoupon from 'pages/pay/usecoupon/coupon'
 
 import {WaitpayContainer} from 'pages/pay/waitpay/'
 
-
+import {AddressContainer} from 'pages/pay/addresslist/'
 
 export default class Pay extends React.PureComponent {
     render(){
@@ -23,6 +23,7 @@ export default class Pay extends React.PureComponent {
                 <Route path='/pay/editaddress' component={EditContainer}></Route>
                 <Route path='/pay/usecoupon' component={UseCoupon}></Route>
                 <Route path='/pay/waitpay' component={WaitpayContainer}></Route>
+                <Route path='/pay/addresslist' component={AddressContainer}></Route>
                 <Redirect from='/pay' exact to='/pay/paypage'></Redirect>
             </Switch>
            

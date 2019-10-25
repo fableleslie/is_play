@@ -3,7 +3,6 @@ import { TopContainer } from './style'
 
 class Top extends Component {
     render() {
-        // console.log(this.props)
         return (
             <TopContainer>
                 <div className='TopName'>
@@ -19,6 +18,7 @@ class Top extends Component {
     }
     search(e){
         if(e.keyCode === 13){
+            this.props.history.push(`/type/search?content=${e.target.value}`)
             let arr = this.props.historyList
             let res = arr.some((value,index)=>{
                 return value === e.target.value

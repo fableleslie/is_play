@@ -1,4 +1,6 @@
 import React,{PureComponent} from 'react'
+import http from 'pages/utiles/http.js'
+
 
 import PayUI from './PayUI'
 
@@ -16,7 +18,8 @@ class Pay extends PureComponent {
         time:'',
         timeList:[],
         dataList:[],
-        isshow_time:false
+        isshow_time:false,
+        loaddata:{}
     }
     render(){
         return(
@@ -30,12 +33,21 @@ class Pay extends PureComponent {
             increCount={this.increCount}
             comeBack={this.comeBack}
             nextStup={this.nextStup}
+            
             ></PayUI>
         )
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         //this.props.show_data('我就是我')
+        let result = (await http.getpay({url:'http://agoiu.com:8080/getActivitiesPriceDetail'})).data
+        console.log(result)
+
+        this.setState({
+            dataList:result.ppriceTypeList,
+            loaddata:result
+        })
+        
     }
 
     changeSelect = (value,price)=>{

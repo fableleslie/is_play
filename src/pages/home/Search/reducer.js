@@ -1,7 +1,9 @@
+import {LOAD_SEARCH} from './actionType'
 const defaultState = {
     historyList : [
         '昌平周边'
-    ]
+    ],
+    searchData : []
 }
 
 export default (state=defaultState,action)=>{
@@ -10,6 +12,13 @@ export default (state=defaultState,action)=>{
             return {
                 historyList : [
                     ...state.historyList,
+                    action.data
+                ]
+            }
+        case LOAD_SEARCH : 
+            return {
+                searchData : [
+                    ...state.searchData,
                     action.data
                 ]
             }
