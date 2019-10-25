@@ -24,7 +24,7 @@ import {
 
 class Details extends Component {
   render() {
-    let { changeComponent, path, changeHeaderBackground, join, goBack, Activityresult } = this.props
+    let { changeComponent, path, changeHeaderBackground, join, goBack } = this.props
     return (
       <DetailsContainer>
         <DetailsWrap onScroll={changeHeaderBackground}>
