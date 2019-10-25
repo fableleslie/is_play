@@ -45,14 +45,19 @@ class Project extends Component {
     }
     beloved = (e)=>{
         // 收藏之后，改变状态
-        if(e.target.src === xin){
-            e.target.src = xin1
-            Toast.info(<Laugh></Laugh> ,1)
-            // Toast.success("收藏成功",20)
+        if(localStorage.getItem('userId')){
+            if(e.target.src === xin){
+                e.target.src = xin1
+                Toast.info(<Laugh></Laugh> ,1)
+                // Toast.success("收藏成功",20)
+            }
+            else{
+                e.target.src = xin
+                Toast.info(<Cry></Cry>,1)
+            }
         }
         else{
-            e.target.src = xin
-            Toast.info(<Cry></Cry>,1)
+            Toast.info('登陆后才可以收藏哦~',2)
         }
     }
 }
