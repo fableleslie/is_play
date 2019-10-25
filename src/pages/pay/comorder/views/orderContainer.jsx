@@ -9,6 +9,12 @@ import axios from 'axios'
 @connect
 class orderContainer extends PureComponent{
     
+    state = {
+        name:'邵邵',
+        address:'北京市-昌平区-沙河镇沙阳路18号北京科技职业学院千锋教育',
+        tell:18897982306
+    }
+
     render(){
         //console.log(this.props)
         return(
@@ -20,6 +26,7 @@ class orderContainer extends PureComponent{
             sureOrder={this.sureOrder}
             isshow={this.props.is_cancel}
             openScan={this.openScan}
+            state={this.state}
             >
             </OrderUI>
         )
@@ -46,32 +53,31 @@ class orderContainer extends PureComponent{
         this.props.history.push('/pay/usecoupon')
     }
     sureOrder = async() => {
-        console.log(this.props)
-        //console.log(this.props.pay_order.dataList[0].activityId)
-        let result = await axios({
-            url:'http://agoiu.com:8080/addOrderByUid?userId=1&userAddress=大声道&username=阿达&activityId=1&priceType=100&ticketSign=124&buyNum=3&userTel=15222222224&discountsType=0',
-            // method:'POST',
-            // data:{
+        // console.log(this.props)
+        // console.log(this.props.pay_order.dataList[0].activityId)
+        // let result = await axios({
+        //     url:'http://agoiu.com:8080/addOrderByUid?userId=1&userAddress=无所谓&username=我我我&activityId=1&priceType=100&ticketSign=124&buyNum=3&discountsType=0&userTel=15222222222',
+        //     // method:'POST',
+        //     // data:{
 
-            //     userId:1,
-            //     userAddress:'ashdkuahsdj',
-            //     username:'我问问看了',
-            //     activityId:1,
-            //     priceType:100,
-            //     ticketSign:124,
-            //     buyNum:3,
-            //     discountsType:5,
-            //     userTel:1522222333
+        //     //     userId:1,
+        //     //     userAddress:'ashdkuahsdj',
+        //     //     username:'我问问看了',
+        //     //     activityId:1,
+        //     //     priceType:100,
+        //     //     ticketSign:124,
+        //     //     buyNum:3,
+        //     //     discountsType:5,
+        //     //     userTel:1522222333
 
-                // userId:123,
-                // activityId:this.props.pay_order.dataList[0].activityId,
-                // productPriceAll:this.props.pay_order.payprice,
-                // productPrice:this.props.pay_order.price
-            
-        })
+        //         // userId:123,
+        //         // activityId:this.props.pay_order.dataList[0].activityId,
+        //         // productPriceAll:this.props.pay_order.payprice,
+        //         // productPrice:this.props.pay_order.price
+        // })
 
-        console.log(result)
-        this.props.history.push('/pay/waitpay')
+        // console.log(result)
+        this.props.history.push('/pay/waitpay',{...this.state})
     }
     openScan = ()=>{
         window.wx.ready(function(){

@@ -6,6 +6,7 @@ import WaitpayUI from './waitpayUI'
 
 import connect from './connect'
 
+import http from 'pages/utiles/http.js'
 
 
 @connect
@@ -17,7 +18,7 @@ class WaitpayContainer extends PureComponent {
     }
 
     render(){
-      //console.log(this.props)
+      console.log(this.props)
       let {pay_order} = this.props
         return(
             <WaitpayUI
@@ -49,8 +50,10 @@ class WaitpayContainer extends PureComponent {
       })
     }
 
-    componentWillMount(){
-
+    async componentWillMount(){
+      // let result = await http.getpay({
+      //   url:''
+      // })
     }
 
     alreadyPay = async()=>{
@@ -58,7 +61,6 @@ class WaitpayContainer extends PureComponent {
       let res =  (await axios({
         url:'/check?id=321321323'
       })).data
-
       console.log(res)
     }
 
@@ -76,6 +78,7 @@ class WaitpayContainer extends PureComponent {
       }
 
       cancelOrder = () => {
+
         this.props.change_isshow(true)
         this.props.history.goBack()
       }

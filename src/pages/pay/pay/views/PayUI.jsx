@@ -5,7 +5,7 @@ import {PayContainer} from './StyledPay'
 import Detaile from 'assets/images/zhifu/detail.png'
 
 function PayUI(props){
-    console.log(props)
+    //console.log(props.state.dataList)
     return (
             <PayContainer>
                 <header>
@@ -24,6 +24,7 @@ function PayUI(props){
                         <ul className="select-content">
                             {
                                 props.state.dataList.map((value,index)=>{
+                                    
                                     return (
                                         <li 
                                         onClick={() => props.changeSelect(value.type,value.price)}

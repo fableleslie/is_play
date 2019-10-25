@@ -9,6 +9,7 @@ import Weixin from 'assets/images/weixin.png'
 function orderUI(props){
     let {pay_order} =  props
     console.log(pay_order)
+    console.log(props)
     return (
         <OrderUIContainer>
             {
@@ -25,12 +26,11 @@ function orderUI(props){
                     <span>&#xe667;</span>
                     <div className="address-desc">
                         <div className="desc-title">
-                            <span className="desc-name">邵邵</span>
-                            <i>18897982306</i>
+                            <span className="desc-name">{props.state.name}</span>
+                            <i>{props.state.tell}</i>
                         </div>
                         <div className="desc-content">
-                            北京市-昌平区-沙河镇沙阳路18号北京科
-                            技职业学院千锋教育
+                            {props.state.address}
                         </div>
                     </div>
                     <div className='yo-ico' onClick={props.toAddressList}>&#xe645;</div>

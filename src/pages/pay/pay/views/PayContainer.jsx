@@ -19,7 +19,8 @@ class Pay extends PureComponent {
         timeList:[],
         dataList:[],
         isshow_time:false,
-        loaddata:{}
+        loaddata:{},
+        activityId:''
     }
     render(){
         return(
@@ -45,7 +46,8 @@ class Pay extends PureComponent {
 
         this.setState({
             dataList:result.ppriceTypeList,
-            loaddata:result
+            loaddata:result,
+            activityId:result.activityId
         })
         
     }
