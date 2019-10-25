@@ -1,21 +1,28 @@
 import React, {Component} from 'react'
 import ConfirmPsdUI from './confirmPassword'
-export default class ConfirmPsdContainer extends Component{
+import connect from './connect'
+import {Toast} from 'antd-mobile';
+import axios from 'axios'
+
+@connect
+class ConfirmPsdContainer extends Component{
     constructor(){
         super()
         this.state={
-            value:''
+            password:null,
+            confirmPassword:null
         }
     }
     render(){
         return <ConfirmPsdUI 
-        toBack={this.handlerBack}
+        toBack={this.toBack}
         inputOnBlur={this.inputOnBlur}
-        getValue={this.getValue}
+        getPassword={this.getPassword}
+        getConfirmPassword={this.getConfirmPassword}
         state={this.state}
         ></ConfirmPsdUI>
     }
-    handlerBack = () => {
+    toBack = () => {
         this.props.history.goBack()
     }
     inputOnBlur = (e)=>{
@@ -23,8 +30,44 @@ export default class ConfirmPsdContainer extends Component{
             iptvalue:e.target.value
         })
     }
-    getValue = ()=>{
-        console.log(this)
 
+    finish = ()=>{
+        if(this.state.password===null||this.state.confirmPassword===null){
+            Toast.info('两次密码不相同~', 2);
+        }else{
+            // axios({
+            //     url:'',
+            //     method:'post',
+            //     params:{
+            //         "userTel":this.state.userTel,
+            //         "password":this.state.password
+            //     },
+            //     headers:{
+            //         'Content-Type':'application/x-www-form-urlencoded'
+            //     }
+            // }).then((res)=>{
+            //     if(res.data.code===0){
+            //         this.props.history.push('loginin/account')
+            //     }else{
+            //         Toast.info(`${res.data.msg}`, 2);
+            //     }
+            // })
+        }
+    }
+
+
+
+
+
+    getPassword = (e)=>{
+        this.setState({
+            password:e.target.value
+        })
+    }
+    getConfirmPassword = (e)=>{
+        this.setState({
+            confirmPassword:e.target.value
+        })
     }
 }
+export default ConfirmPsdContainer
