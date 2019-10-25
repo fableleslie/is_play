@@ -72,7 +72,7 @@ class PhoneContainer extends PureComponent{
             })
             this.timer = setInterval(() => {
                 this.setState({
-                    title:`(${time}获取验证码)`
+                    title:`(${time})获取验证码`
                 })
                 time --
                 if(time<0){
@@ -147,7 +147,9 @@ class PhoneContainer extends PureComponent{
     showWait(){
         Toast.info('请稍等', 2);
     }
-
+    showLoginErr() {
+        Toast.info('哎呀，出错了~', 2);
+    }
 
 
     componentWillUnmount(){

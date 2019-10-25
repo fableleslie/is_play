@@ -27,7 +27,7 @@ function PhoneUI (props){
                             <div>
                                 <ShortMsg className="pad">&#xe697;</ShortMsg>
                                 <div className="IptBox">
-                                    <input onChange={props.userCode} defaultValue={props.userCode} type="" placeholder="短信验证码"/>
+                                    <input onChange={props.userCode} defaultValue={props.userCode} type="text" placeholder="短信验证码"/>
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,7 @@ import { takeEvery, put } from 'redux-saga/effects'
 import {loginData} from './actionCreator'
 import axios from 'axios'
 
-import http from 'utiles/http.js'
+// import http from 'utiles/http.js'
 
 function login(){
     return takeEvery('sagaLogin',function* (action){
@@ -20,9 +20,10 @@ function login(){
             }
         })
         .then((res)=>{
-            console.log(res.data.data.userId)
+            console.log(res)
             let userID = res.data.data.userId
-            localStorage.setItem('userID',userID)
+            // let code = res.data.code
+            localStorage.setItem('userId',userID)
         })
         yield put(loginData(res))
     })

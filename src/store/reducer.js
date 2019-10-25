@@ -10,6 +10,7 @@ import {reducer as waitpay} from 'pages/pay/waitpay/index.js'
 import {reducer as categoryReducer} from 'pages/mine/my/category/index.js' 
 
 import {reducer as phonelogin} from 'pages/login&registration/phoneLoginin/index.js'
+import {reducer as sendPassword} from 'pages/login&registration/forgetPassword/index.js'
 
 export default combineReducers({
     search,
@@ -19,5 +20,6 @@ export default combineReducers({
     categoryReducer,
     phonelogin,
     details,
-    categoryReducer
+    categoryReducer,
+    sendPassword
 })

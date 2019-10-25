@@ -1,4 +1,4 @@
-import {connect} from 'react-redux'
+import {connect} from'react-redux'
 const mapState = (state)=>{
     return{
         state

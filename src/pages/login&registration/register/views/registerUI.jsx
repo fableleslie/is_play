@@ -12,25 +12,25 @@ function RegisterUI(props){
                             <div>
                                 <PhoneNum className="pad">&#xe651;</PhoneNum>
                                 <div className="IptBox">
-                                    <input type="text" placeholder="手机号码"/>
-                                    <span onClick={props.getVerification}>{props.state.title}</span>
+                                    <input onChange={props.getPhoneNum} type="text" placeholder="手机号码" defaultValue={props.state.phoneNum}/>
+                                    <span onClick={props.VerificationClick}>{props.state.title}</span>
                                 </div>
                             </div>
                             <div>
                                 <ShortMsg className="pad">&#xe697;</ShortMsg>
                                 <div className="IptBox noline">
-                                    <input type="password" placeholder="短信验证码"/>
+                                    <input onChange={props.getUserCode} type="password" placeholder="短信验证码" defaultValue={props.state.userCode}/>
                                 </div>
                             </div>
                             <div className="resetPassword">
                                 <ShortMsg className="pad">&#xe6b0;</ShortMsg>
                                 <div className="IptBox noline">
-                                    <input type="password" placeholder="设置密码"/>
+                                    <input onChange={props.getPassWord} type="password" placeholder="设置密码"defaultValue={props.state.password}/>
                                 </div>
                             </div>
                         </div>
                         <div className="loginBox">
-                            <div className="loginIn">登录</div>
+                            <div className="loginIn" onClick={props.register}>完成</div>
                             <p>
                                 {
                                     props.state.isAgremeent ? <Choice onClick={props.agreement}>&#xe60a;</Choice> : <Choice onClick={props.agreement} style={{color:"#eee"}}>&#xe64a;</Choice>
