@@ -15,15 +15,13 @@ function Headlines(props){
                     <span>玩么头条</span>
                 </div>
                 <ul>
-                    <Link to="/headline/headderail">
-                        <li>
+                        <li onClick={props.handlerClick}>
                             <img src={headpic1} alt=""/>
                             <div>
                                 <p className="headline_title">#溜娃好去处#小小天才的诞生--UCCA Kids儿童节艺 术展要来啦！</p>
                                 <p className="`headline_summary`">小小天才的诞生--UCCA Kids儿童节</p>
                             </div>
                         </li>
-                    </Link>
                     <Link to="/headline/headderail">
                         <li>
                             <img src={headpic2} alt=""/>
