@@ -37,10 +37,6 @@ class orderContainer extends PureComponent{
             this.props.change_isshow(false)
             clearTimeout(timer)
         }, 2000)
-
-
-        
-
     }
 
     comeBack = () => {
@@ -53,31 +49,33 @@ class orderContainer extends PureComponent{
         this.props.history.push('/pay/usecoupon')
     }
     sureOrder = async() => {
-        // console.log(this.props)
+        let userId = localStorage.getItem('userId')
+        console.log(userId)
+        console.log(this.props)
         // console.log(this.props.pay_order.dataList[0].activityId)
-        // let result = await axios({
-        //     url:'http://agoiu.com:8080/addOrderByUid?userId=1&userAddress=无所谓&username=我我我&activityId=1&priceType=100&ticketSign=124&buyNum=3&discountsType=0&userTel=15222222222',
-        //     // method:'POST',
-        //     // data:{
+        let result = await axios({
+            url:'http://agoiu.com:8080/addOrderByUid?userId=1&userAddress=无所谓&username=我我我&activityId=1&priceType=100&ticketSign=124&buyNum=3&discountsType=0&userTel=15222222222',
+            // method:'POST',
+            // data:{
 
-        //     //     userId:1,
-        //     //     userAddress:'ashdkuahsdj',
-        //     //     username:'我问问看了',
-        //     //     activityId:1,
-        //     //     priceType:100,
-        //     //     ticketSign:124,
-        //     //     buyNum:3,
-        //     //     discountsType:5,
-        //     //     userTel:1522222333
+            //     userId:1,
+            //     userAddress:'ashdkuahsdj',
+            //     username:'我问问看了',
+            //     activityId:1,
+            //     priceType:100,
+            //     ticketSign:124,
+            //     buyNum:3,
+            //     discountsType:5,
+            //     userTel:1522222333
 
-        //         // userId:123,
-        //         // activityId:this.props.pay_order.dataList[0].activityId,
-        //         // productPriceAll:this.props.pay_order.payprice,
-        //         // productPrice:this.props.pay_order.price
-        // })
+                // userId:123,
+                // activityId:this.props.pay_order.dataList[0].activityId,
+                // productPriceAll:this.props.pay_order.payprice,
+                // productPrice:this.props.pay_order.price
+        })
 
-        // console.log(result)
-        this.props.history.push('/pay/waitpay',{...this.state})
+        console.log(result)
+        //this.props.history.push('/pay/waitpay',{...this.state})
     }
     openScan = ()=>{
         window.wx.ready(function(){

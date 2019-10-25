@@ -57,6 +57,7 @@ class WaitpayContainer extends PureComponent {
     }
 
     alreadyPay = async()=>{
+      
       console.log(this.props)
       let res =  (await axios({
         url:'/check?id=321321323'
