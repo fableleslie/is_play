@@ -24,7 +24,6 @@ class Usecoupon extends PureComponent{
                 </header>
                 <main>
                     <ul>
-
                         <CouponLi
                             money={5}
                             coupontype="新用户专享券"
