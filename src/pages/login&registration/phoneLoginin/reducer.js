@@ -2,7 +2,6 @@ const defaultState = {
     data:{}
 }
 export default (state=defaultState,action)=>{
-    console.log('reducer')
     switch (action.type) {
         case 'loginData':
             return {

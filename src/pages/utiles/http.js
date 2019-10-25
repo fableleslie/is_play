@@ -4,11 +4,11 @@ export default {
     get : (url)=>{
         return fetch(url).then(response => response.json()).then(result => {return result})
     },
-    post : ({url,data}) => {
+    post : ({url,params}) => {
        return axios({
             url,
             method:'POST',
-            data
+            params
         }).then((result)=>{
             return result
         })

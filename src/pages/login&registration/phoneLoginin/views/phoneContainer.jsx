@@ -93,6 +93,7 @@ class PhoneContainer extends PureComponent{
         axios.post(`http://agoiu.com:8080/sendCode?userTel=${this.state.phoneNum}`,{
             // userTel:this.state.phoneNum
         }).then((res)=>{
+            console.log(res.data)
             this.setState({
                 code:res.data.data,
             })
@@ -104,7 +105,8 @@ class PhoneContainer extends PureComponent{
             this.showErrMsg()
         }else{
             if(this.state.code === this.state.userCode){
-                this.props.login(this.state.loginData)  
+                this.props.login(this.state.loginData)
+                this.props.history.push('/index/home')
             }else{
                 this.showUserCode()
             }
