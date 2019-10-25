@@ -10,6 +10,11 @@ import http from 'pages/utiles/http.js'
 
 @connect
 class Usecoupon extends PureComponent{
+    
+    state={
+        couponList:{}
+    }
+
     render(){
         return(
             <Coupon>
@@ -19,16 +24,12 @@ class Usecoupon extends PureComponent{
                 </header>
                 <main>
                     <ul>
+
                         <CouponLi
                             money={5}
                             coupontype="新用户专享券"
                             deadline="2019年11月8日前有效"
                             toDecount={this.toDecount}
-                        ></CouponLi>
-                        <CouponLi
-                            money={'20'}
-                            coupontype="吃货节优惠专享"
-                            deadline="2019年11月8日前有效"
                         ></CouponLi>
                     </ul>
                 </main>
@@ -37,11 +38,17 @@ class Usecoupon extends PureComponent{
     }
 
     async componentDidMount(){
+
+        console.log(111)
         let result = await http.getpay({
             url:'http://agoiu.com:8080/getDiscounts?userId=1&activityId=1'
         })
 
-        console.log(result)
+     
+        console.log(result.data)
+        this.setState({
+            couponList:result.data
+        })
     }
 
 
@@ -49,6 +56,7 @@ class Usecoupon extends PureComponent{
         this.props.history.goBack()
     }
     toDecount = (deprice) => {
+        console.log(deprice)
         this.props.decount(deprice)
         this.props.history.goBack()
     }
