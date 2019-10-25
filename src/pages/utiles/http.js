@@ -8,7 +8,7 @@ export default {
        return axios({
             url,
             method:'POST',
-            data
+            params : data
         }).then((result)=>{
             return result
         })

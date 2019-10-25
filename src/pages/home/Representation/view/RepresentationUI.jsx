@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import {RepContainer,MainContainer} from './style'
+import http from 'utiles/http'
 import act1 from 'images/act-1.png'
 import act2 from 'images/act-2.png'
 import act3 from 'images/act-3.png'
 import act4 from 'images/act-4.png'
 export class RepresentationUI extends Component {
+    state = {
+        list : ''
+    }
     render() {
         return (
             <RepContainer>
@@ -48,6 +52,18 @@ export class RepresentationUI extends Component {
                 </MainContainer>
             </RepContainer>
         )
+    }
+    async componentDidMount(){
+        let res = await http.post({
+            url : 'http://agoiu.com:8080/getActivityByTitle',
+            data : {
+                activityTitle : '精彩演出'
+            }
+        })
+        console.log(res.data.data)
+        this.setState({
+            list : res.data.data
+        })
     }
 }
 

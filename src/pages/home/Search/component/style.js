@@ -90,6 +90,9 @@ const HotContainer = styledIconOne(HotContainer_1)
 
 const History = styled.div`
     flex : 1;
+    .am-button{
+        font-size : .11rem;
+    }
     p{
         color : #505050;
         font-size : .11rem;
@@ -164,6 +167,15 @@ const SeachresContainer_1 = styled.div`
     }
     .contentRes{
         flex : 1;
+        overflow-y : scroll;
+        .nothing{
+            height : 100%;
+            position: relative;
+            img{
+                height : 40%;
+                width : 100%;
+            }
+        }
     }
 `
 const SeachresContainer = styledIconOne(SeachresContainer_1)
@@ -171,6 +183,7 @@ const SeachresContainer = styledIconOne(SeachresContainer_1)
 const LoadingContainer = styled.div`
     height : 100%;
     position: relative;
+    background : #fff;
     img{
         position : absolute;
         top : 15%;

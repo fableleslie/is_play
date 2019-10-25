@@ -5,6 +5,7 @@ import {SeachresContainer,LoadingContainer} from './style'
 import Activity from 'pages/home/Sunday/component/Activity.jsx'
 import http from 'utiles/http'
 import loading from 'images/loading.gif'
+import nothing from 'images/nothing.jpg'
 
 class SearchRes extends Component {
     state = {
@@ -20,8 +21,8 @@ class SearchRes extends Component {
                         <i></i>
                     </div>
                     <div className='contentRes'>
-                        {
-                            (this.state.list).map((value,index)=>{
+                        {   this.state.list.length !== 0 ?
+                            ((this.state.list).map((value,index)=>{
                                 return  <Activity key={index}
                                             pic={value.pic}
                                             title={value.title}
@@ -31,7 +32,10 @@ class SearchRes extends Component {
                                             price={value.price}
                                             btn={value.btn}
                                         ></Activity>
-                            })
+                            }))
+                            :  <div className='nothing'>
+                                <img src={nothing} alt=""/>
+                            </div>
                         }
                     </div>
                 </SeachresContainer>
@@ -45,6 +49,7 @@ class SearchRes extends Component {
     }
     async componentDidMount(){
         let keyword = this.props.location.search.split('=')[1]
+        // 做搜索
         let res = await http.get(`http://localhost:3002/data?keyword=${keyword}`)
         this.setState({
             list : res
