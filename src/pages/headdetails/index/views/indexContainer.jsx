@@ -14,6 +14,7 @@ export default class HeadDetailContainer extends Component{
         share={this.share}
         state={this.state}
         onClose={this.onClose}
+        to={this.to}
         ></HeadDetail>
     }
 
@@ -32,6 +33,9 @@ export default class HeadDetailContainer extends Component{
         this.setState({
             isShowShare:!this.state.isShowShare
         })
+    }
+    to = ()=>{
+        this.props.history.push('/details')
     }
     
 

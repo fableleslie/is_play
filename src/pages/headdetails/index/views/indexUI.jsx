@@ -58,7 +58,7 @@ function HeadDetail(props){
                     <img src={smallpic2} alt=""/>
                     <p>小小天才的诞生--UCCA Kids儿童节...</p>
                 </div>
-                <div className="joinin">我要参加</div>
+                <div className="joinin" onClick={props.to}>我要参加</div>
             </footer>
             <Modal
             visible={props.state.isShowShare}
