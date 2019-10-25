@@ -53,13 +53,14 @@ class EditInfo extends PureComponent {
     })
   }
   async componentDidMount() {
-    let result = await http.get("http://agoiu.com:8080/myMessage?userId=1");
+    let userId = localStorage.getItem("userId")
+    let result = await http.get("http://agoiu.com:8080/myMessage?userId="+userId);
     this.setState({
       userInfo: result.data
     }, () => {
       this.setState({
         sex: this.state.userInfo.userSex,
-        name: this.state.userInfo.username
+        name: localStorage.getItem("name")
       })
     })
 
@@ -99,11 +100,13 @@ class EditInfo extends PureComponent {
     this.setState({
       name: val
     })
+    localStorage.setItem("name",val)
   }
   setSex(val) {
     this.setState({
       sex: val
     })
+    localStorage.setItem("sex",val)
   }
 }
 const Edit = createForm()(EditInfo);

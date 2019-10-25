@@ -6,8 +6,8 @@ class MyOrder extends PureComponent {
   render() {
     return (
       <MyOrderContainer>
-        <div className="imgWrap">
-          <img src={item1} alt="" />
+        <div className="imgWrap" onClick={()=>{this.goDetail(this.props.item.activityId)}}>
+          <img src={item1} alt=""/>
           {/* 这里判断有没有心和心的类型 */}
         </div>
         {/* 这里判断是否需要使用那行字 */}
@@ -37,6 +37,9 @@ class MyOrder extends PureComponent {
   }
   goPay(orderId){
     this.props.history.push("/pay/waitpay",{orderId})
+  }
+  goDetail(activityId){
+    this.props.history.push("/details",{activityId})
   }
 }
 export default withRouter(MyOrder)

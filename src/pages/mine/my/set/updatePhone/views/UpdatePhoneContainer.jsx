@@ -29,7 +29,7 @@ class UpdatePhone extends PureComponent {
         )
     }
     async finish(ipt, newIpt, code) {
-        if (ipt.value.trim() !== "" && newIpt.value.trim() !== "" &&code.value.trim() !== "") {
+        if (ipt.value.trim() !== "" && newIpt.value.trim() !== "" && code.value.trim() !== "") {
             console.log(ipt.value, newIpt.value, code.value)
             let oldPhone = localStorage.getItem("phone")
             if (ipt.value !== oldPhone) {
@@ -41,8 +41,7 @@ class UpdatePhone extends PureComponent {
             } else {
                 //再验证验证码是否匹配
                 if (this.state.code === code.value) {
-                    // let userId = localStorage.getItem("userId")
-                    let userId = 1
+                    let userId = localStorage.getItem("userId");
                     //发送更改
                     let result = await http.post("http://agoiu.com:8080/update", {
                         userTel: newIpt.value,

@@ -6,7 +6,7 @@ import http from 'utiles/http'
 function loadDataSagaSearch(){
     return takeEvery(SAGA_LOAD_SEARCH,function*(data){
         // console.log(data.data)
-        let result = yield http.get(`http://localhost:3001/data?type=${data.data}`) //需要post请求
+        let result = yield http.get(`http://localhost:3002/data?keyword=${data.data}`) //需要post请求
         yield put(loadData(result))
     })
 }

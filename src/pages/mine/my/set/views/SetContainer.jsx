@@ -28,7 +28,9 @@ class SetContainer extends PureComponent {
     }
     async componentDidMount(){
         // let userId = localStorage.getItem("userId")
-        let result = await http.get("http://agoiu.com:8080/myMessage?userId=1")
+        let userId = localStorage.getItem("userId");
+
+        let result = await http.get("http://agoiu.com:8080/myMessage?userId="+userId)
         if(result.msg==="成功"){
         this.setState({
             userInfo:result.data,

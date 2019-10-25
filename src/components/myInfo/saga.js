@@ -9,9 +9,7 @@ function MyInfoDelete() {
         let list = data.data.data
         let index = data.data.index
         let activeId = data.data.activeId
-        // let userId = localStorage.getItem("userId")
-        let userId = 1;
-        console.log(activeId,userId)
+        let userId = localStorage.getItem("userId")
         let result = yield http.post("http://agoiu.com:8080/myFavorite",{
             userId,
             activityId:activeId

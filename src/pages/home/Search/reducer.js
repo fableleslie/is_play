@@ -3,7 +3,9 @@ const defaultState = {
     historyList : [
         '昌平周边'
     ],
-    searchData : []
+    searchData : [
+        '周边'
+    ]
 }
 
 export default (state=defaultState,action)=>{
@@ -21,6 +23,10 @@ export default (state=defaultState,action)=>{
                     ...state.searchData,
                     action.data
                 ]
+            }
+        case "Clear" : 
+            return {
+                historyList : []
             }
         default : 
             return state

@@ -49,6 +49,7 @@ class MineComp extends PureComponent {
 
     async componentDidMount() {
         // let id = document.cookie("userId")
+        let userId = localStorage.getItem('userId')
         let touImg = localStorage.getItem("touImg")
         let name = localStorage.getItem("name")
         //异步请求数据
@@ -58,7 +59,7 @@ class MineComp extends PureComponent {
                 name
             })
         }
-        let result = await http.get("http://agoiu.com:8080/myMessage?userId=1")
+        let result = await http.get("http://agoiu.com:8080/myMessage?userId="+userId)
         if (result.msg === "成功") {
             this.setState({
                 userInfo: result.data

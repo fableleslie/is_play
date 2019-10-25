@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { MyLikeContainer } from "./StyledLike"
 import { Modal } from 'antd-mobile';
 import item1 from 'assets/images/mine/item1.png'
+import {withRouter} from "react-router-dom"
 import { CSSTransition } from 'react-transition-group';
 const alert = Modal.alert;
 class MyLike extends PureComponent {
@@ -14,7 +15,7 @@ class MyLike extends PureComponent {
                     onExited={() => this.exitDom()}
                 >
                     <div>
-                        <div className="imgWrap" >
+                        <div className="imgWrap" onClick={()=>{this.goDetails(this.props.item.activityId)}}>
                             <img src={`http://agoiu.com:8080${this.props.item.activityPic}`} alt="" />
                             {/* 这里判断有没有心和心的类型 */}
                             <i
@@ -69,5 +70,8 @@ class MyLike extends PureComponent {
     exitDom() {
         console.log(1)
     }
+    goDetails(activityId){
+        this.props.history.push("/details?activityId="+activityId)
+    }
 }
-export default MyLike
+export default withRouter(MyLike)

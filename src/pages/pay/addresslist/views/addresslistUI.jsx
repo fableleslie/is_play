@@ -3,6 +3,8 @@ import React from 'react'
 import AddressUIContainer from './styledAddress'
 
 function AddressUI (props){
+
+    console.log(props)
     return(
         <AddressUIContainer>
             <header>

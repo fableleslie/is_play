@@ -24,6 +24,9 @@ import {MoldSort} from 'pages/home/MoldSort/index'
 
 import {Mine} from "pages/mine/mine"
 export class Foot extends Component {
+    state = {
+        isLogin : localStorage.getItem('userId')
+    }
     render() {
         let { match } = this.props;
         let data = this.props.location.pathname.split('type')[1]
@@ -34,8 +37,8 @@ export class Foot extends Component {
                         <Switch>
                             <Route path={`${match.path}/home`} component={Index}></Route>
                             <Route path={`${match.path}/discover`} component={FindContainer}></Route>
-                            <Route path={`${match.path}/message`} component={false?MessageContainer:BeforeContainer}></Route>
-                            <Route path={`${match.path}/mine`} component={Mine}></Route>
+                            <Route path={`${match.path}/message`} component={this.state.isLogin === null ? BeforeContainer : MessageContainer}></Route>
+                            <Route path={`${match.path}/mine`} component={this.state.isLogin === null ? BeforeContainer : Mine}></Route>
                             <Route path={`${match.path}/moldSort`} component={MoldSort}></Route>
                             <Redirect from='/index' to='/index/home' exact></Redirect>
                         </Switch>

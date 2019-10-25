@@ -1,7 +1,15 @@
 import React , {Component} from 'react'
 import GuessLike from './GuessLikeUI'
-export default class GuessLikeContainer extends Component{
+import {withRouter} from 'react-router-dom'
+class GuessLikeContainer extends Component{
     render(){
-        return <GuessLike></GuessLike>
+        return <GuessLike
+                jump={this.jump}
+                ></GuessLike>
+    }
+
+    jump = ()=>{
+        this.props.history.push('/details')
     }
 }
+export default withRouter(GuessLikeContainer)
