@@ -5,7 +5,7 @@ import {PayContainer} from './StyledPay'
 import Detaile from 'assets/images/zhifu/detail.png'
 
 function PayUI(props){
-    //console.log(props.state.dataList)
+    console.log(props.state.loaddata.pactivitySessionList)
     return (
             <PayContainer>
                 <header>
@@ -61,20 +61,25 @@ function PayUI(props){
                     <div className="select-date">
                         <div className="select-title"><span>选择日期</span></div>
                         <ul className="date-content">
-                            <li
-                            onClick={() => {props.selectDate('19年9月15日','本周日')}}
-                            className={(props.state.week==='本周日' && props.state.date ==='19年9月15日')?'active':''}
-                            >
-                                <div>19年9月15日</div>
-                                <p>本周日</p>
-                            </li>
-                            <li
-                            onClick={() => {props.selectDate('19年9月20日','本周五')}}
-                            className={(props.state.week==='本周五' && props.state.date ==='19年9月20日')?'active':''}
-                            >
-                                <div>19年9月20日</div>
-                                <p>本周五</p>
-                            </li>
+
+                            {
+                                props.state.loaddata.pactivitySessionList === undefined ? '':(
+                                    props.state.loaddata.pactivitySessionList.map((value,index)=>{
+                                        return(
+                                            <li
+                                            key={index}
+                                            onClick={() => {props.selectDate(value.activityOneTime,'本周日',value.ticketSign)}}
+                                            className={(props.state.week==='本周日' && props.state.date ===value.activityOneTime)?'active':''}
+                                            >
+                                                <div>19年9月15日</div>
+                                                <p>本周日</p>
+                                            </li>
+                                        )
+                                    })
+                                )
+                                
+                                
+                            }
                         </ul>
                     </div>
                     {

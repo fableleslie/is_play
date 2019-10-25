@@ -19,8 +19,9 @@ class Pay extends PureComponent {
         timeList:[],
         dataList:[],
         isshow_time:false,
-        loaddata:{},
-        activityId:''
+        loaddata:[],
+        activityId:'',
+        ticketSign:''
     }
     render(){
         return(
@@ -43,7 +44,7 @@ class Pay extends PureComponent {
         //this.props.show_data('我就是我')
         let result = (await http.getpay({url:'http://agoiu.com:8080/getActivitiesPriceDetail'})).data
         console.log(result)
-
+        
         this.setState({
             dataList:result.ppriceTypeList,
             loaddata:result,
@@ -61,11 +62,12 @@ class Pay extends PureComponent {
             payprice:price
         })
     }
-    selectDate = (date,week) => {
+    selectDate = (date,week,ticketSign) => {
         this.setState({
             date,
             week,
-            isshow_time:true
+            isshow_time:true,
+            ticketSign
         })
     }
     
