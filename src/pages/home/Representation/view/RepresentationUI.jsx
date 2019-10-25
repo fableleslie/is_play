@@ -56,11 +56,11 @@ export class RepresentationUI extends Component {
     async componentDidMount(){
         let res = await http.post({
             url : 'http://agoiu.com:8080/getActivityByTitle',
-            data : {
+            params : {
                 activityTitle : '精彩演出'
             }
         })
-        console.log(res.data.data)
+        // console.log(res.data.data)
         this.setState({
             list : res.data.data
         })
