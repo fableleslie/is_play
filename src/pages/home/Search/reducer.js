@@ -1,9 +1,7 @@
-import {LOAD_SEARCH} from './actionType'
 const defaultState = {
     historyList : [
-        '昌平周边'
-    ],
-    searchData : []
+        '周边'
+    ]
 }
 
 export default (state=defaultState,action)=>{
@@ -15,12 +13,9 @@ export default (state=defaultState,action)=>{
                     action.data
                 ]
             }
-        case LOAD_SEARCH : 
+        case "Clear" : 
             return {
-                searchData : [
-                    ...state.searchData,
-                    action.data
-                ]
+                historyList : []
             }
         default : 
             return state

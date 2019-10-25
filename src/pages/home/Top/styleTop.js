@@ -7,10 +7,13 @@ const Top = styled.div`
     background : #FFE60D;
     display : flex;
     align-items : center;
-    img{
-        display : inline-block;
-        width : .3rem;
-        height : .3rem;
+    .head_portrait{
+        img{
+            display : inline-block;
+            width : .3rem;
+            height : .3rem;
+            border-radius : 50%;
+        }
     }
     .city{
         flex : 1;
