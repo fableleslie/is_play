@@ -16,7 +16,7 @@ class Category extends PureComponent {
             //显示不同的title
             title: "",
             //显示的内容列表
-            // infoList:[]
+            list:[] 
         }
     }
     render() {
@@ -34,25 +34,54 @@ class Category extends PureComponent {
         )
     }
     async componentDidMount() {
+        // 每次都清空数组
+        this.props.clean();
         let type = this.props.match.params.type
         let title;
+        let func;
         //1、根据type不同获取不同的数据存到state中infoList
 
         //根据type不同设置不同的title
         switch (type) {
             case "waitPay":
                 title = "待付款";
+                func="loadWaitPayData"
+                // this.setState({
+                //     list:this.props.waitPaylist
+                // })
                 break;
             case "allOrder":
                 title = "全部订单";
+                func="loadAllPayData"
+                // this.setState({
+                //     list:this.props.allPaylist
+                // })
                 break;
             case "wkTicket":
                 title = "周末券";
+                console.log(11)
+                func="loadwkTicket"
+                // this.setState({
+                //     list:this.props.ticketslist
+                // })
                 break;
             case "collect":
                 title = "收藏";
+                func="loadCollect"
+                // this.setState({
+                //     list:this.props.collectlist
+                // })
+                break;
+            case "boss":
+                title = "活动商户"
+                func="loadAction"
+                // this.setState({
+                //     list:this.props.actionlist
+                // })
                 break;
             default:
+                console.log(22)
+                func="loadWaitPayData"
                 title = "";
         }
 
@@ -60,8 +89,8 @@ class Category extends PureComponent {
             title,
             type
         })
-        this.props.loadWaitPayData();
-        
+        this.props[func]();
+        console.log(this.state.list)
         //2、获取到数据之后判断结果是否为空 如果为空就修改isEmpty
         //如何监测数据变化
         

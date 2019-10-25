@@ -3,6 +3,7 @@ import {UpdatePhoneContainer,BorderDiv} from "./StyledUpdatePhone"
 export default (props) => {
     let iptValue;
     let newPhone;
+    let code;
     return (
         <UpdatePhoneContainer>
             <BorderDiv className="header">
@@ -18,17 +19,17 @@ export default (props) => {
             <div className="phoneWrap">
                 <i>&#xe651;</i>
                 <input placeholder="输入新手机号" ref={(input)=>{newPhone=input}}></input>
-                <div onClick={props.getCode}>
+                <div onClick={()=>props.getCode(newPhone)}>
                     <span>{props.text}</span>
                 </div>
             </div>
             <BorderDiv className="codeWrap">
                 <i>&#xe602;</i>
-                <input placeholder="验证码"></input>
+                <input placeholder="验证码"  ref={(input)=>{code=input}}></input>
                 <div></div>
             </BorderDiv>
             <div className="jingubang">
-                <div className="finish" onClick={()=>props.finish(iptValue,newPhone)}>
+                <div className="finish" onClick={()=>props.finish(iptValue,newPhone,code)}>
                     <span>完 成</span>
                 </div>
             </div>

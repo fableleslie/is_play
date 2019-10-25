@@ -49,6 +49,10 @@ const MyLikeContainer = styled.div`
                 text-emphasis:emphasis;
             }
             .addressInfo{
+                width:2.5rem;
+                white-space:nowrap;
+                text-emphasis:emphasis;
+                overflow:hidden;
                 font-size:.12rem;
                 i{
                     font-size:.14rem;
@@ -65,13 +69,14 @@ const MyLikeContainer = styled.div`
             margin-top:.08rem;
         }
         .goPay{
-            width:.55rem;
+            width:.70rem;
             height:.25rem;
             display:flex;
             justify-content:center;
             align-items: center;
+            color:#FF6600;
             span{
-                font-size: .14rem;
+                font-size: .16rem;
             }
         }
     }

@@ -35,6 +35,7 @@ const MineIndex = styledIconOne(
                     border-radius:50%;
                     margin-top:.18rem;
                     img{
+                        border-radius:50%;
                         width:100%;
                         height:100%;
                     }

@@ -15,7 +15,7 @@ class orderContainer extends PureComponent{
             <OrderUI
             {...this.props}
             comeBack={this.comeBack}
-            toEdit={this.toEdit}
+            toAddressList={this.toAddressList}
             useCoupon={this.useCoupon}
             sureOrder={this.sureOrder}
             isshow={this.props.is_cancel}
@@ -39,8 +39,8 @@ class orderContainer extends PureComponent{
     comeBack = () => {
         this.props.history.goBack()
     }
-    toEdit = ()=>{
-        this.props.history.push('/pay/editaddress')
+    toAddressList = ()=>{
+        this.props.history.push('/pay/addresslist')
     }
     useCoupon = () => {
         this.props.history.push('/pay/usecoupon')

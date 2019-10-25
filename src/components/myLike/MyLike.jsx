@@ -7,7 +7,7 @@ const alert = Modal.alert;
 class MyLike extends PureComponent {
     render() {
         return (
-            <MyLikeContainer ref={this.props.item.id}>
+            <MyLikeContainer ref={this.props.item.activityId}>
                 <CSSTransition
                     timeout={300}
                     classNames="item"
@@ -15,13 +15,13 @@ class MyLike extends PureComponent {
                 >
                     <div>
                         <div className="imgWrap" >
-                            <img src={item1} alt="" />
+                            <img src={`http://agoiu.com:8080${this.props.item.activityPic}`} alt="" />
                             {/* 这里判断有没有心和心的类型 */}
                             <i
                                 onClick={() =>
                                     alert('确定取消收藏么?', '', [
                                         { text: '取消', onPress: () => console.log('cancel') },
-                                        { text: '确定', onPress: () => this.noLike() },
+                                        { text: '确定', onPress: () => this.noLike(this.props.item.activityId) },
                                     ])
                                 }
                             >
@@ -31,23 +31,23 @@ class MyLike extends PureComponent {
                         </div>
                         {/* 这里判断是否需要使用那行字 */}
                         <div className="actionType">
-                            <span>北京初心户外{this.props.item.userId}</span>
+                            <span>{this.props.item.activityTitle}</span>
                         </div>
                         <div className="messageWrap">
                             <ul>
                                 <li className="smallTitle">
-                                    <span>滴滴滴滴滴滴滴</span>
+                                    <span>{this.props.item.activityName}</span>
                                 </li>
                                 <li className="addressInfo">
                                     <i>&#xe667;</i>
                                     {/* <div> */}
-                                    <span className="address">北京西直门</span>
+                                    <span className="address">{this.props.item.activityAddress}</span>
                                     <span>进行中，8天后结束</span>
                                     {/* </div> */}
                                 </li>
                             </ul>
                             <div className="goPay">
-                                <span>￥{this.props.price}起</span>
+                                <span>￥{this.props.item.activityTotalNum}起</span>
                             </div>
                             <div></div>
                         </div>
@@ -56,12 +56,15 @@ class MyLike extends PureComponent {
             </MyLikeContainer>
         )
     }
-    noLike() {
-        let dom = this.refs[this.props.item.id]
+    componentDidMount(){
+        console.log(this.props.item)
+    }
+    noLike(id) {
+        let dom = this.refs[this.props.item.activityId]
         dom.style.transform="translate(-100vw, 0vw)"
         setTimeout(() => {
-            this.props.deleteDom(this.props.index)
-        }, 300);
+            this.props.deleteDom(this.props.index,id)
+        }, 200);
     }
     exitDom() {
         console.log(1)

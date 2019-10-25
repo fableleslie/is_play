@@ -14,7 +14,7 @@ export class RepresentationUI extends Component {
                 </header>
                 <MainContainer>
                     <div>
-                        <div className='left'>
+                        <div className='left'onClick={this.props.toDetail}>
                             <img src={act1} alt=""/>
                             <p>中秋节游园会【梦回古代】送汉服</p>
                             <span>昀清书院</span>
@@ -22,7 +22,7 @@ export class RepresentationUI extends Component {
                         </div>
                     </div>
                     <div>
-                        <div className='right'>
+                        <div className='right' onClick={this.props.toDetail}>
                             <img src={act2} alt=""/>
                             <p>中秋优惠活动 —— 桃山皮流心月饼DIY</p>
                             <span>芬芳食堂</span>
@@ -30,7 +30,7 @@ export class RepresentationUI extends Component {
                         </div>
                     </div>
                     <div>
-                        <div className='left'>
+                        <div className='left' onClick={this.props.toDetail}>
                             <img src={act3} alt=""/>
                             <p>随身带着的香兔兔————中秋植物花草香囊</p>
                             <span>昀清书院</span>
@@ -38,7 +38,7 @@ export class RepresentationUI extends Component {
                         </div>
                     </div>
                     <div>
-                        <div className='right'>
+                        <div className='right' onClick={this.props.toDetail}>
                             <img src={act4} alt=""/>
                             <p>中秋团建专场——冰皮月饼DIY</p>
                             <span>德胜创客教育</span>

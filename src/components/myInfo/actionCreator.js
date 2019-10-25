@@ -1,19 +1,21 @@
 //actionCreator里面是进行进行dispath的方法
 import { DELETEDOMSAGA ,DELETEDOM } from "./actionTypes"
 
-export const deleteDomSaga = (data,index)=>{
+export const deleteDomSaga = (data,index,activeId)=>{
     return {
         type: DELETEDOMSAGA,
         data:{
             data,
-            index
+            index,
+            activeId
         }
     }
 }
 
-export const deleteDom = ()=>{
+export const deleteDom = (data)=>{
     return {
-        type: DELETEDOM
+        type: DELETEDOM,
+        data
     }
 }
 
