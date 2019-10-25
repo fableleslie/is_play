@@ -7,7 +7,7 @@ class Top extends Component {
             <TopContainer>
                 <div className='TopName'>
                     <i>&#xe652;</i>
-                    <input type="text" placeholder={this.props.activity} onKeyDown={(e)=>this.search(e)}/>
+                    <input type="text" placeholder={this.props.activity} onKeyDown={(e)=>this.search(e)} />
                 </div>
                 <span onClick={this.goBack}>取消</span>
             </TopContainer>

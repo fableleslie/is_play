@@ -71,7 +71,7 @@ class orderContainer extends PureComponent{
         })
 
         console.log(result)
-        this.props.history.push('/pay/waitpay')
+        //this.props.history.push('/pay/waitpay')
     }
     openScan = ()=>{
         window.wx.ready(function(){

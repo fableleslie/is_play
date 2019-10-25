@@ -12,7 +12,9 @@ class Representation extends Component {
         this.props.history.push('/type/allAct')
     }
     toDetail= ()=>{
-        this.props.history.push('/details?id=1')
+        this.props.history.push('/details',{
+            id : 1
+        })
     }
 }
 

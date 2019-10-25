@@ -58,7 +58,6 @@ class WaitpayContainer extends PureComponent {
       let res =  (await axios({
         url:'/check?id=321321323'
       })).data
-
       console.log(res)
     }
 

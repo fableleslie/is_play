@@ -1,0 +1,28 @@
+{
+    "data" : [
+        {
+            "id" : 1,
+            "keyword" : 123,
+            "type" : 2,
+            "pic" : "https://upload-images.jianshu.io/upload_images/18974629-98a613f304e098b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "title" : "奇葩减压馆——36项奇葩体验",
+            "address" : "国瑞购物中心LG层（物美超市）",
+            "state" : "进行中",
+            "price" : "58起",
+            "site" : "北京"
+            
+        },
+        {
+            "id" : 2,
+            "keyword" : 123,
+            "type" : 2,
+            "pic" : "https://upload-images.jianshu.io/upload_images/18974629-98a613f304e098b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+            "title" : "奇葩减压馆——36项奇葩体验",
+            "address" : "国瑞购物中心LG层（物美超市）",
+            "state" : "进行中",
+            "price" : "58起",
+            "site" : "北京"
+            
+        }
+    ]
+}
