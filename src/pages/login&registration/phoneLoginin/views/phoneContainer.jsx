@@ -10,12 +10,16 @@ class PhoneContainer extends PureComponent{
     constructor(){
         super()
         this.state = {
+            isClick:false,
             phoneNum:null,
             isActive:false,
             title :'获取验证码',
             code:null,
             userCode:null,
-            data:{}
+            loginData:{
+                loginPhoneNum:null,
+                loginUserCode:null
+            }
         }
         this.timer = null
     }
@@ -37,30 +41,34 @@ class PhoneContainer extends PureComponent{
         this.props.history.push('/index/message')
     }
     handlerTo = ()=>{
-        // console.log(this.props.history)
         this.props.history.push('/loginin/register')
     }
     handlerAccount = ()=>{
         this.props.history.push('/loginin/account')
     }
 
-
-
     VerificationClick = ()=>{
         if(!(/^1[3456789]\d{9}$/.test(this.state.phoneNum))){ 
             this.showPhoneToast() 
             return false; 
         }else{
-            this.getVerification()
+            if(this.state.isClick===false){
+                this.getVerification()
+            }else{
+                this.showWait()
+                return false
+            }
         }
     }
+    //获取验证逻辑
     getVerification = ()=>{
         let time = 60
         if(this.state.isActive === false){
             this.showToast()
             this.getCode()
             this.setState({
-                isActive:!this.state.isActive
+                isActive:!this.state.isActive,
+                isClick:!this.state.isClick
             })
             this.timer = setInterval(() => {
                 this.setState({
@@ -69,7 +77,8 @@ class PhoneContainer extends PureComponent{
                 time --
                 if(time<0){
                     this.setState({
-                        isActive:!this.state.isActive
+                        isActive:!this.state.isActive,
+                        isClick:!this.state.isClick
                     })
                     clearInterval(this.timer)
                     this.setState({
@@ -79,6 +88,48 @@ class PhoneContainer extends PureComponent{
             }, 1000);
         }
     }
+    //获取验证码
+    getCode(){
+        axios.post(`http://agoiu.com:8080/sendCode?userTel=${this.state.phoneNum}`,{
+            // userTel:this.state.phoneNum
+        }).then((res)=>{
+            this.setState({
+                code:res.data.data,
+            })
+        })
+    }
+    //登录
+    login = ()=>{
+        if(this.state.code===null || this.state.userCode===null){
+            this.showErrMsg()
+        }else{
+            if(this.state.code === this.state.userCode){
+                this.props.login(this.state.loginData)  
+            }else{
+                this.showUserCode()
+            }
+        }
+    }
+
+    //监听数据
+    phoneNum = (e)=>{
+        this.setState({
+            phoneNum:e.target.value,
+            loginData:{
+                loginPhoneNum:e.target.value
+            }
+        })
+    }
+    userCode = (e)=>{
+        this.setState({
+            userCode:e.target.value,
+            loginData:{
+                loginPhoneNum:this.state.loginData.loginPhoneNum,
+                loginUserCode:e.target.value
+            }
+        })
+    }
+    //提示
     showToast() {
         Toast.info('验证码已逃窜至您的手机~', 2);
     }
@@ -91,49 +142,9 @@ class PhoneContainer extends PureComponent{
     showErrMsg(){
         Toast.info('请输入手机号和验证码', 2);
     }
-    //获取验证码
-    getCode(){
-        console.log(this.state.phoneNum)
-        axios.post(`http://agoiu.com:8080/sendCode?userTel=${this.state.phoneNum}`,{
-            // userTel:this.state.phoneNum
-        }).then((res)=>{
-            console.log(res.data)
-            this.setState({
-                code:res.data.data,
-                data:res.data
-            })
-        })
+    showWait(){
+        Toast.info('请稍等', 2);
     }
-    //登录
-    login = ()=>{
-        console.log(this.state.code)
-        console.log(this.state.userCode)
-        if(this.state.code===null || this.state.userCode===null){
-            this.showErrMsg()
-        }else{
-            if(this.state.code === this.state.userCode){
-                console.log(this.props)
-                // console.log(this.state.data)
-                this.props.login(this.state.data)
-    
-    
-            }else{
-                this.showUserCode()
-            }
-        }
-    }
-
-    phoneNum = (e)=>{
-        this.setState({
-            phoneNum:e.target.value
-        })
-    }
-    userCode = (e)=>{
-        this.setState({
-            userCode:e.target.value
-        })
-    }
-
 
 
 
