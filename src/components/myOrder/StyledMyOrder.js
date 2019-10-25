@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const MyOrderContainer = styled.div`
     width:100%;
-    margin-top:.25rem;
+    padding-top:.25rem;
     i{
         font-family:"iconfont";
     }
@@ -11,6 +11,7 @@ const MyOrderContainer = styled.div`
         padding-bottom:50%;
         position:relative;
         img{
+            position:absolute;
             width:100%;
             height:100%;
         }
@@ -51,7 +52,9 @@ const MyOrderContainer = styled.div`
             display:flex;
             justify-content:center;
             align-items: center;
+            text-align:center;
             span{
+                color: #FF6600;
                 font-size: .13rem;
             }
         }

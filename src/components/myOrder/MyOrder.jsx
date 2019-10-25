@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react'
 import { MyOrderContainer } from "./StyledMyOrder"
 import item1 from 'assets/images/mine/item1.png'
+import {withRouter} from "react-router-dom"
 class MyOrder extends PureComponent {
   render() {
     return (
       <MyOrderContainer>
-        <div className="imgWrap">
-          <img src={item1} alt="" />
+        <div className="imgWrap" onClick={()=>{this.goDetail(this.props.item.activityId)}}>
+          <img src={item1} alt=""/>
           {/* 这里判断有没有心和心的类型 */}
         </div>
         {/* 这里判断是否需要使用那行字 */}
@@ -18,12 +19,12 @@ class MyOrder extends PureComponent {
             <li className="addressInfo">
               <i>&#xe667;</i>
               {/* <div> */}
-              <span className="address">北京西直门</span>
-              <span>进行中，8天后结束</span>
+              <span className="address">{this.props.item.takeAddress}</span>
+              <span>进行中，{this.props.item.activityId}天后结束</span>
               {/* </div> */}
             </li>
           </ul>
-          <div className="goPay" style={this.props.isPay?{display:"none"}:{display:"block"}}>
+          <div className="goPay" onClick={()=>{this.goPay(this.props.item.orderId)}} style={this.props.item.activityDingStatus===1?{display:"block"}:{display:"none"}}>
             <span>去支付</span>
           </div>
           <div></div>
@@ -31,5 +32,14 @@ class MyOrder extends PureComponent {
       </MyOrderContainer>
     )
   }
+  componentDidMount(){
+    console.log(this.props.item)
+  }
+  goPay(orderId){
+    this.props.history.push("/pay/waitpay",{orderId})
+  }
+  goDetail(activityId){
+    this.props.history.push("/details",{activityId})
+  }
 }
-export default MyOrder
+export default withRouter(MyOrder)

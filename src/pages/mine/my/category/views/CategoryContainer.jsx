@@ -4,67 +4,100 @@ import connect from "./connect"
 //根据路由信息的不同获取不同的数据
 @connect
 class Category extends PureComponent {
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            // 动图加在
-            isGetted:false,
+        this.state = {
+            // 动图加载
+            isGetted: "",
             //控制空白页和有内容的也
-            isEmpty:false,
+            isEmpty: true,
             //通过type加载不同的模块
-            type:"",
+            type: "like",
             //显示不同的title
-            title:"",
+            title: "",
             //显示的内容列表
-            infoList:[]
+            list:[] 
         }
     }
     render() {
         return (
             // 要有个category 判断是空也还是info 然后还要有一个type  判断是order还是like收藏
             <CategoryUI
-                isGetted={this.state.isGetted}
+                isGetted="成功啦"
                 isEmpty={this.state.isEmpty}
                 type={this.state.type}
                 title={this.state.title}
-                infoList={this.state.infoList}
+                list={this.props.list}
+                back={()=>this.back()}
             >
             </CategoryUI>
         )
     }
-   async componentDidMount(){
-        console.log(this.props)
-
+    async componentDidMount() {
+        // 每次都清空数组
+        this.props.clean();
         let type = this.props.match.params.type
         let title;
-        let infoList;
+        let func;
         //1、根据type不同获取不同的数据存到state中infoList
 
         //根据type不同设置不同的title
-        switch(type){
+        switch (type) {
             case "waitPay":
-                title="待付款";
-                infoList=await this.props.loadWaitPayData();
+                title = "待付款";
+                func="loadWaitPayData"
+                // this.setState({
+                //     list:this.props.waitPaylist
+                // })
                 break;
             case "allOrder":
-                title="全部订单";
+                title = "全部订单";
+                func="loadAllPayData"
+                // this.setState({
+                //     list:this.props.allPaylist
+                // })
                 break;
             case "wkTicket":
-                title="周末券";
+                title = "周末券";
+                console.log(11)
+                func="loadwkTicket"
+                // this.setState({
+                //     list:this.props.ticketslist
+                // })
                 break;
             case "collect":
-                title="收藏";
+                title = "收藏";
+                func="loadCollect"
+                // this.setState({
+                //     list:this.props.collectlist
+                // })
+                break;
+            case "boss":
+                title = "活动商户"
+                func="loadAction"
+                // this.setState({
+                //     list:this.props.actionlist
+                // })
                 break;
             default:
-                title="";
+                console.log(22)
+                func="loadWaitPayData"
+                title = "";
         }
-        console.log(title)
+
         this.setState({
             title,
-            infoList
+            type
         })
+        this.props[func]();
+        console.log(this.state.list)
         //2、获取到数据之后判断结果是否为空 如果为空就修改isEmpty
-        console.log(this.props.match.params.type)
+        //如何监测数据变化
+        
+
+    }
+    back(){
+        this.props.history.push("/index/mine")
     }
 }
 export default Category
