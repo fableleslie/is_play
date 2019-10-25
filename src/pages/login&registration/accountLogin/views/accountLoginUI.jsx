@@ -19,18 +19,18 @@ function AccountLoginUI (props){
                             <div>
                                 <PhoneNum className="pad">&#xe651;</PhoneNum>
                                 <div className="IptBox">
-                                    <input type="text" placeholder="手机号码"/>
+                                    <input onChange={props.userTelChange} type="text" placeholder="手机号码"defaultValue={props.userTel}/>
                                 </div>
                             </div>
                             <div>
                                 <ShortMsg className="pad">&#xe6b0;</ShortMsg>
                                 <div className="IptBox">
-                                    <input type="password" placeholder="密码"/>
+                                    <input onChange={props.passwordChange}type="password" placeholder="密码" defaultValue={props.password}/>
                                 </div>
                             </div>
                         </div>
                         <div className="loginBox">
-                            <div className="loginIn">登录</div>
+                            <div className="loginIn" onClick={props.login}>登录</div>
                             <p onClick={props.forgetPassword}>忘记密码？</p>
                         </div>
                     </div>

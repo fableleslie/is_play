@@ -7,7 +7,7 @@ function GuessLike(props){
             <GuessLikestyle>
                 <p className="guesstitle">猜你喜欢</p>
                 {/* 渲染开始 */}
-                <div className="guesslist">
+                <div className="guesslist" onClick={props.jump}>
                     <div className="guesspic">
                         <img src={guesspic1} alt=""/>
                         <Heart>
@@ -24,7 +24,7 @@ function GuessLike(props){
                 </div>
                 {/* 渲染结束 */}
 
-                <div className="guesslist">
+                <div className="guesslist"onClick={props.jump}>
                     <div className="guesspic">
                         <img src={guesspic2} alt=""/>
                         <Heart>
