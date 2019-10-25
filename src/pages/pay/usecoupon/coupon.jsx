@@ -37,11 +37,12 @@ class Usecoupon extends PureComponent{
     }
 
     async componentDidMount(){
+        console.log('awdaw')
         let result = await http.getpay({
             url:'http://agoiu.com:8080/getDiscounts?userId=1&activityId=1'
         })
 
-        console.log(result)
+        console.log(result.data)
     }
 
 
