@@ -1,10 +1,10 @@
 import React from 'react'
 import {SearchStyle,SearchPic} from '../../search/views/styleSearch'
 
-function Search(){
+function Search(props){
         return (
             <SearchStyle>
-                <div>
+                <div onClick={props.handlerClick}>
                     <SearchPic>
                         <div className="imgbox">&#xe652;</div> 
                     </SearchPic>

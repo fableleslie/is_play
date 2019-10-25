@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import BindPhoneUI from "./BindPhoneUI"
-
+import http from "utiles/getData.js"
 let timer = null;
 class BindPhone extends PureComponent {
     constructor() {
@@ -15,7 +15,7 @@ class BindPhone extends PureComponent {
     render() {
         return (
             <BindPhoneUI
-                getCode={() => { this.getCode() }}
+                getCode={(num) => { this.getCode(num) }}
                 text={this.state.text}
                 canClick
                 finish = {(value)=>{this.finish(value)}}
@@ -42,8 +42,9 @@ class BindPhone extends PureComponent {
 
         
     }
-    getCode() {
-        if (timer == null) {
+    async getCode(num) {
+        console.log(num)
+        if (timer == null&&num&&num.value.trim()!=="") {
             let time = 60;
             // 发送短信请求
             this.setState({
@@ -63,6 +64,11 @@ class BindPhone extends PureComponent {
                 clearInterval(timer)
                 timer = null;
             }, 60000)
+            let result = await http.post("http://agoiu.com:8080/sendCode",{
+                userTel:num.value
+            })
+            // 这个result就是返回的结果
+            console.log(result)
         }
         // 调用后台发送短信的接口
     }

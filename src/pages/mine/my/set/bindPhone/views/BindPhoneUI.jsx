@@ -12,7 +12,7 @@ export default (props) => {
             <div className="phoneWrap">
                 <i>&#xe651;</i>
                 <input placeholder="输入手机号" ref={(input)=>{iptValue=input}}></input>
-                <div onClick={props.getCode}>
+                <div onClick={()=>props.getCode(iptValue)}>
                     <span>{props.text}</span>
                 </div>
             </div>

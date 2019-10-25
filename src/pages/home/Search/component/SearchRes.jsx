@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {mapStateToProps,mapDispatchToProps} from '../view/connect'
 import {connect} from 'react-redux'
+
 import {SeachresContainer,LoadingContainer} from './style'
 import Activity from 'pages/home/Sunday/component/Activity.jsx'
 import http from 'utiles/http'

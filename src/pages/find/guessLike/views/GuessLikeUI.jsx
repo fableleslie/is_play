@@ -13,6 +13,9 @@ function GuessLike(props){
                         <Heart>
                             <span>&#xe634;</span>
                         </Heart>
+                        {
+                        // props.state.collection ? <Heart onClick={props.collectionClick}><span>&#xe634;</span></Heart> :<Heart onClick={props.collectionClick}><span style={{color:'red'}}>&#xe64e;</span></Heart>
+                        }
                     </div>
                     <div className="guessP">
                         <p>自己动手,做最美好的月饼（两人同行一人免单）</p>
@@ -23,7 +26,6 @@ function GuessLike(props){
                     </div>
                 </div>
                 {/* 渲染结束 */}
-
                 <div className="guesslist"onClick={props.jump}>
                     <div className="guesspic">
                         <img src={guesspic2} alt=""/>

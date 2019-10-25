@@ -119,9 +119,13 @@ class ResetPsdContainer extends Component{
             }
         }).then((res)=>{
             console.log(res)
+            if(res.data.code === 0){
+                this.props.history.push('loginin/confirm_psd')
+            }else{
+                Toast.info(`${res.data.msg}`, 2);
+            }
         })
     }
-
 
 
     componentWillUnmount(){
