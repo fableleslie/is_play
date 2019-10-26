@@ -18,6 +18,9 @@ const TopContainer_1 = styled.div`
             font-family : 'iconfont';
             font-size : .15rem;
             padding-left : .05rem;
+            display : inline-block;
+            width : .2rem;
+            height : .15rem;
         }
         input{
             height : 100%;
@@ -64,9 +67,15 @@ const HotContainer_1 = styled.div`
             span{
                 margin : 0 .14rem;
                 color : #505050;
-                img{
-                    width : .17rem;
-                    height : .17rem;
+                height : 100%;
+                line-height : .34rem;
+                display : inline-block;
+                i{
+                    margin-right : .02rem;
+                    img{
+                        width : .17rem;
+                        height : .17rem;
+                    }
                 }
             }
         }
@@ -81,6 +90,9 @@ const HotContainer = styledIconOne(HotContainer_1)
 
 const History = styled.div`
     flex : 1;
+    .am-button{
+        font-size : .11rem;
+    }
     p{
         color : #505050;
         font-size : .11rem;
@@ -103,6 +115,8 @@ const HistoryType = border({
 const NearByContainer_1 = styled.div`
     height : 100%;
     background : #fff;
+    display : flex;
+    flex-direction : column;
     .nearTop{
         height : .44rem;
         background : #FFE60D;
@@ -113,6 +127,9 @@ const NearByContainer_1 = styled.div`
         i{
             font-family : 'iconfont';
             font-size : .15rem;
+            display : inline-block;
+            width : .15rem;
+            height : .15rem;
         }
         span{
             font-size : .13rem;
@@ -122,14 +139,63 @@ const NearByContainer_1 = styled.div`
             color : #030000;
         }
     }
+    .List{
+        flex : 1;
+        overflow-y : scroll;
+    }
 `
 const NearByContainer = styledIconOne(NearByContainer_1)
 
+const SeachresContainer_1 = styled.div`
+    height : 100%;
+    background : white;
+    display : flex;
+    flex-direction : column;
+    .searchRes{
+        height : .44rem;
+        background : #FFE60D;
+        padding-left : .15rem;
+        display : flex;
+        align-items : center;
+        justify-content : space-between;
+        i{
+            font-family : 'iconfont';
+            font-size : .15rem;
+            display : inline-block;
+            width : .15rem;
+        }
+    }
+    .contentRes{
+        flex : 1;
+        overflow-y : scroll;
+        .nothing{
+            height : 100%;
+            position: relative;
+            img{
+                height : 40%;
+                width : 100%;
+            }
+        }
+    }
+`
+const SeachresContainer = styledIconOne(SeachresContainer_1)
+
+const LoadingContainer = styled.div`
+    height : 100%;
+    position: relative;
+    background : #fff;
+    img{
+        position : absolute;
+        top : 15%;
+    }
+`
 
 export {
     TopContainer,
     HotContainer,
     History,
     HistoryType,
-    NearByContainer
+    NearByContainer,
+    SeachresContainer,
+    LoadingContainer
 }

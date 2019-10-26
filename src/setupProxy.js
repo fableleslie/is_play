@@ -13,4 +13,11 @@ module.exports = function(app) {
         secure : true ,
         changeOrigin : true 
   }))
+
+  app.use(proxy('/check',{
+    target : 'http://127.0.0.1:3333',
+    secure : true ,
+    changeOrigin : true 
+  }))
+  
 }

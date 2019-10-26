@@ -26,7 +26,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>玩么</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -37,12 +37,13 @@
         .then(response => response.json())
         .then((result)=>{
             console.log(result)
-                wx.config({
+            wx.config({
                 debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                 ...result,
                 jsApiList: ['scanQRCode', 'getLocation', 'openLocation'] // 必填，需要使用的JS接口列表
             })
         })
     </script>
+    <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=X6o5FHOMduiPiQypIM5GTnN7LpUBsFZe"></script> -->
   </body>
 </html>

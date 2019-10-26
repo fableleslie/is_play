@@ -10,7 +10,8 @@ class CommentContainer extends PureComponent{
     }
     
     state={
-        iptvalue:''
+        iptvalue:'',
+        
     }
 
     render(){
@@ -24,11 +25,13 @@ class CommentContainer extends PureComponent{
         )
     }
 
-    handleChange = (e)=>{
-       console.log(this.fileInput.current.value)
-    }
+    // handleChange = (e)=>{
+    //    console.log(this.fileInput.current.value)
+    // }
     toSubmit = ()=>{
+        console.log(0)
         console.log(this.fileInput.current.value)
+        this.fileInput.current.value = ''
     }
 }
 

@@ -35,6 +35,7 @@ class DetailsContainer extends Component{
   async componentDidMount() {
     let meta = this.props.location.state === undefined ? 1 : this.props.location.state.meta;
     this.props.changeMeta(meta)
+    // console.log(this.props)
 
     let Activityresult = (await http.post('http://www.agoiu.com:8080/finall' , 
       {
@@ -66,7 +67,7 @@ class DetailsContainer extends Component{
   }
   
   goBack = () => {
-    this.props.history.goBack();
+    console.log(this.props);
   }
   
   handleClick = (e) => {

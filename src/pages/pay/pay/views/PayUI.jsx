@@ -5,7 +5,7 @@ import {PayContainer} from './StyledPay'
 import Detaile from 'assets/images/zhifu/detail.png'
 
 function PayUI(props){
-    //console.log(props)
+    console.log(props)
     return (
             <PayContainer>
                 <header>
@@ -17,19 +17,33 @@ function PayUI(props){
                         <div className="active-pic">
                             <img src={Detaile} alt=""/>
                         </div>
-                        <div className="active-desc"><span>不可能的艺术--纪念碑谷2视错觉主题艺...</span></div>
+                        <div className="active-desc"><span>{props.state.loaddata.activityIntro}</span></div>
                     </div>
                     <div className="select-ticket">
                         <div className="select-title"><span>选择票种</span></div>
                         <ul className="select-content">
-                            <li 
-                            onClick={() => props.changeSelect('单人','328')}
-                            className={props.state.select ==='单人'?'active':''}
-                            >
-                                <div>￥328</div>
-                                <p>单人</p>                          
-                            </li>
-                            <li>
+                            {
+                                props.state.dataList.map((value,index)=>{
+                                    return (
+                                        <li 
+                                        onClick={() => props.changeSelect(value.type,value.price)}
+                                        className={props.state.select ===value.type?'active':''}
+                                        key={index}
+                                        >
+                                            <div>￥{value.price}</div>
+                                            <p> 
+                                            {
+                                                value.type === 1 ? '单人':(value.type === 2 ? '亲子/情侣':(value.type === 3 ? '家庭三人' : '家庭四人'))
+                                                
+                                            }
+                                            </p>                          
+                                        </li>
+                                    )
+                                })
+                                
+                            }
+                         
+                            {/* <li>
                                 <div>￥428</div>
                                 <p>亲子/情侣</p>
                             </li>
@@ -40,7 +54,7 @@ function PayUI(props){
                             <li>
                                 <div>￥598</div>
                                 <p>家庭四人</p>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <div className="select-date">
@@ -53,9 +67,12 @@ function PayUI(props){
                                 <div>19年9月15日</div>
                                 <p>本周日</p>
                             </li>
-                            <li>
-                                <div>19年9月15日</div>
-                                <p>本周日</p>
+                            <li
+                            onClick={() => {props.selectDate('19年9月20日','本周五')}}
+                            className={(props.state.week==='本周五' && props.state.date ==='19年9月20日')?'active':''}
+                            >
+                                <div>19年9月20日</div>
+                                <p>本周五</p>
                             </li>
                         </ul>
                     </div>

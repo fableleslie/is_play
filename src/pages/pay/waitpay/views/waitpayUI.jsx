@@ -11,6 +11,7 @@ import { Modal, Button, WhiteSpace, WingBlank } from 'antd-mobile';
 const alert = Modal.alert;
 
 function WaitpayUI(props){
+    //console.log(props)
     return(
         <WaitUIContainer>
             <header>
@@ -38,7 +39,7 @@ function WaitpayUI(props){
             <div className="waitpay-bar">付款剩余时间，逾期订单将自动取消</div>
             <main>
                 <div className="order-detail">
-                    <div className="order-type">{props.pay_order.select} ￥{props.pay_order.price}，{props.pay_order.count}份</div>
+                    <div className="order-type">{props.pay_order.select === 1 ? '单人':(props.pay_order.select === 2 ? '亲子/情侣':(props.pay_order.select === 3 ? '家庭三人' : '家庭四人'))} ￥{props.pay_order.price}，{props.pay_order.count}份</div>
                     <div className="order-date">{props.pay_order.date} {props.pay_order.week} {props.pay_order.time}</div>
                     <div className="pay-money">
                         <i>应付金额：</i>
@@ -54,7 +55,7 @@ function WaitpayUI(props){
                         </div>
                         <i>&#xe695;</i>
                     </div>
-                    <div className="pay-weixin">
+                    <div onClick={props.alreadyPay} className="pay-weixin">
                         <div className="weixin-pic-wrapper">
                             <img src={Weixin} alt=""/>
                             <span>微信支付</span>
