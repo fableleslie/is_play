@@ -14,12 +14,17 @@ export class Top extends Component {
         const isLogin = localStorage.getItem("userId")  //从本地中取用户id，判断是否登录
         if(isLogin){
             let res = async ()=>{
-                let aaa =  await http.get(`http://agoiu.com:8080/myMessage?userId=1`)
-                this.setState({
-                    userHeadPic : aaa.data.userHeadPicture
-                })
+                let aaa =  await http.get(`http://agoiu.com:8080/myMessage?userId=${isLogin}`)
+                // console.log(aaa.data.userHeadPicture)
+                if(aaa.data){
+                    this.setState({
+                        userHeadPic : aaa.data.userHeadPicture
+                    })
+                }
+
             }
             res()
+            // console.log(isLogin)
         }
         else{
             // console.log(1)

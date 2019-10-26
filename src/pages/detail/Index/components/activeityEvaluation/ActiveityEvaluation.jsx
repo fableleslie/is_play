@@ -77,7 +77,7 @@ class ActiveityEvaluation extends Component{
   }
 
   toEvaluation = () => {
-    this.props.history.push('/details/activeevaluation')
+    this.props.history.push('/details/evaluation')
     // console.log(this.props)
   }
 

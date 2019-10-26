@@ -8,6 +8,7 @@ import { BeBoss } from "./set/beBoss/index.js"
 import { BeBossInfo } from "./set/beBossInfo/index.js"
 import { Edit } from "./edit/index.js"
 import { Category } from "./category/index.js"
+import { Active }  from "./active/index.js"
 
 class My extends PureComponent {
     render() {
@@ -21,6 +22,7 @@ class My extends PureComponent {
                 <Route path="/my/edit" component={Edit}></Route>
                 <Route path="/my/category/:type" component={Category}></Route>
                 <Route path="/my/set" component={SetContainer}></Route>
+                <Route path="/my/public" component={Active}></Route>
                 <Redirect from="/my" exact to="/my/set"></Redirect>
             </Switch>
         )

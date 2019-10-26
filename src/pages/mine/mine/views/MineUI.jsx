@@ -12,17 +12,19 @@ export default (props) => {
                 </div>
                 <div className="user">
                     <div className="headImgWrap">
-                        <img src={head} alt="" className="headImg" />
+                        {/* <img src={props.touImg==""?head:`http://agoiu.com:8080/${props.userInfo.userHeadPicture}`} alt="" className="headImg" /> */}
+                        <img src={props.touImg===""?head:`${props.touImg}`} alt="" className="headImg" />
                     </div>
                     <span className="username">
-                        账户昵称
+                        {/* {props.userInfo.username} */}
+                        {props.name||"zhangsan"}
                     </span>
                     <div className="editBtn" onClick={props.toEdit}>
                         <span>编辑资料</span>
                     </div>
                 </div>
-                <div className="beBoss" onClick={props.beBoss}>
-                    成为商户？
+                <div className="beBoss" onClick={props.beBoss} >
+                   {props.userInfo.userRole===2?"我的商户":"成为商户?"}
                 </div>
             </header>
             <ul className="listWrap">
