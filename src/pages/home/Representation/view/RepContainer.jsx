@@ -11,10 +11,8 @@ class Representation extends Component {
     goAllAct= ()=>{
         this.props.history.push('/type/allAct')
     }
-    toDetail= ()=>{
-        this.props.history.push('/details',{
-            id : 1
-        })
+    toDetail= (id)=>{
+        this.props.history.push('/details',id)
     }
 }
 

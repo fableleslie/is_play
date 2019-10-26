@@ -6,6 +6,8 @@ import xin from 'images/love/xin.png'
 import { Toast} from 'antd-mobile';
 import Laugh from './Laugh'
 import Cry from './Cry'
+// import http from 'utiles/http'
+import act1 from 'images/act-1.png'
 
 class Project extends Component {
     state = {
@@ -13,7 +15,7 @@ class Project extends Component {
     }
 
     render() {
-        if(this.props.Activity.length === 0 ){
+        if(this.props.Activity === null ){
             return <div className='loading'><img src={time} alt=""/></div>
         }
         else{
@@ -23,17 +25,17 @@ class Project extends Component {
                         return <ProjectContainer key={index}>
                                     <div className='item'>
                                         <div className='leftImg'>
-                                            <img src={value.imgurl} alt=""/>
-                                            <div className='collect' onClick={this.beloved}>
+                                            <img src={act1} alt=""/>
+                                            <div className='collect' onClick={(e)=>this.beloved(e,index)}>
                                                 <img src={xin} alt=""/>
                                             </div>
                                         </div>
                                         <div className='rightName' >
-                                            <p className='title'>{value.title}<span className={value.site === "" ? null : 'circle'}></span>{value.site}</p>
-                                            <p className='address'>{value.address}</p>
+                                            <p className='title'>{value.activityName}<span className={value.site === "" ? null : 'circle'}></span>{value.site}</p>
+                                            <p className='address'>{value.activityAddress}</p>
                                             <p className='time'>
-                                                <span>{value.state}</span>
-                                                <span>￥{value.price}</span>
+                                                <span>进行中</span>
+                                                <span>￥{value.ppriceType.price}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -43,13 +45,20 @@ class Project extends Component {
             </>
         }
     }
-    beloved = (e)=>{
+    beloved = async (e,value)=>{
         // 收藏之后，改变状态
+        // console.log(e.target,value)
         if(localStorage.getItem('userId')){
             if(e.target.src === xin){
                 e.target.src = xin1
+                // let res = await http.post({
+                //     url : 'http://agoiu.com:8080/myFavorite',
+                //     params : {
+                //         userId : localStorage.getItem('userId'),
+                //         activityId : index +1 
+                //     }
+                // })
                 Toast.info(<Laugh></Laugh> ,1)
-                // Toast.success("收藏成功",20)
             }
             else{
                 e.target.src = xin
