@@ -2,10 +2,10 @@ import React from 'react'
 
 import AddressUIContainer from './styledAddress'
 
-function AddressUI (props){
+function AddressUI(props) {
 
     console.log(props)
-    return(
+    return (
         <AddressUIContainer>
             <header>
                 <i onClick={props.toBack}>&#xe646;</i>

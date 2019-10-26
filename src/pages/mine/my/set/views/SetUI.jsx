@@ -49,13 +49,14 @@ export default function (props) {
                     <span>意见反馈</span>
                 </LiWrap>
                 <LiWrap onClick={props.beBoss}>
-                    <span>成为商户</span>
+                    {/* <span>成为商户</span> */}
+                    {props.userInfo.userRole===2?"我的商户":"成为商户?"}
                 </LiWrap>
                 <LiWrap>
                     <span>版本更新</span>
                     <span className="isLatest">已是最新版本</span>
                 </LiWrap>
-                <div className="exitBtn">
+                <div className="exitBtn" onClick={()=>props.logout()}>
                     <span>退出登录</span>
                 </div>
             </ul>

@@ -17,7 +17,7 @@ export default (props) => {
                     </div>
                     <span className="username">
                         {/* {props.userInfo.username} */}
-                        {props.name}
+                        {props.name||"zhangsan"}
                     </span>
                     <div className="editBtn" onClick={props.toEdit}>
                         <span>编辑资料</span>
