@@ -67,7 +67,7 @@ class DetailsContainer extends Component{
   }
   
   goBack = () => {
-    console.log(this.props);
+    this.props.history.goBack();
   }
   
   handleClick = (e) => {
