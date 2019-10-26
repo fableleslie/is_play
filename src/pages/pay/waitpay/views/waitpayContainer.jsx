@@ -63,6 +63,10 @@ class WaitpayContainer extends PureComponent {
         url:'/check?id=321321323'
       })).data
       console.log(res)
+
+      axios({
+        url:`http://agoiu.com:8080/WxPaySuccess?orderId=${350569}`
+      })
     }
 
     showModal = key => (e) => {
@@ -78,7 +82,11 @@ class WaitpayContainer extends PureComponent {
         })
       }
 
-      cancelOrder = () => {
+      cancelOrder = async() => {
+        // console.log(this.props.state.orderId)
+        // let result = await axios({
+        //   url:`http://agoiu.com:8080/cancelOrder?orderId=${this.props.state.orderId}`
+        // })
 
         this.props.change_isshow(true)
         this.props.history.goBack()

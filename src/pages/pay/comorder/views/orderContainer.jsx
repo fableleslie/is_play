@@ -12,7 +12,8 @@ class orderContainer extends PureComponent{
     state = {
         name:'邵邵',
         address:'北京市-昌平区-沙河镇沙阳路18号北京科技职业学院千锋教育',
-        tell:18897982306
+        tell:18897982306,
+        orderId:''
     }
 
     render(){
@@ -50,31 +51,18 @@ class orderContainer extends PureComponent{
     }
     sureOrder = async() => {
         let userId = localStorage.getItem('userId')
+
         console.log(userId)
-        console.log(this.props)
         // console.log(this.props.pay_order.dataList[0].activityId)
-        let result = await axios({
-            url:'http://agoiu.com:8080/addOrderByUid?userId=1&userAddress=无所谓&username=我我我&activityId=1&priceType=100&ticketSign=124&buyNum=3&discountsType=0&userTel=15222222222',
-            // method:'POST',
-            // data:{
+        console.log(this.state.address)
+       let result = await axios({
+           url:`http://agoiu.com:8080/addOrderByUid?userId=${userId ? userId: 1}&activityId=1&userAddress=${this.state.address}&userTel=15022222222&priceType=100&ticketSign=123&buyNum=1`
+       }) 
 
-            //     userId:1,
-            //     userAddress:'ashdkuahsdj',
-            //     username:'我问问看了',
-            //     activityId:1,
-            //     priceType:100,
-            //     ticketSign:124,
-            //     buyNum:3,
-            //     discountsType:5,
-            //     userTel:1522222333
-
-                // userId:123,
-                // activityId:this.props.pay_order.dataList[0].activityId,
-                // productPriceAll:this.props.pay_order.payprice,
-                // productPrice:this.props.pay_order.price
+        console.log(result.data.data)
+        this.setState({
+            orderId:result.data.data
         })
-
-        console.log(result)
         this.props.history.push('/pay/waitpay',{...this.state})
     }
     openScan = ()=>{
