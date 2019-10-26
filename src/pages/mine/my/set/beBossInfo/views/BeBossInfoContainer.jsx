@@ -59,7 +59,7 @@ class BeBossMessage extends PureComponent {
     
     // let userId = localStorage.getItem('1')
     console.log(name.value,Intro.value,Tel.value,address.value)
-    let userId = 1;
+    let userId = localStorage.getItem("userId");
     console.log(this.type)
     let type = this.type
     let result = await http.post("http://agoiu.com:8080/becomeSeller",{

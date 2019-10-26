@@ -2,11 +2,20 @@ import React , { Component } from 'react'
 
 export default class DetailsContent extends Component{
   render(){
+    let { Activityresult } = this.props
+    let timeArr = []
+    let startTime = ''
+    let endTime = ''
+    if(Activityresult.activityTime !== undefined){
+      timeArr = Activityresult.activityTime.split('-')
+      startTime = timeArr[0].substr(5)
+      endTime = timeArr[1].substr(5)
+    }
     return(
       <dl className="DetailsContent">
         <dt>
           <span className="content-title">
-            不可能的艺术——纪念碑谷2视错觉主题艺术展
+            {Activityresult.activityTitle}
           </span>
           <span className="content-price">
             ￥ 78-260<i>></i>
@@ -19,19 +28,19 @@ export default class DetailsContent extends Component{
               <span>终</span>
             </div>
             <div className="active-time">
-              <span className="start-time">8月25日</span>
+              <span className="start-time">{startTime}</span>
               <span className="direction-line"><i>></i></span>
-              <span className="end-time">11月24日</span>
+              <span className="end-time">{endTime}</span>
             </div>
           </div>
           <div className="content-bottom">
             <div className="loc">
-              <span className="location">傻逼莫雷</span>
+              <span className="location">{Activityresult.activityAddress}</span>
               <span className="check-map">查看地图</span>
             </div>
             <div className="detailed-location">
               <i>&#xe60d;</i>
-              <span>智障肖华</span>
+              <span>{Activityresult.activityAddress}</span>
             </div>
           </div>
         </dd>

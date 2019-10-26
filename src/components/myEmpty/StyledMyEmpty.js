@@ -34,6 +34,7 @@ const MyEmptyContainer = styled.div`
         }
     }
     .bossWrap{
+        padding: .2rem .1rem 0;
         background:#fff;
         flex:1;
         display:flex;

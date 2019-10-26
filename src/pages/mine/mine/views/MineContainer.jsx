@@ -52,6 +52,7 @@ class MineComp extends PureComponent {
         let userId = localStorage.getItem('userId')
         let touImg = localStorage.getItem("touImg")
         let name = localStorage.getItem("name")
+    
         //异步请求数据
         if(touImg!==null){
             this.setState({

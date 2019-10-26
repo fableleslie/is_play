@@ -5,8 +5,17 @@ import { withRouter } from 'react-router-dom'
 
 import connect from './connect'
 
+import http from '../../utils/http'
+
 @connect
 class DetailsContainer extends Component{
+
+  constructor() {
+    super()
+    this.state = {
+      Activityresult: {}
+    }
+  }
 
   render(){
     let path = this.props.match.path
@@ -18,14 +27,28 @@ class DetailsContainer extends Component{
         join = { this.iWantJoin }
         toEvaluation = { this.toEvaluation }
         goBack = {this.goBack}
+        Activityresult = {this.state.Activityresult}
       ></DetailsUI>
     )
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     let meta = this.props.location.state === undefined ? 1 : this.props.location.state.meta;
     this.props.changeMeta(meta)
+    // console.log(this.props)
 
+    let Activityresult = (await http.post('http://www.agoiu.com:8080/finall' , 
+      {
+        'activityId' : 1
+      },
+      // {
+      //   'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'
+      // }
+    )).data.data
+
+    this.setState({
+      Activityresult
+    })
   }
 
   hanldeScroll() {

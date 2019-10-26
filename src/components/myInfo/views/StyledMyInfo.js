@@ -14,6 +14,11 @@ const MyInfo = styled.div`
         overflow:scroll;
         padding:0 .15rem;
     }
+    .activeWrap{
+        height:100%;
+        /* display:flex; */
+        /* flex-direction: column; */
+    }
 
 `
 

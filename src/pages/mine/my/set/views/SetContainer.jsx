@@ -21,6 +21,7 @@ class SetContainer extends PureComponent {
                 goFeedback = {()=>this.goFeedback()}
                 beBoss ={()=>this.beBoss()}
                 select={this.state.select}
+                logout={()=>{this.logout()}}
             >
 
             </SetUI>
@@ -61,7 +62,18 @@ class SetContainer extends PureComponent {
         this.props.history.push("/my/set/feedback")
     }
     beBoss(){
-        this.props.history.push("/my/beboss")
+          //判断是否为商户  
+          if (this.state.userInfo.userRole === 2) {
+            //如果是商户了就跳转到另一个
+            this.props.history.push("/my/category/boss")
+        } else {
+            this.props.history.push("/my/beboss");
+        }
+    }
+    logout(){
+        console.log("登出操作")
+        localStorage.clear();
+        this.props.history.push("/index/home")
     }
 }
 

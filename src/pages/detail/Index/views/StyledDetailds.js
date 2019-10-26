@@ -126,6 +126,7 @@ const DetailsWrap = styled.main`
                     .location{
                         font-size: .19rem;
                         font-weight: 550;
+                        
                     }
                     .check-map{
                         font-size: .13rem;

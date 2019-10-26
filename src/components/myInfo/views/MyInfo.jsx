@@ -17,7 +17,7 @@ class MyInfoContainer extends PureComponent {
         }
     }
     render() {
-        if (this.state.list.length !== 0) {
+        // if (this.state.list.length !== 0) {
             return (
                 <MyInfo>
                     <div className="listWrap">
@@ -35,33 +35,31 @@ class MyInfoContainer extends PureComponent {
                                         case "wkTicket":
                                             return <MyTicket key={item.id + Math.random()} item={item} {...this.props} ></MyTicket>
                                         case "boss":
-                                            return <MyActive key={item.id + Math.random()} item={item}></MyActive>
-                                            break;
+                                            return (
+                                            <MyActive key={item.id + Math.random()} item={item} index={index}></MyActive>
+                                            )
                                         default:
                                             return <MyEmpty key={item.id + Math.random()} {...this.props}></MyEmpty>
                                     }
                                 })
-                                // this.props.catelist.length === 0
-                                //     ? <MyEmpty  {...this.props}></MyEmpty>
-                                //     : 
                             }
                         </div>
                     </div>
                 </MyInfo>
             )
-        }
-        else {
-            console.log(11)
-            return (
-                <MyInfo>
-                    <div className="listWrap">
-                        <div className="infoList">
-                            <MyEmpty  {...this.props}></MyEmpty>
-                        </div>
-                    </div>
-                </MyInfo>
-            )
-        }
+        // }
+        // else {
+        //     console.log(11)
+        //     return (
+        //         <MyInfo>
+        //             <div className="listWrap">
+        //                 <div className="infoList">
+        //                     <MyEmpty  {...this.props}></MyEmpty>
+        //                 </div>
+        //             </div>
+        //         </MyInfo>
+        //     )
+        // }
     }
 
     componentDidMount() {
