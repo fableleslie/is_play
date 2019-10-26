@@ -3,11 +3,13 @@ import border from 'components/styles/border'
 const MyActive = styled.div`
     width:100%;
     height: .85rem;
+    display:flex;
+    flex-direction: column;
     i{
         font-family:"iconfont";
     }
-    >div{
-
+    .first{
+        flex:1;
         display:flex;
         /* justify-content: space-between; */
         align-items:center;
@@ -44,6 +46,13 @@ const MyActive = styled.div`
             }
         }
     }
+    .public{
+        width:100%;
+        height:.5rem;
+        text-align:center;
+    }
+
+
 `
 const MyActiveContainer = border({
     width: "0 0 1px 0",

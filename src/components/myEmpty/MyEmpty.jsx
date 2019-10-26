@@ -52,7 +52,7 @@ class MyEmpty extends PureComponent {
         console.log(this.props)
     }
     toActive(){
-        
+        this.props.history.push("/my/public")
     }
 }
 export default withRouter(MyEmpty)
