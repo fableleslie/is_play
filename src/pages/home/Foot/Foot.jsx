@@ -38,7 +38,7 @@ export class Foot extends Component {
                             <Route path={`${match.path}/home`} component={Index}></Route>
                             <Route path={`${match.path}/discover`} component={FindContainer}></Route>
                             <Route path={`${match.path}/message`} component={this.state.isLogin === null ? BeforeContainer : MessageContainer}></Route>
-                            <Route path={`${match.path}/mine`} component={Mine}></Route>
+                            <Route path={`${match.path}/mine`} component={this.state.isLogin === null ? BeforeContainer : Mine}></Route>
                             <Route path={`${match.path}/moldSort`} component={MoldSort}></Route>
                             <Redirect from='/index' to='/index/home' exact></Redirect>
                         </Switch>

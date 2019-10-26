@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import BattleContainer from './styleBattle'
 import Swiper from 'swiper/js/swiper.js'
 import battle1 from 'images/battle/battle-1.png'
+import http from 'utiles/http'
 
 
 class BattleUI extends Component {
+    state = {
+        list : ''
+    }
     render() {
         return (
             <BattleContainer>
@@ -37,7 +41,7 @@ class BattleUI extends Component {
                             </div>
                             <div className="swiper-slide">
                                 <img src={battle1} alt=""/>
-                                <div className='title'>
+                                <div className='title'> 
                                     <span className='address'>金秋坝上草原…</span>
                                     <div>
                                         <span className='price'>¥ 120 起</span>
@@ -51,7 +55,17 @@ class BattleUI extends Component {
             </BattleContainer>
         )
     }
-    componentDidMount(){
+    async componentDidMount(){
+        // let res = await http.post({
+        //     url : 'http://agoiu.com:8080/getActivityByTitle',
+        //     params : {
+        //         activityTitle : '甩汗大作战'
+        //     }
+        // })
+        // // console.log(res)
+        // this.setState({
+        //     list : res.data
+        // })
         new Swiper('.swiper-container',{
             slidesPerView : 'auto',
             spaceBetween : 30,

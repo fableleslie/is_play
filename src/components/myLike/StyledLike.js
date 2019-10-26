@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
-const MyOrderContainer = styled.div`
+const MyLikeContainer = styled.div`
     width:100%;
-    margin-top:.25rem;
+    padding-top:.25rem;
+    transition: all 0.2s Ease-in;
     i{
         font-family:"iconfont";
     }
@@ -10,9 +11,24 @@ const MyOrderContainer = styled.div`
         width:100%;
         padding-bottom:66.67%;
         position:relative;
+        display:flex;
+        justify-content:center; 
+        overflow: hidden;
         img{
-            width:100%;
+            border-radius:.05rem;
+            position:absolute;
+            /* width:100%; */
+            /* left: */
             height:100%;
+            transform:scale(0.9);
+        }
+        i{
+            position:absolute;
+            top:.27rem;
+            right:.1rem;
+            z-index: 999;
+            color: red;
+            font-size:.35rem;
         }
     }
     .messageWrap{
@@ -33,6 +49,10 @@ const MyOrderContainer = styled.div`
                 text-emphasis:emphasis;
             }
             .addressInfo{
+                width:2.5rem;
+                white-space:nowrap;
+                text-emphasis:emphasis;
+                overflow:hidden;
                 font-size:.12rem;
                 i{
                     font-size:.14rem;
@@ -49,18 +69,24 @@ const MyOrderContainer = styled.div`
             margin-top:.08rem;
         }
         .goPay{
-            width:.55rem;
+            width:.70rem;
             height:.25rem;
             display:flex;
             justify-content:center;
             align-items: center;
+            color:#FF6600;
             span{
-                font-size: .14rem;
+                font-size: .16rem;
             }
         }
+    }
+    .item-exit-active {
+        opacity: 0;
+        /* transition: opacity 200ms; */
+        transition: translate(-100%)
     }
 `
 
 export {
-    MyOrderContainer
+    MyLikeContainer
 }

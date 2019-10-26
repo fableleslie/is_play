@@ -10,7 +10,10 @@ const ActivityContainer = styled.div`
         height : 2rem;
         img{
             height : 100%;
+<<<<<<< HEAD
+=======
             width : 100%;
+>>>>>>> master
         }
     }
     p{
