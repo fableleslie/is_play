@@ -8,7 +8,7 @@ export default (props) => {
             <BorderDiv className="header">
                 <i onClick={props.back}>&#xe646;</i>
                 <span>意见反馈</span>
-                <h4 onClick = {()=>props.submit(text,connect)}>提交</h4>
+                <h4 onClick = {()=>props.loadingToast(text,connect)}>提交</h4>
             </BorderDiv>
             <BorderDiv className="codeWrap">
                 <textarea className="text" placeholder="提意见，留电话，赢旅费！

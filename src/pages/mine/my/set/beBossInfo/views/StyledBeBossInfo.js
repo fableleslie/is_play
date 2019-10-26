@@ -9,6 +9,7 @@ const BeBossInfoContainer = styledIconOne(
         display:flex;
         flex-direction:column;
         background:#F6F6F6;
+        
         i{
             font-family:"iconfont";
         }
@@ -32,7 +33,7 @@ const BeBossInfoContainer = styledIconOne(
             padding-left:.15rem;
             color:black;
             background:#fff;
-            font-size:.15rem;
+            font-size:.17rem;
             >li{
                 height: .5rem;
                 display:flex;
@@ -54,7 +55,7 @@ const BeBossInfoContainer = styledIconOne(
             justify-content: space-between;
             align-items: center;
             span{
-                font-size:.15rem;
+                font-size:.17rem;
             }
             .touRight{
                 display:flex;
@@ -65,6 +66,11 @@ const BeBossInfoContainer = styledIconOne(
                 height:.65rem;
                 border-radius:50%;
                 margin-right:.05rem;
+                    div{
+                    width:100%;
+                    height:100%;
+
+                    }
                 img{
                     width:100%;
                     height:100%;
@@ -100,10 +106,13 @@ const BeBossInfoContainer = styledIconOne(
                 height:.36rem;
                 flex:1;
                 ::placeholder{
-                    font-size:.13rem;
+                    font-size:.14rem;
                     text-align:right;
                 }
             }
+        }
+        .am-list-extra{
+            font-size:.14rem !important;
         }
         .bottom{    
             li{
@@ -121,7 +130,7 @@ const BeBossInfoContainer = styledIconOne(
                     height:.36rem;
                     flex:1;
                     ::placeholder{
-                        font-size:.13rem;
+                        font-size:.14rem;
                         text-align:right;
                         }
                     }
@@ -133,7 +142,7 @@ const BeBossInfoContainer = styledIconOne(
             align-items:center;
             justify-content:center;
             background:#FFE60D;
-            font-size: .16rem;
+            font-size: .17rem;
             font-weight:600;
         }
 

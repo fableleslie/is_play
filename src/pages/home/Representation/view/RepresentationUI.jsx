@@ -53,18 +53,18 @@ export class RepresentationUI extends Component {
             </RepContainer>
         )
     }
-    async componentDidMount(){
-        let res = await http.post({
-            url : 'http://agoiu.com:8080/getActivityByTitle',
-            params : {
-                activityTitle : '精彩演出'
-            }
-        })
-        // console.log(res.data.data)
-        this.setState({
-            list : res.data.data
-        })
-    }
+    // async componentDidMount(){
+    //     let res = await http.post({
+    //         url : 'http://agoiu.com:8080/getActivityByTitle',
+    //         params : {
+    //             activityTitle : '精彩演出'
+    //         }
+    //     })
+    //     // console.log(res.data.data)
+    //     this.setState({
+    //         list : res.data.data
+    //     })
+    // }
 }
 
 export default RepresentationUI;

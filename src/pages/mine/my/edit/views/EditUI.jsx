@@ -1,6 +1,6 @@
 import React from "react"
 import { EditContainer, DivBord, LiBord } from "./StyledEdit"
-import touxiang from "assets/images/mine/touxiang.png"
+// import touxiang from "assets/images/mine/touxiang.png"
 import {  Modal, Toast } from 'antd-mobile';
 import { ImagePicker } from 'antd-mobile';
 const prompt = Modal.prompt;
@@ -20,14 +20,17 @@ export default (props) => {
                              className="touxiang"
                             files={props.files}
                             onChange={props.onChange}
-                            onImageClick={(index, fs) => console.log(index, fs)}
-                            selectable={props.files.length < 3}
+                            onImageClick={(index, fs) => props.recheck()}
+                            selectable={props.files.length < 2}
                             multiple={props.multiple}
-                            disableDelete={false}
+                            disableDelete={true}
+                            length={1}
+                            selectable={props.isSelect}
+                            style={{width:".8rem"}}
                             />
-                        <div className="touxiang">
+                        {/* <div className="touxiang">
                             <img src={touxiang} alt="" />
-                        </div>
+                        </div> */}
                         <i>&#xe645;</i>
                     </div>
                 </LiBord>
@@ -45,9 +48,14 @@ export default (props) => {
                             {
                                 text: '确定',
                                 onPress: value => new Promise((resolve, reject) => {
-                                    Toast.info('修改成功', 1);
-                                    props.setName(value)
-                                    resolve();
+                                    if(value.trim()===""){
+                                        Toast.info('请填写昵称', 1);
+                                        resolve();
+                                    }else{
+                                        Toast.info('修改成功', 1);
+                                        props.setName(value)
+                                        resolve();
+                                    }
                                 }),
                             },
                         ], 'default', null, [props.name])}

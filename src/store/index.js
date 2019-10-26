@@ -6,7 +6,7 @@ import saga from './saga'
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
     reducer,
-    applyMiddleware(sagaMiddleware)    
+    applyMiddleware(sagaMiddleware)
 )
 sagaMiddleware.run(saga)
 

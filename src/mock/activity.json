@@ -2,7 +2,7 @@
     "data" : [
         {
             "id" : 1,
-            "keyword" : 123,
+            "keyword" : "周边",
             "type" : 2,
             "pic" : "https://upload-images.jianshu.io/upload_images/18974629-98a613f304e098b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
             "title" : "奇葩减压馆——36项奇葩体验",
@@ -22,7 +22,6 @@
             "state" : "进行中",
             "price" : "58起",
             "site" : "北京"
-            
         }
     ]
 }

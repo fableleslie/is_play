@@ -1,2 +1,10 @@
 export  const WAIT_PAY = "category/loadWaitPay";
 export  const SAGA_WAIT_PAY = "category/saga/loadWaitPay";
+export const SAGA_ALL_PAY = "category/saga/loadAllPaySaga"
+export const ALL_PAY = "category/loadAllPay"
+export const SAGA_LOAD_TICKET = "category/saga/loadTicketSaga"
+export const LOAD_TICKET = "category/loadTicket"
+export const SAGA_LOAD_Collect = "category/saga/loadCollectSaga"
+export const LOAD_Collect = "category/loadCollect"
+export const SAGA_LOAD_ACTION = "category/saga/loadActionSaga"
+export const LOAD_ACTION = "category/loadAction"

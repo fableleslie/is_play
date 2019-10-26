@@ -12,10 +12,7 @@ const mapDispatchToProps = (dispatch)=> {
         type: 'Search',
         data
       }),
-      searchKeyword : (data)=>dispatch(loadSagaData(data)),
-      clearAll : ()=>dispatch({
-        type : 'Clear'
-      })
+      searchKeyword : (data)=>dispatch(loadSagaData(data))
     }
 }
 

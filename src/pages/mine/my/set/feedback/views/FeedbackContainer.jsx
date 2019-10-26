@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import FeedbackUI from "./FeedbackUI"
-
+import { Toast } from 'antd-mobile';
 class Feedback extends PureComponent {
     constructor() {
         super();
@@ -12,24 +12,31 @@ class Feedback extends PureComponent {
     render() {
         return (
             <FeedbackUI
-                submit = {(text,connect)=>this.submit(text,connect)}
+                loadingToast={(text, connect) => this.loadingToast(text, connect)}
                 isShow={this.state.isShow}
                 back={() => this.back()}
-                successText = {this.state.successText}
+                successText={this.state.successText}
             >
 
             </FeedbackUI>
         )
     }
-    submit(text,connect) {
-        //判断是否有输入内容
-        
+    loadingToast(text, connect) {
         console.log(text.value,connect.value)
-        this.setState({
-            isShow:true
-        })
-        // 走提交数据的流程
+        if(text.value===""){
+             Toast.fail('请填写意见 !!!', 1.4);
+        }else if(connect.value===""){
+            Toast.fail("请填写联系方式,方便我们联系")
+        }else{
+            Toast.loading('提交中...', 1.5, () => {
+                this.setState({
+                    isShow: true
+                })
+            });
+        }
     }
+    
+
     back() {
         this.props.history.push("/my/set")
     }

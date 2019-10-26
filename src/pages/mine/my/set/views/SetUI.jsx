@@ -14,12 +14,21 @@ export default function (props) {
                     <span>手机号码</span>
                     {/* 这里有一个判断 如果是绑定了就是手机号 如果没有绑定就是未绑定 */}
                     
-                    <div onClick={props.bindPhone} className="phoneLink" style={props.phone?{display:"none"}:{display:"block"}}>
+                    <div onClick={props.bindPhone} className="phoneLink" style={props.userInfo.userTel?{display:"none"}:{display:"block"}}>
                         <span className="bindPhone" >未绑定</span>
                         <i>&#xe645;</i>
                     </div>
-                    <div onClick={props.updatePhone} className="phoneLink"  style={props.phone?{display:"block"}:{display:"none"}}>
-                        <span className="bindPhone">{props.phone}</span>
+                    <div onClick={props.updatePhone} className="phoneLink"  style={props.userInfo.userTel?{display:"block"}:{display:"none"}}>
+                        <span className="bindPhone">{
+                            (()=>{
+                                if(props.userInfo.userTel){
+                                    let num1 = props.userInfo.userTel.slice(0,3)
+                                    let num2 = props.userInfo.userTel.slice(7)
+                                    let phone = num1+"****"+num2
+                                    return phone
+                                }
+                            })()
+                            }</span>
                         <i>&#xe645;</i>
                     </div>
 
@@ -50,8 +59,6 @@ export default function (props) {
                     <span>退出登录</span>
                 </div>
             </ul>
-
-
         </SetContainer>
     )
 }
