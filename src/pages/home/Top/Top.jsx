@@ -15,13 +15,12 @@ export class Top extends Component {
         if(isLogin){
             let res = async ()=>{
                 let aaa =  await http.get(`http://agoiu.com:8080/myMessage?userId=${isLogin}`)
-                // console.log(aaa.data.userHeadPicture)
-                if(aaa.data){
+                console.log(aaa.data.userHeadPicture)
+                if(aaa.data !== null){
                     this.setState({
                         userHeadPic : aaa.data.userHeadPicture
                     })
                 }
-
             }
             res()
             // console.log(isLogin)

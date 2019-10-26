@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BattleContainer from './styleBattle'
 import Swiper from 'swiper/js/swiper.js'
 import battle1 from 'images/battle/battle-1.png'
-import http from 'utiles/http'
+// import http from 'utiles/http'
 
 
 class BattleUI extends Component {

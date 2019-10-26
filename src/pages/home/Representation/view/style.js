@@ -62,6 +62,9 @@ const MainContainer_1 = styled.main`
                 color : #777777;
                 margin-top : .06rem;
                 display :block;
+                overflow: hidden;    
+                text-overflow:ellipsis;    
+                white-space: nowrap;
             }
             i{
                 color : #FF6600;
@@ -85,6 +88,9 @@ const MainContainer_1 = styled.main`
                 color : #777777;
                 margin-top : .06rem;
                 display :block;
+                overflow: hidden;    
+                text-overflow:ellipsis;    
+                white-space: nowrap;
             }
             i{
                 color : #FF6600;

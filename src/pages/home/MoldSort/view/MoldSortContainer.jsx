@@ -18,10 +18,14 @@ class MoldSort extends Component {
         // console.log(1)
         // 金刚区跳转进来可以做一次ajax请求
         // 根据路由做的ajax请求
-        let data = this.props.location.pathname.split('type')[1]
-        // let order = this.props.location.search.split('=')[1]
+        let type = this.props.location.pathname.split('type')[1]
+        let order = this.props.location.search.split('=')[1]
         // console.log(order)
         // 还需要order的数据
+        let data = {
+            type,
+            order
+        }
         this.props.loadTypeData(data)
     }
 }
