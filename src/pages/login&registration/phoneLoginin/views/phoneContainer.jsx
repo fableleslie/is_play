@@ -107,6 +107,7 @@ class PhoneContainer extends PureComponent{
             if(this.state.code === this.state.userCode){
                 this.props.login(this.state.loginData)
                 this.props.history.push('/index/home')
+                window.location.reload()
             }else{
                 this.showUserCode()
             }
